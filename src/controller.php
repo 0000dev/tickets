@@ -23,26 +23,23 @@ class Controller
 	public function homePage()
 	{		 
 
-		// fetching smth from db:
-		$content = $this -> db -> homePage(803);
-
-		//print_r($content);
-
 		$this->twig->display('home.html.twig', array('artist' => $content));
+		
 		return;
 	}
 
-	public function itemPage()
-	{		
+	public function itemPage($id, $artist_name)
+	{	
 
-		echo 'item page'; 
-			
-		// fetching smth from db:
-		//$z['list'] = $this -> db -> homePage();
-		//print_r($z);
+		$content = $this -> db -> itemPage($id);
+		
+		/*print_r($content);
+		die;*/
 
-		//$this -> loadView('appHomePage',$z);
+		$this->app->checkFor404($content, $artist_name);
 
+		$this->twig->display('artist.html.twig', array('artist' => $content));
+		
 		return;
 	}
 

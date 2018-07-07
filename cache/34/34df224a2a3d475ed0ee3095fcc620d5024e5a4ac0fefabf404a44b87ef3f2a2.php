@@ -70,15 +70,15 @@ class __TwigTemplate_1c51194f7ad0ee637e9561069da429f4ba3bd85bbb63cbf33e34bf41420
         // line 10
         echo "            <link rel=\"stylesheet\" href=\"https://unpkg.com/purecss@1.0.0/build/pure-min.css\" integrity=\"sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w\" crossorigin=\"anonymous\">
 
-            <link rel=\"stylesheet\" type=\"text/css\" href=\"css/pure-extend.css\">
+            <link rel=\"stylesheet\" type=\"text/css\" href=\"/css/pure-extend.css\">
             <!--[if lte IE 8]>
                 <link rel=\"stylesheet\" href=\"https://unpkg.com/purecss@1.0.0/build/grids-responsive-old-ie-min.css\">
             <![endif]-->
             <!--[if gt IE 8]><!-->
                 <link rel=\"stylesheet\" href=\"https://unpkg.com/purecss@1.0.0/build/grids-responsive-min.css\">
             <!--<![endif]-->
-            <link rel=\"stylesheet\" type=\"text/css\" href=\"css/tickets.css\">
-            <link rel=\"stylesheet\" type=\"text/css\" href=\"css/tabs.css\">
+            <link rel=\"stylesheet\" type=\"text/css\" href=\"/css/tickets.css\">
+            <link rel=\"stylesheet\" type=\"text/css\" href=\"/css/tabs.css\">
         ";
     }
 

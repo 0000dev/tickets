@@ -16,10 +16,16 @@ $helper 	= $dice->create('\App\Helper\Helper');
 * Router
 */
 
-Router::route('/blog/([0-9]+)(/[0-9]+|)', function($params) use($controller){
-  //$controller -> homePage();
-	echo 'router is working';
-	print_r($params);
+Router::route('/', function() use($controller){
+
+	$controller -> homePage($id, $artist_name);
+
+});
+
+Router::route('/([0-9]+)/(.+)', function($id, $artist_name) use($controller){
+
+	$controller -> itemPage($id, $artist_name);
+
 });
 
 if (false === Router::execute($url)) 

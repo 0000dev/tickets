@@ -21,7 +21,7 @@ class Model
 		$this->db = new PDO($this->dsn, DB_USER, DB_PASS, $this->opt);
 	}
 
-	public function homePage($id) {
+	public function itemPage($id) {
 
 		// artist data
 
@@ -33,12 +33,16 @@ class Model
 				artists.image,
 				artists.description,
 
+				images.image as images,
+
 				categories_names.name as cats
 
-			from artists 
+			from artists
 
-			join categories ON (artists.id = categories.artists_id)
-			join categories_names ON (categories_names.id = categories.categories_names_id)
+			left join images on (artists.id = images.artists_id)
+
+			left join categories ON (artists.id = categories.artists_id)
+			left join categories_names ON (categories_names.id = categories.categories_names_id)
 			
 			where
 			artists.id = '.$id.'
