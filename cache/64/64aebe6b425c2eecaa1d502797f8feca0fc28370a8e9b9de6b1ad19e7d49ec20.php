@@ -33,7 +33,30 @@ class __TwigTemplate_688ff1a4c9f7255cc5795438390eb029a0789799cd56ef05ff42121ef37
     {
         // line 4
         echo "
-HOME PAGE
+</div> ";
+        // line 6
+        echo "
+ 
+\t<div style=\"background: url('https://st.depositphotos.com/1063397/4654/i/950/depositphotos_46549179-stock-photo-musician-at-a-concert.jpg');height: 663px;background-size: cover;\">
+
+
+\t \t<div>
+\t\t<form   style=\"padding:20%; width:100%\"><input type=\"text\" style='width:100%;height:50px;' /></form>
+\t \t</div>
+\t\t\t 
+\t\t 
+
+\t</div>
+ 
+
+<div class=\"content\">
+<div class=\"pure-g\">
+\t\t<div class=\"pure-u-1\">
+\t\t\tsome content
+\t\t</div>
+</div>
+</div>
+
 
 ";
     }
@@ -50,7 +73,7 @@ HOME PAGE
 
     public function getDebugInfo()
     {
-        return array (  35 => 4,  32 => 3,  15 => 1,);
+        return array (  38 => 6,  35 => 4,  32 => 3,  15 => 1,);
     }
 
     public function getSourceContext()

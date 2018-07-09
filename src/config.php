@@ -17,6 +17,8 @@ define('TWIG_CACHE_FOLDER', __DIR__.'/../cache');
 define('TWIG_AUTO_RELOAD', true); // disable cache
 define('TWIG_AUTOESCAPE', true);
 
+define('CATEGORY_ITEMS_PER_PAGE', 10);
+
 if (PHP_SAPI == 'cli-server') {
     // To help the built-in PHP dev server, check if the request was actually for
     // something which should probably be served as a static file

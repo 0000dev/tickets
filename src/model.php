@@ -21,6 +21,46 @@ class Model
 		$this->db = new PDO($this->dsn, DB_USER, DB_PASS, $this->opt);
 	}
 
+	public function catPage($id, $page) {
+
+		$sql_query = '
+
+			SELECT
+				
+				artists.id,
+				artists.name,
+				artists.image,
+				artists.description,
+
+				categories_names.name as cats,
+				categories_names.id as cats_id
+
+			from artists
+
+			left join categories ON (artists.id = categories.artists_id)
+			left join categories_names ON (categories_names.id = categories.categories_names_id)
+			
+			where
+			categories.categories_names_id = '.$id.' 
+
+			limit '.(CATEGORY_ITEMS_PER_PAGE+1).'
+			offset '.($page*CATEGORY_ITEMS_PER_PAGE).'
+		';
+
+		$stmt = $this->db->prepare($sql_query); // stmt = statement
+		$stmt -> execute();
+		
+		$sql_res = $stmt -> fetchAll();
+
+		$next_page = false;
+ 
+		if (count($sql_res)>CATEGORY_ITEMS_PER_PAGE)
+			$next_page = true;
+
+		return array('sql_res' => $sql_res, 'next_page' => $next_page);
+
+	}
+
 	public function itemPage($id) {
 
 		// artist data
@@ -29,13 +69,15 @@ class Model
 
 			SELECT
 				
+				artists.id,
 				artists.name,
 				artists.image,
 				artists.description,
 
 				images.image as images,
 
-				categories_names.name as cats
+				categories_names.name as cats,
+				categories_names.id as cats_id
 
 			from artists
 
@@ -48,7 +90,7 @@ class Model
 			artists.id = '.$id.'
 		';
 
-		$stmt = $this->db->prepare($sql_query); // stmt = statement
+		$stmt = $this->db->prepare($sql_query); 
 		$stmt -> execute();
 		
 		$sql_res = $stmt -> fetchAll();
@@ -83,7 +125,7 @@ class Model
 			(SELECT id,name from artists where id = (select max(id) from artists where id < '.$id.'))
 		';
 
-		$stmt = $this->db->prepare($sql_query); // stmt = statement
+		$stmt = $this->db->prepare($sql_query);
 		$stmt -> execute();
 		
 		$sql_res = $stmt -> fetchAll();
@@ -110,7 +152,7 @@ class Model
 			join comment_details ON (comment_details.id = comments.comment_details_id)	
 			
 			where
-			comments.artists_id = '.$id.'
+			comments.artists_id = '.$id.' limit 100
 		';
 
 		$stmt = $this->db->prepare($sql_query); // stmt = statement

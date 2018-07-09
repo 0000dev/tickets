@@ -1,8 +1,6 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-<div class="content">
- 
 
 <!-- top header menu / better to do with native menu? -->
 <div class="custom-wrapper pure-g" id="menu">
@@ -38,7 +36,7 @@
 
 		<div class="crumps">
 			{% for category in artist.cats %}
-				{{category}} {% if loop.last == false %} > {% endif %}
+				<a href="/category/{{artist.cats_id[loop.index0]}}">{{category}}</a> {% if loop.last == false %} > {% endif %}
 			{% endfor %}
 		</div>
 		
@@ -65,7 +63,7 @@
 	</div>
 </div>
 
-<div class="pure-g">
+{# <div class="pure-g">
 	<div class="pure-u-1">
 		<div class="pc-tab">
 			<input checked="checked" id="tab1" type="radio" name="pct" />
@@ -91,51 +89,108 @@
 			    <div class="tab2">
 			      <p id="photos">
 			      	{% for image in artist.images %}
-			      		<img src="http://photos-eu.bazaarvoice.com/photo/2/cGhvdG86dGlja2V0bWFzdGVy/{{ image }}">
+
+			      		<a href="#img{{loop.index}}">
+			      			<img class="thumbnail" src="http://photos-eu.bazaarvoice.com/photo/2/cGhvdG86dGlja2V0bWFzdGVy/{{ image }}">
+			      		</a>
+
+			      		<a href="#_" class="lightbox" id="img{{loop.index}}"> 
+			      			<img src="http://photos-eu.bazaarvoice.com/photo/2/cGhvdG86dGlja2V0bWFzdGVy/{{ image }}">
+			      		</a> 
+
 			      	{% endfor %}
 			      </p>
 			    </div>
 			  </section>
 		</div>
 	</div>
-</div>
-
-
-<div class="pure-g">
-	<div class="pure-u-1">
-		<h4>Visitors' feedback</h4>
-	</div>
-</div>
-
-
-{% for neighbor in artist.neighbors %}
-	<a href="/{{neighbor['id']}}/{{neighbor['name']|trim|replace({" ":"-"})}}">{{neighbor['name']}}</a> :: 
-{% endfor %}
-
-{% for comment in artist.comments %}
-
-<div class="pure-g comments">
-	<div class="pure-u-1">
-		<div  class="stars">
-			{% for i in 1..comment.rating %}
-				★
-			{% endfor %}
-			{% if comment.rating<5 %}
-				{% for i in 1..5-comment.rating %}
-					☆
-				{% endfor %}
-			{% endif %}
-		</div> 
-
-		<div class="username"><strong>Anonymous</strong></div>
-		<div class="feebacktext">
-		{{ comment.text }}
+</div> #}
+{% if artist.description|length > 0 %}
+	<div class="pure-g">
+		<div class="pure-u-1 artistdescriptionblock">
+			<p>
+				{{artist.description}}
+			</p>
 		</div>
-		<span class="placeandtime">{{ comment.details }}</span>
 	</div>
-</div>
+{% endif %}
 
-{% endfor %}
+{% if artist.images|length > 0 %}
+	<div class="pure-g">
+		<div class="pure-u-1">
+			<h4>{{artist.name}} Concert & Tour Photos</h4>	
+			<div class="artistphotosblock{% if artist.images|length < 5 %} smallphotoblock{% endif %}">
+				<p id="photos">
+			      	{% for image in artist.images %}
+
+			      		<a href="/{{artist.id}}/img/{{ image|replace({'.jpg':''}) }}"><img src="http://photos-eu.bazaarvoice.com/photo/2/cGhvdG86dGlja2V0bWFzdGVy/{{ image }}"></a>
+
+			      		{# <a href="#img{{loop.index}}">
+			      			<img class="thumbnail" src="http://photos-eu.bazaarvoice.com/photo/2/cGhvdG86dGlja2V0bWFzdGVy/{{ image }}">
+			      		</a>
+
+			      		<a href="#_" class="lightbox" id="img{{loop.index}}"> 
+			      			<img src="http://photos-eu.bazaarvoice.com/photo/2/cGhvdG86dGlja2V0bWFzdGVy/{{ image }}">
+			      		</a> #}
+			      	{% endfor %}
+				</p>
+			</div>
+		</div>
+	</div>
+{% endif %}
+
+
+{% if artist.comments|length > 0 %}
+
+	<div class="pure-g">
+		<div class="pure-u-1">
+			<h4>Fan Reviews</h4>
+		</div>
+	</div>
+
+	{% for comment in artist.comments %}
+
+	<div class="pure-g comments">
+		<div class="pure-u-1">
+			<div  class="stars">
+				{% for i in 1..comment.rating %}
+					★
+				{% endfor %}
+				{% if comment.rating<5 %}
+					{% for i in 1..5-comment.rating %}
+						☆
+					{% endfor %}
+				{% endif %}
+			</div> 
+
+			<div class="username"><strong>Anonymous</strong></div>
+			<div class="feebacktext">
+			{{ comment.text|replace({'\\u2019':"'",'\\u201d':'','\\u201c':'','\\u2013':' ','\\n':"<br>"}) }}
+			</div>
+			<span class="placeandtime">{{ comment.details }}</span>
+		</div>
+	</div>
+
+			{% if comment == artist.comments[2] %}
+				<div class="neighbors">
+				{% for neighbor in artist.neighbors %}
+					<a href="/{{neighbor['id']}}/{{neighbor['name']|trim|replace({" ":"-"})}}">{{neighbor['name']}} Reviews</a> {% if loop.last == false %} :: {% endif %}
+				{% endfor %}
+				</div>
+			{% endif %}
+		
+	{% endfor %}
+
+{% endif %}
+
+{% if artist.comments|length < 3 %}
+	<div class="neighbors margintop15">
+		{% for neighbor in artist.neighbors %}
+			<a href="/{{neighbor['id']}}/{{neighbor['name']|trim|replace({" ":"-"})}}">{{neighbor['name']}}</a> {% if loop.last == false %} :: {% endif %}
+		{% endfor %}
+	</div>
+{% endif %}
+
  
 
 
@@ -144,9 +199,6 @@
 	[some footer]
 	</p>	
 </footer>
-
-
-</div>
 
 
 {% endblock %}

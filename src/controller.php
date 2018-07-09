@@ -5,6 +5,8 @@ namespace App\Controller;
 use \App\Model\Model;
 use \App\Helper\Helper;
 
+use \JasonGrimes\Paginator;
+
 class Controller
 {	
 
@@ -28,15 +30,44 @@ class Controller
 		return;
 	}
 
+	public function catPage($id, $page)
+	{	
+		if ($page == null)
+			$page = 0;
+
+		$model = $this -> db -> catPage($id, $page);
+
+		$content = $model['sql_res'];
+
+		if (count($content)<1) {
+			$this->app->show404();
+			return;
+		}
+
+		/*echo '<pre>';
+		print_r($content);
+		echo '</pre>';
+		die;*/
+
+		// first 'next' page starts with #2 
+		if ($page == 0)
+			$page = 1;
+
+		$this->twig->display('cat.html.twig', array('category' => $content, 'next_page' => $model['next_page'], 'curr_page' => $page, 'cat_id' => $id));
+	}
+
 	public function itemPage($id, $artist_name)
 	{	
 
 		$content = $this -> db -> itemPage($id);
 		
-		/*print_r($content);
+		/*echo '<pre>';
+		print_r($content);
+		echo '</pre>';
 		die;*/
 
-		$this->app->checkFor404($content, $artist_name);
+		if ($this->app->checkFor404($content, $artist_name))
+			return;
 
 		$this->twig->display('artist.html.twig', array('artist' => $content));
 		

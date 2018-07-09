@@ -42,17 +42,19 @@ class __TwigTemplate_1c51194f7ad0ee637e9561069da429f4ba3bd85bbb63cbf33e34bf41420
         echo "    </head>
 
     <body>
+        <div class=\"content\">
        
         ";
-        // line 26
-        $this->displayBlock('body', $context, $blocks);
         // line 27
+        $this->displayBlock('body', $context, $blocks);
+        // line 28
         echo "
         ";
-        // line 28
+        // line 29
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 31
-        echo "
+        // line 32
+        echo "        
+        </div>
     </body>
 </html>
 ";
@@ -82,15 +84,15 @@ class __TwigTemplate_1c51194f7ad0ee637e9561069da429f4ba3bd85bbb63cbf33e34bf41420
         ";
     }
 
-    // line 26
+    // line 27
     public function block_body($context, array $blocks = array())
     {
     }
 
-    // line 28
+    // line 29
     public function block_javascripts($context, array $blocks = array())
     {
-        // line 29
+        // line 30
         echo "
         ";
     }
@@ -102,7 +104,7 @@ class __TwigTemplate_1c51194f7ad0ee637e9561069da429f4ba3bd85bbb63cbf33e34bf41420
 
     public function getDebugInfo()
     {
-        return array (  94 => 29,  91 => 28,  86 => 26,  71 => 10,  68 => 9,  62 => 5,  55 => 31,  53 => 28,  50 => 27,  48 => 26,  42 => 22,  40 => 9,  33 => 5,  27 => 1,);
+        return array (  96 => 30,  93 => 29,  88 => 27,  73 => 10,  70 => 9,  64 => 5,  56 => 32,  54 => 29,  51 => 28,  49 => 27,  42 => 22,  40 => 9,  33 => 5,  27 => 1,);
     }
 
     public function getSourceContext()
