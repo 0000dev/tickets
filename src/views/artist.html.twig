@@ -163,7 +163,7 @@
 				{% endif %}
 			</div> 
 
-			<div class="username"><strong>Anonymous</strong></div>
+			<div class="username"><strong>{{ comment.author }}</strong></div>
 			<div class="feebacktext">
 			{{ comment.text|replace({'\\u2019':"'",'\\u201d':'','\\u201c':'','\\u2013':' ','\\n':"<br>"}) }}
 			</div>

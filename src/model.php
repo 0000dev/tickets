@@ -145,6 +145,8 @@ class Model
 				comments.text as text,
 				comments.title as title,
 				comments.rating as rating,
+				comments.author as author,
+
 				comment_details.details as details
 
 			from comments 
