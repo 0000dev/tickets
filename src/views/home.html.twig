@@ -18,22 +18,24 @@
         <!--<![endif]-->
         <link rel="stylesheet" type="text/css" href="/css/tickets.css">
         <link rel="stylesheet" type="text/css" href="/css/tabs.css">
+		<link rel="stylesheet" type="text/css" href="/css/slick/slick.css"/>
+		<link rel="stylesheet" type="text/css" href="/css/slick/slick-theme.css"/>
+
+		<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+		<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+		<script type="text/javascript" src="/js/slick/slick.min.js"></script>
+
     {% endblock %}
 </head>
 
 <body>
 
-
-
-	{# вынести в отдельны twig файл, без extends, бо криво получается #}
-
- 
 	<div style="background: url('https://st.depositphotos.com/1063397/4654/i/950/depositphotos_46549179-stock-photo-musician-at-a-concert.jpg');height: 600px;background-size: cover;">
 
-		<form   style="padding:15%; width:100%">
+		<form  action="/search" method="POST" style="padding:15%; width:100%">
 			<div style="padding:40px; background-color:#fff9; border-radius: 10px;">
 			<div style="padding:40px; background-color:#fff9; border-radius: 10px;"> 
-				<input placeholder="What are you looking for?" id="mainpage_domain" onkeydown="if (event.keyCode == 13) myFunction(this.value)" type="text"  style='width:100%;height:50px;' />
+				<input name="search" placeholder="What are you looking for?" id="mainpage_domain" onkeydown="if (event.keyCode == 13) myFunction(this.value)" type="text"  style='width:100%;height:50px;' />
 			</div>
 			</div>
 		</form>
@@ -41,79 +43,82 @@
 	</div>
  
 <div class="content">
-	
 
+	<div class="slickslider">
+	{% for comment in comments %}
 
-	<div class="pure-g comments margintop15">
-		<div class="pure-u-1">
-			<div class="stars">
-									★
-									★
-									★
-									★
-									★
-											</div> 
+		<div class="pure-g comments margintop15" style="height:200px">
+			<div class="pure-u-1">
+				<div style="float:left; margin-right:20px"><a href="/{{ comment.artists_id }}/{{ comment.artists_name|trim|replace({" ":"-"}) }}">{{ comment.artists_name }}</a></div>
+				<div  class="stars">
+					{% for i in 1..comment.rating %}
+						★
+					{% endfor %}
+					{% if comment.rating<5 %}
+						{% for i in 1..5-comment.rating %}
+							☆
+						{% endfor %}
+					{% endif %}
+				</div> 
 
-			<div class="username"><strong>Anonymous</strong></div>
-			<div class="feebacktext">
-			So this show was amazing and so worth the wait. I hated that I couldn't see the whole cast but I really enjoyed it. I would absolutely love to see it again in the near future.
-			</div>
-			<span class="placeandtime">August Wilson Theatre - New York, NY - Sat, Apr 7, 2018</span>
-		</div>
-	</div>
-
-	<div class="pure-g comments margintop15">
-		<div class="pure-u-1">
-			<div class="stars">
-									★
-									★
-									★
-									★
-									★
-											</div> 
-
-			<div class="username"><strong>Anonymous</strong></div>
-			<div class="feebacktext">
-			So this show was amazing and so worth the wait. I hated that I couldn't see the whole cast but I really enjoyed it. I would absolutely love to see it again in the near future.
-			</div>
-			<span class="placeandtime">August Wilson Theatre - New York, NY - Sat, Apr 7, 2018</span>
-		</div>
-	</div>
-
-	<div class="pure-g comments margintop15">
-		<div class="pure-u-1">
-			<div class="stars">
-									★
-									★
-									★
-									★
-									★
-											</div> 
-
-			<div class="username"><strong>Anonymous</strong></div>
-			<div class="feebacktext">
-			So this show was amazing and so worth the wait. I hated that I couldn't see the whole cast but I really enjoyed it. I would absolutely love to see it again in the near future.
-			</div>
-			<span class="placeandtime">August Wilson Theatre - New York, NY - Sat, Apr 7, 2018</span>
-		</div>
-	</div>
-
-	</div>
-
-
-	<div style="background: #444;height: 200px;background-size: cover; color:white">
-		<div class="content">
-	
-
-
-			<div class="pure-g comments margintop15">
-				<div class="pure-u-1">
-
-					some backlinks?
+				<div class="username"><strong>{{ comment.author }}</strong></div>
+				<div class="feebacktext">
+				{{ comment.text|replace({'\\u2019':"'",'\\u201d':'','\\u201c':'','\\u2013':' ','\\n':"<br>"}) }}
 				</div>
+				<span class="placeandtime">{{ comment.details }}</span>
 			</div>
 		</div>
+
+	{% endfor %}
 	</div>
 
-    </body>
+</div>
+
+<div style="background: #444;height: 200px;background-size: cover; color:white">
+	<div class="content">
+
+		<div class="pure-g" style="border:1px solid;border-top-color:#444;margin-top:15px; padding:20px;">
+			<div class="pure-u-1-2">
+
+				<b>Recent feedbacks</b>
+				<u>
+					{% for artist in artists %}
+					<li style="list-style-type: square;">
+						<a style="color:white" href="/{{ artist.id }}/{{ artist.name|trim|replace({" ":"-"}) }}">{{ artist.name }}</a>
+					</li>
+
+					{% endfor %}
+				</u>
+			</div>
+
+			<div class="pure-u-1-2">
+
+				<b>More information</b>
+				<u>
+					
+						<li><a href="/page/about">About us</a></li>
+						<li><a href="/page/terms">Terms</a></li>
+						<li><a href="/page/privacy-policy">Privacy Policy</a></li>
+						<li><a href="/page/contact">Contact</a></li>
+					
+				</u>
+			</div>
+
+		</div>
+
+	</div>
+</div>
+
+</body>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+	  $('.slickslider').slick({
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		autoplay: true,
+		autoplaySpeed: 2000,
+	  });
+	});
+</script>
 </html>

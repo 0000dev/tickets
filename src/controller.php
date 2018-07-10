@@ -5,8 +5,6 @@ namespace App\Controller;
 use \App\Model\Model;
 use \App\Helper\Helper;
 
-use \JasonGrimes\Paginator;
-
 class Controller
 {	
 
@@ -22,10 +20,35 @@ class Controller
 
 	}
 
+	// 2DO : add pagination
+
+	public function search($s)
+	{
+		$content = $this -> db -> search($s);
+
+		print_r($content);
+	}
+
+	public function staticPage($page_file)
+	{
+		$content = file_get_contents($page_file);
+
+		$this->twig->display('static_page.html.twig', array('content' => $content));
+	}
+
 	public function homePage()
 	{		 
 
-		$this->twig->display('home.html.twig', array('artist' => $content));
+		$model = $this -> db -> homePage();
+
+		/*echo '<pre>';
+		print_r($model);
+		echo '</pre>';
+		die;*/		
+
+		shuffle($model['comments']);
+
+		$this->twig->display('home.html.twig', array('comments' => $model['comments'], 'artists' => $model['artists']));
 		
 		return;
 	}

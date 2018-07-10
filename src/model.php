@@ -21,6 +21,95 @@ class Model
 		$this->db = new PDO($this->dsn, DB_USER, DB_PASS, $this->opt);
 	}
 
+	public function search($s, $page=0)
+	{
+		$sql_query = '
+
+			SELECT
+				
+				artists.id,
+				artists.name,
+				artists.image,
+				artists.description
+
+			from artists
+			
+			where
+			MATCH (artists.name) AGAINST (:s IN NATURAL LANGUAGE MODE)
+
+			limit '.(CATEGORY_ITEMS_PER_PAGE+1).'
+			offset '.($page*CATEGORY_ITEMS_PER_PAGE).'
+		';
+
+		$stmt = $this->db->prepare($sql_query); // stmt = statement
+		$stmt -> execute([':s' => $s]);
+		
+		$sql_res = $stmt -> fetchAll();
+
+		$next_page = false;
+ 
+		if (count($sql_res)>CATEGORY_ITEMS_PER_PAGE)
+			$next_page = true;
+
+		return array('sql_res' => $sql_res, 'next_page' => $next_page);
+	}
+
+	public function homePage() {
+
+		$result = array();
+
+		$sql_query = '
+
+			SELECT
+
+				comments.text as text,
+				comments.title as title,
+				comments.rating as rating,
+				comments.author as author,
+
+				comment_details.details as details,
+
+				artists.id as artists_id,
+				artists.name as artists_name
+
+			from comments 
+
+			join artists ON (artists.id = comments.artists_id)
+			join comment_details ON (comment_details.id = comments.comment_details_id)	
+			
+			where
+			comments.artists_id > '.rand(1,800).' 
+
+			limit 10
+		';
+
+		$stmt = $this->db->prepare($sql_query); // stmt = statement
+		$stmt -> execute();
+
+		$result['comments'] = $sql_res = $stmt -> fetchAll();
+
+		$sql_query = '
+
+			SELECT
+				
+				artists.id,
+				artists.name
+
+			from artists
+			
+			limit 5			
+		';
+
+		$stmt = $this->db->prepare($sql_query); // stmt = statement
+		$stmt -> execute();
+		
+		$sql_res = $stmt -> fetchAll();
+
+		$result['artists'] = $sql_res;
+
+		return $result;
+	}
+
 	public function catPage($id, $page) {
 
 		$sql_query = '

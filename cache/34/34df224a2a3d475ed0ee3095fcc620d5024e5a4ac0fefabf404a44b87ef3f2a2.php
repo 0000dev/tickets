@@ -42,17 +42,45 @@ class __TwigTemplate_1c51194f7ad0ee637e9561069da429f4ba3bd85bbb63cbf33e34bf41420
         echo "    </head>
 
     <body>
+
         <div class=\"content\">
+
+            <!-- top header menu / better to do with native menu? -->
+            <div class=\"custom-wrapper pure-g\" id=\"menu\">
+                <div class=\"pure-u-1 pure-u-md-1-5\">
+                    <div class=\"pure-menu\">
+                        <a href=\"/\" class=\"pure-menu-heading custom-brand\">FansVoice</a>
+                        <a href=\"#\" class=\"custom-toggle\" id=\"toggle\"><s class=\"bar\"></s><s class=\"bar\"></s></a>
+                    </div>
+                </div>
+                <div class=\"pure-u-1 pure-u-md-2-5\">
+                    <div class=\"pure-menu pure-menu-horizontal custom-can-transform\">
+                        
+                            <form class=\"pure-form\"><input type=\"text\" class=\"pure-input-rounded\"></form>
+                        
+                    </div>
+                </div>
+                <div class=\"pure-u-1 pure-u-md-2-5\">
+                    <div class=\"pure-menu pure-menu-horizontal custom-menu-3 custom-can-transform\">
+                        <ul class=\"pure-menu-list\">
+                            <li class=\"pure-menu-item\"><a href=\"/category/16\" class=\"pure-menu-link\">Rock & Pop</a></li>
+                            <li class=\"pure-menu-item\"><a href=\"/category/18\" class=\"pure-menu-link\">Musicals</a></li>
+                            <li class=\"pure-menu-item\"><a href=\"#\" class=\"pure-menu-link\">Yahoo</a></li>
+                            <li class=\"pure-menu-item\"><a href=\"#\" class=\"pure-menu-link\">W3C</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
        
         ";
-        // line 27
+        // line 55
         $this->displayBlock('body', $context, $blocks);
-        // line 28
+        // line 56
         echo "
         ";
-        // line 29
+        // line 57
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 32
+        // line 60
         echo "        
         </div>
     </body>
@@ -84,15 +112,15 @@ class __TwigTemplate_1c51194f7ad0ee637e9561069da429f4ba3bd85bbb63cbf33e34bf41420
         ";
     }
 
-    // line 27
+    // line 55
     public function block_body($context, array $blocks = array())
     {
     }
 
-    // line 29
+    // line 57
     public function block_javascripts($context, array $blocks = array())
     {
-        // line 30
+        // line 58
         echo "
         ";
     }
@@ -104,7 +132,7 @@ class __TwigTemplate_1c51194f7ad0ee637e9561069da429f4ba3bd85bbb63cbf33e34bf41420
 
     public function getDebugInfo()
     {
-        return array (  96 => 30,  93 => 29,  88 => 27,  73 => 10,  70 => 9,  64 => 5,  56 => 32,  54 => 29,  51 => 28,  49 => 27,  42 => 22,  40 => 9,  33 => 5,  27 => 1,);
+        return array (  124 => 58,  121 => 57,  116 => 55,  101 => 10,  98 => 9,  92 => 5,  84 => 60,  82 => 57,  79 => 56,  77 => 55,  42 => 22,  40 => 9,  33 => 5,  27 => 1,);
     }
 
     public function getSourceContext()

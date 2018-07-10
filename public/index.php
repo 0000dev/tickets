@@ -18,7 +18,7 @@ $helper 	= $dice->create('\App\Helper\Helper');
 
 Router::route('/', function() use($controller){
 
-	$controller -> homePage($id, $artist_name);
+	$controller -> homePage();
 
 });
 
@@ -43,6 +43,26 @@ Router::route('/category/([0-9]+)(|/[0-9]+)', function($cat_id, $page) use($cont
 	$controller -> catPage($cat_id, $page);
 
 });
+
+Router::route('/page/([a-z0-9]+)', function($page_file) use($controller){
+
+	$page = STATIC_PAGES_CONTENT_FOLDER.'/'.$page_file.'.txt';
+
+	if (file_exists($page))
+		$controller -> staticPage($page);
+
+});
+
+
+Router::route('/search', function() use($controller){
+
+	$_POST  = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+	print_r($_POST);
+	//echo 'search page';
+	$controller -> search($_POST['search']);
+
+});
+
 
 
 if (false === Router::execute($url)) 
