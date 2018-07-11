@@ -36,7 +36,7 @@
                 <div class="pure-u-1 pure-u-md-2-5">
                     <div class="pure-menu pure-menu-horizontal custom-can-transform">
                         
-                            <form class="pure-form"><input type="text" class="pure-input-rounded"></form>
+                            <form class="pure-form" action="/search" method="POST"><input name="search" type="text" class="pure-input-rounded"></form>
                         
                     </div>
                 </div>
@@ -54,10 +54,28 @@
        
         {% block body %}{% endblock %}
 
+        </div>
+
+        <div class="darkfooter">
+            <div class="content">
+
+                <div class="pure-g">
+                <div class="pure-u-1-1">
+                   <b>More information</b>
+                    <ul>
+                        <li><a href="/page/about">About us</a></li>
+                        <li><a href="/page/privacy-policy">Privacy Policy</a></li>
+                        <li><a href="/page/contact">Contact</a></li>
+                    </ul>
+                </div>
+                </div>
+
+            </div>
+        </div>
+
         {% block javascripts %}
 
         {% endblock %}
-        
-        </div>
+    
     </body>
 </html>

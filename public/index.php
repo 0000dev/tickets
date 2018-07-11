@@ -44,7 +44,7 @@ Router::route('/category/([0-9]+)(|/[0-9]+)', function($cat_id, $page) use($cont
 
 });
 
-Router::route('/page/([a-z0-9]+)', function($page_file) use($controller){
+Router::route('/page/([-a-z0-9]+)', function($page_file) use($controller){
 
 	$page = STATIC_PAGES_CONTENT_FOLDER.'/'.$page_file.'.txt';
 

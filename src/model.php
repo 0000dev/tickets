@@ -62,6 +62,7 @@ class Model
 
 			SELECT
 
+				comments.artists_id,
 				comments.text as text,
 				comments.title as title,
 				comments.rating as rating,
@@ -70,7 +71,8 @@ class Model
 				comment_details.details as details,
 
 				artists.id as artists_id,
-				artists.name as artists_name
+				artists.name as artists_name,
+				artists.image as artists_image
 
 			from comments 
 
@@ -78,9 +80,11 @@ class Model
 			join comment_details ON (comment_details.id = comments.comment_details_id)	
 			
 			where
-			comments.artists_id > '.rand(1,800).' 
+			artists.image is not null
 
-			limit 10
+			group by comments.artists_id
+
+			limit 100
 		';
 
 		$stmt = $this->db->prepare($sql_query); // stmt = statement
@@ -112,6 +116,10 @@ class Model
 
 	public function catPage($id, $page) {
 
+		$offset = $page;
+		if ($page>0)
+			$offset = $page-1;
+
 		$sql_query = '
 
 			SELECT
@@ -131,9 +139,11 @@ class Model
 			
 			where
 			categories.categories_names_id = '.$id.' 
+			and 
+			artists.description is NOT NULL
 
 			limit '.(CATEGORY_ITEMS_PER_PAGE+1).'
-			offset '.($page*CATEGORY_ITEMS_PER_PAGE).'
+			offset '.($offset*CATEGORY_ITEMS_PER_PAGE).'
 		';
 
 		$stmt = $this->db->prepare($sql_query); // stmt = statement

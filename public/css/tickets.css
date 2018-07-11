@@ -43,9 +43,60 @@ h1, h2, h3 {
   padding: 10px;
 }
 
-
 .setborder {
   border:1px solid lightgrey;
+}
+
+.homepage.bigheader{
+  background: url('https://st.depositphotos.com/1063397/4654/i/950/depositphotos_46549179-stock-photo-musician-at-a-concert.jpg');
+  height: 600px;
+  background-size: cover;
+}
+
+.homepage .searchlinediv{
+  padding:40px;
+  background-color:#fff9;
+  border-radius: 10px;
+}
+
+.slickslider .comments{
+  height:200px;
+}
+
+.slickslider .comments .commentsheader{
+  float:left; 
+  margin-right:20px;
+}
+
+.darkfooter ul{
+  margin: 0;
+  padding: 0;
+}
+
+.darkfooter{
+  background: #444;
+  height: 200px;
+  background-size: cover;
+}
+
+.darkfooter .pure-g{
+  border:1px solid #727272;
+  border-top-color:#444;
+  margin-top:15px;
+  padding:20px;
+}
+
+.darkfooter b{
+  color:#FFC300;
+}
+
+.darkfooter .pure-g li {
+  list-style-type: none;
+}
+
+.darkfooter .pure-g li a {
+  color: lightgrey ;
+  text-decoration: none;
 }
 
 /* Vertical align CSS begin */
@@ -82,7 +133,7 @@ h1, h2, h3 {
 .toppanel .artistimage{
   height:250px;
   width:305px;
-  background:white;
+  /*background:white;*/
 }
 
 .comments .stars{
@@ -217,8 +268,14 @@ h1, h2, h3 {
   padding: 15px;
 }
 
+.home.artistphotosblock {
+  max-height:initial;
+  overflow: auto;
+}
+
 .smallphotoblock{
-  max-height: 100px !important;
+  max-height: 200px !important;
+  overflow: auto;
 }
 
 /* Image grid begin */

@@ -22,7 +22,7 @@
 			<p>
 				<div class="artistimage">
 				 
-				<img class="vertical-align" src="{{artist.image}}"/>
+				<img class="vertical-align" src="{% if artist.image|length > 0 %} {{artist.image}} {% else %} /img/noimage.jpg {% endif %}"/>
 		 
 				</div>
 			</p>
@@ -162,15 +162,6 @@
 		{% endfor %}
 	</div>
 {% endif %}
-
- 
-
-
-<footer>
-	<p>
-	[some footer]
-	</p>	
-</footer>
 
 
 {% endblock %}

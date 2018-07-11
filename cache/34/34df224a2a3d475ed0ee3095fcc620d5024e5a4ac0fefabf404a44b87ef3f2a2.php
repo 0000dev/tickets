@@ -56,7 +56,7 @@ class __TwigTemplate_1c51194f7ad0ee637e9561069da429f4ba3bd85bbb63cbf33e34bf41420
                 <div class=\"pure-u-1 pure-u-md-2-5\">
                     <div class=\"pure-menu pure-menu-horizontal custom-can-transform\">
                         
-                            <form class=\"pure-form\"><input type=\"text\" class=\"pure-input-rounded\"></form>
+                            <form class=\"pure-form\" action=\"/search\" method=\"POST\"><input name=\"search\" type=\"text\" class=\"pure-input-rounded\"></form>
                         
                     </div>
                 </div>
@@ -77,12 +77,30 @@ class __TwigTemplate_1c51194f7ad0ee637e9561069da429f4ba3bd85bbb63cbf33e34bf41420
         $this->displayBlock('body', $context, $blocks);
         // line 56
         echo "
-        ";
-        // line 57
-        $this->displayBlock('javascripts', $context, $blocks);
-        // line 60
-        echo "        
         </div>
+
+        <div class=\"darkfooter\">
+            <div class=\"content\">
+
+                <div class=\"pure-g\">
+                <div class=\"pure-u-1-1\">
+                   <b>More information</b>
+                    <ul>
+                        <li><a href=\"/page/about\">About us</a></li>
+                        <li><a href=\"/page/privacy-policy\">Privacy Policy</a></li>
+                        <li><a href=\"/page/contact\">Contact</a></li>
+                    </ul>
+                </div>
+                </div>
+
+            </div>
+        </div>
+
+        ";
+        // line 76
+        $this->displayBlock('javascripts', $context, $blocks);
+        // line 79
+        echo "    
     </body>
 </html>
 ";
@@ -117,10 +135,10 @@ class __TwigTemplate_1c51194f7ad0ee637e9561069da429f4ba3bd85bbb63cbf33e34bf41420
     {
     }
 
-    // line 57
+    // line 76
     public function block_javascripts($context, array $blocks = array())
     {
-        // line 58
+        // line 77
         echo "
         ";
     }
@@ -132,7 +150,7 @@ class __TwigTemplate_1c51194f7ad0ee637e9561069da429f4ba3bd85bbb63cbf33e34bf41420
 
     public function getDebugInfo()
     {
-        return array (  124 => 58,  121 => 57,  116 => 55,  101 => 10,  98 => 9,  92 => 5,  84 => 60,  82 => 57,  79 => 56,  77 => 55,  42 => 22,  40 => 9,  33 => 5,  27 => 1,);
+        return array (  142 => 77,  139 => 76,  134 => 55,  119 => 10,  116 => 9,  110 => 5,  103 => 79,  101 => 76,  79 => 56,  77 => 55,  42 => 22,  40 => 9,  33 => 5,  27 => 1,);
     }
 
     public function getSourceContext()

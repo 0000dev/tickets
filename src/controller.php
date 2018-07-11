@@ -46,7 +46,9 @@ class Controller
 		echo '</pre>';
 		die;*/		
 
-		shuffle($model['comments']);
+		//shuffle($model['comments']);
+
+		//$model['comments'] = array_slice($model['comments'], 0,10);
 
 		$this->twig->display('home.html.twig', array('comments' => $model['comments'], 'artists' => $model['artists']));
 		
