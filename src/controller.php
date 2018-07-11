@@ -26,7 +26,10 @@ class Controller
 	{
 		$content = $this -> db -> search($s);
 
-		print_r($content);
+		$this->twig->display('search.html.twig', array('content' => $content, 'search_phrase' => $s ));
+
+
+		//print_r($content);
 	}
 
 	public function staticPage($page_file)

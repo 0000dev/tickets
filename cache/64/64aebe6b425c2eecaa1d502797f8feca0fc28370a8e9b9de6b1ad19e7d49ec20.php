@@ -46,7 +46,7 @@ class __TwigTemplate_688ff1a4c9f7255cc5795438390eb029a0789799cd56ef05ff42121ef37
 \t\t<form  action=\"/search\" method=\"POST\" style=\"padding:15%; width:100%\">
 \t\t\t<div class=\"searchlinediv\">
 \t\t\t<div class=\"searchlinediv\"> 
-\t\t\t\t<input name=\"search\" placeholder=\"What are you looking for?\" id=\"mainpage_domain\" onkeydown=\"if (event.keyCode == 13) myFunction(this.value)\" type=\"text\"  style='width:100%;height:50px;' />
+\t\t\t\t<input name=\"search\" placeholder=\"What are you looking for?\" onkeydown=\"if (event.keyCode == 13) myFunction(this.value)\" type=\"text\"  style='width:100%;height:50px;' />
 \t\t\t</div>
 \t\t\t</div>
 \t\t</form>
@@ -385,7 +385,7 @@ class __TwigTemplate_688ff1a4c9f7255cc5795438390eb029a0789799cd56ef05ff42121ef37
     // line 5
     public function block_title($context, array $blocks = array())
     {
-        echo "TicketHub Home Page";
+        echo "FansVoice. We need to hear your voice";
     }
 
     // line 9

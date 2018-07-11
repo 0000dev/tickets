@@ -21,7 +21,7 @@ class Model
 		$this->db = new PDO($this->dsn, DB_USER, DB_PASS, $this->opt);
 	}
 
-	public function search($s, $page=0)
+	public function search($s)
 	{
 		$sql_query = '
 
@@ -37,21 +37,14 @@ class Model
 			where
 			MATCH (artists.name) AGAINST (:s IN NATURAL LANGUAGE MODE)
 
-			limit '.(CATEGORY_ITEMS_PER_PAGE+1).'
-			offset '.($page*CATEGORY_ITEMS_PER_PAGE).'
+			limit 50
 		';
 
 		$stmt = $this->db->prepare($sql_query); // stmt = statement
 		$stmt -> execute([':s' => $s]);
 		
-		$sql_res = $stmt -> fetchAll();
-
-		$next_page = false;
- 
-		if (count($sql_res)>CATEGORY_ITEMS_PER_PAGE)
-			$next_page = true;
-
-		return array('sql_res' => $sql_res, 'next_page' => $next_page);
+		return $sql_res = $stmt -> fetchAll();
+		
 	}
 
 	public function homePage() {

@@ -57,7 +57,7 @@ Router::route('/page/([-a-z0-9]+)', function($page_file) use($controller){
 Router::route('/search', function() use($controller){
 
 	$_POST  = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
-	print_r($_POST);
+	//print_r($_POST);
 	//echo 'search page';
 	$controller -> search($_POST['search']);
 
