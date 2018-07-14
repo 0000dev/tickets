@@ -107,6 +107,36 @@ class Model
 		return $result;
 	}
 
+/*	public function glalery($id) {
+
+		$sql_query = '
+
+			SELECT
+				
+				artists.id,
+				artists.name,
+				artists.image,
+				artists.description,
+
+				images.image as images,
+
+				categories_names.name as cats,
+				categories_names.id as cats_id
+
+			from artists
+
+			left join images on (artists.id = images.artists_id)
+
+			left join categories ON (artists.id = categories.artists_id)
+			left join categories_names ON (categories_names.id = categories.categories_names_id)
+			
+			where
+			artists.id = '.$id.'
+		';
+
+
+	}*/
+
 	public function catPage($id, $page) {
 
 		$offset = $page;
@@ -230,6 +260,24 @@ class Model
 
 		// comments
 
+		$max_comments = MAX_COMMENTS_PER_PAGE;
+
+		if (defined('POSTPONED_COMMENT_PUBLISH') and POSTPONED_COMMENT_PUBLISH === true) {
+
+			$now = time(); 
+			$start_date = strtotime(COMMENTS_START_PUBLISH_DATE); 
+			$datediff = $now - $start_date;
+			$datediff =  round($datediff / (60 * 60 * 24));
+
+			$x = PUBLISH_ONE_COMMENT_EACH_DAYS;
+
+			$max_comments = round($datediff / $x); // 1 comment each $x days
+
+			if ($max_comments<0)
+				$max_comments = 1;
+		}
+
+
 		$sql_query = '
 
 			SELECT
@@ -246,7 +294,7 @@ class Model
 			join comment_details ON (comment_details.id = comments.comment_details_id)	
 			
 			where
-			comments.artists_id = '.$id.' limit 100
+			comments.artists_id = '.$id.' limit '.$max_comments.'
 		';
 
 		$stmt = $this->db->prepare($sql_query); // stmt = statement

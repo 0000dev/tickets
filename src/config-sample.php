@@ -17,9 +17,14 @@ define('TWIG_CACHE_FOLDER', __DIR__.'/../cache');
 define('TWIG_AUTO_RELOAD', true); // disable cache
 define('TWIG_AUTOESCAPE', true);
 
+define('STATIC_PAGES_CONTENT_FOLDER', __DIR__.'/pages');
+
 define('CATEGORY_ITEMS_PER_PAGE', 10);
 
-define('STATIC_PAGES_CONTENT_FOLDER', __DIR__.'/pages');
+define('POSTPONED_COMMENT_PUBLISH', true);
+define('COMMENTS_START_PUBLISH_DATE', '2018-06-20');
+define('PUBLISH_ONE_COMMENT_EACH_DAYS', 3); 
+define('MAX_COMMENTS_PER_PAGE', 100);
 
 if (PHP_SAPI == 'cli-server') {
     // To help the built-in PHP dev server, check if the request was actually for

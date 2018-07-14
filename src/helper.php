@@ -64,15 +64,24 @@ class Helper
 		return;       
 	}
 
-	public function checkFor404(array $content, $name)
+	public function checkFor404(array $content, $name = false)
 	{	
 
 		/*echo str_replace('-', ' ', $name);
 		echo $content['name'];*/
 
-		if (!isset($content['name']) or strpos($content['name'], str_replace('-', ' ', $name)) === false) {
-			$this->show404();
-			return true;
+		if ($name !== false)
+		{
+			if (!isset($content['name']) or strpos($content['name'], str_replace('-', ' ', $name)) === false) {
+				$this->show404();
+				return true;
+			}
+		} else {
+
+			if (!isset($content['name'])) {
+				$this->show404();
+				return true;
+			}
 		}
 
 		return false;

@@ -6,7 +6,11 @@
 - страницы картинок - сделать галереей с h1 и ссылкой на страницу артиста
 - найти всех артистов, которые отдают 404 из-за названия, пофиксить
 - venue (т.е. локация выступлений) - отдельная страница?
+	- в бд нужно помечать venue это или нет, чтоб по venue дергать правильную урлу по апи
 - АПИ с ticketmaster, чтоб реально показывать билеты
+	- https://developer.ticketmaster.com/api-explorer/
+- все css, js на внешних ресурсах скачать к себе
+
 
 */
 
@@ -15,6 +19,9 @@ namespace App;
 
 use \Dice\Dice;
 use \Router;
+
+if (!file_exists(__DIR__.'/../src/config.php'))
+	die('No config file. Rename and edit /src/config-sample.php');
 
 require_once __DIR__.'/../vendor/autoload.php';
 
@@ -33,16 +40,26 @@ Router::route('/', function() use($controller){
 
 });
 
+// artist page
+
 Router::route('/([0-9]+)/([^/]+)', function($id, $artist_name) use($controller){
 
 	$controller -> itemPage($id, $artist_name);
 
 });
 
-Router::route('/([0-9]+)/img/([a-fA-F0-9-]{36})', function($id, $image_id) use($controller){
+Router::route('/feedbackpost', function() use($controller){
 
-	//$controller -> itemPage($id, $artist_name);
-	echo '<center><img src="http://photos-eu.bazaarvoice.com/photo/2/cGhvdG86dGlja2V0bWFzdGVy/'.$image_id.'"></center>';
+	$_POST  = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+	print_r($_POST);
+});
+
+// gallery page
+
+Router::route('/([0-9]+)/img/([a-fA-F0-9-]{36})', function($artist_id) use($controller){
+
+	$controller -> gallery($artist_id);
+	//echo '<center><img src="http://photos-eu.bazaarvoice.com/photo/2/cGhvdG86dGlja2V0bWFzdGVy/'.$image_id.'"></center>';
 
 });
 
@@ -64,7 +81,6 @@ Router::route('/page/([-a-z0-9]+)', function($page_file) use($controller){
 
 });
 
-
 Router::route('/search', function() use($controller){
 
 	$_POST  = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
@@ -73,8 +89,6 @@ Router::route('/search', function() use($controller){
 	$controller -> search($_POST['search']);
 
 });
-
-
 
 if (false === Router::execute($url)) 
 	echo '404';

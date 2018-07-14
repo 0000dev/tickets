@@ -164,6 +164,19 @@ class __TwigTemplate_c5f835dc4e0001f05e88bef3525ac759c5dae13aa2f98534d5c1fd46843
             // line 98
             $context['_parent'] = $context;
             $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, ($context["artist"] ?? null), "images", array()));
+            $context['loop'] = array(
+              'parent' => $context['_parent'],
+              'index0' => 0,
+              'index'  => 1,
+              'first'  => true,
+            );
+            if (is_array($context['_seq']) || (is_object($context['_seq']) && $context['_seq'] instanceof Countable)) {
+                $length = count($context['_seq']);
+                $context['loop']['revindex0'] = $length - 1;
+                $context['loop']['revindex'] = $length;
+                $context['loop']['length'] = $length;
+                $context['loop']['last'] = 1 === $length;
+            }
             foreach ($context['_seq'] as $context["_key"] => $context["image"]) {
                 // line 99
                 echo "
@@ -172,6 +185,8 @@ class __TwigTemplate_c5f835dc4e0001f05e88bef3525ac759c5dae13aa2f98534d5c1fd46843
                 echo twig_get_attribute($this->env, $this->source, ($context["artist"] ?? null), "id", array());
                 echo "/img/";
                 echo twig_replace_filter($context["image"], array(".jpg" => ""));
+                echo "#img";
+                echo twig_get_attribute($this->env, $this->source, $context["loop"], "index", array());
                 echo "\"><img src=\"http://photos-eu.bazaarvoice.com/photo/2/cGhvdG86dGlja2V0bWFzdGVy/";
                 echo $context["image"];
                 echo "\"></a>
@@ -179,6 +194,14 @@ class __TwigTemplate_c5f835dc4e0001f05e88bef3525ac759c5dae13aa2f98534d5c1fd46843
 \t\t\t      \t\t";
                 // line 109
                 echo "\t\t\t      \t";
+                ++$context['loop']['index0'];
+                ++$context['loop']['index'];
+                $context['loop']['first'] = false;
+                if (isset($context['loop']['length'])) {
+                    --$context['loop']['revindex0'];
+                    --$context['loop']['revindex'];
+                    $context['loop']['last'] = 0 === $context['loop']['revindex0'];
+                }
             }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['image'], $context['_parent'], $context['loop']);
@@ -384,6 +407,58 @@ class __TwigTemplate_c5f835dc4e0001f05e88bef3525ac759c5dae13aa2f98534d5c1fd46843
         // line 167
         echo "
 
+<div class=\"pure-g\">
+\t<div class=\"pure-u-1\">
+\t\t[Temporary disabled] ";
+        // line 171
+        echo twig_get_attribute($this->env, $this->source, ($context["artist"] ?? null), "name", array());
+        echo " needs your feedback
+\t</div>
+</div>
+
+<div class=\"pure-g\">
+\t<div class=\"pure-u-1 pure-u-md-1-2\">
+
+\t\t<form class=\"pure-form\" action=\"#\" method=\"POST\">
+\t\t    <fieldset class=\"pure-group\">
+\t\t        <input name=\"feedback_name\" type=\"text\" class=\"pure-input-1\" placeholder=\"Your Name\">
+\t\t        <input name=\"feedback_email\" type=\"email\" class=\"pure-input-1\" placeholder=\"Email\">
+\t\t    </fieldset>
+\t\t    <span class=\"rating\">
+\t\t        <input name=\"feedback_rate\" type=\"radio\" class=\"rating-input\" id=\"rating-input-1-5\" name=\"rating-input-1\"/>
+\t\t        <label for=\"rating-input-1-5\" class=\"rating-star\"></label>
+\t\t        <input name=\"feedback_rate\" type=\"radio\" class=\"rating-input\" id=\"rating-input-1-4\" name=\"rating-input-1\"/>
+\t\t        <label for=\"rating-input-1-4\" class=\"rating-star\"></label>
+\t\t        <input name=\"feedback_rate\" type=\"radio\" class=\"rating-input\" id=\"rating-input-1-3\" name=\"rating-input-1\"/>
+\t\t        <label for=\"rating-input-1-3\" class=\"rating-star\"></label>
+\t\t        <input name=\"feedback_rate\" type=\"radio\" class=\"rating-input\" id=\"rating-input-1-2\" name=\"rating-input-1\"/>
+\t\t        <label for=\"rating-input-1-2\" class=\"rating-star\"></label>
+\t\t        <input name=\"feedback_rate\" type=\"radio\" class=\"rating-input\" id=\"rating-input-1-1\" name=\"rating-input-1\"/>
+\t\t        <label for=\"rating-input-1-1\" class=\"rating-star\"></label>
+\t\t\t</span>
+
+\t\t    <fieldset class=\"pure-group\">
+\t\t        <input name=\"feedback_title\" type=\"text\" class=\"pure-input-1\" placeholder=\"Title\">
+\t\t        <textarea name=\"feedback_text\" class=\"pure-input-1\" placeholder=\"Your feedback\"></textarea>
+\t\t    </fieldset>
+
+\t\t    <button disabled type=\"submit\" class=\"pure-button pure-input-1 pure-button-primary\">Temporary disabled. Coming back soon!</button>
+\t\t</form>
+
+\t</div>
+</div>
+
+<script type=\"text/javascript\">
+\$( document ).ready(function() {
+\t\$( \"input.rating-input\" ).click(function() {
+\t\tname=\$(this).attr('name');
+\t\t\$(\"input[name='\"+name+\"']\").val(\"\"); // remove value from all radio's (with this name)
+\t\t\$(\"input[name='\"+name+\"']:checked\").val(\$(this).attr('id')); // add value to checked radio
+\t});
+});
+</script>
+
+
 ";
     }
 
@@ -399,7 +474,7 @@ class __TwigTemplate_c5f835dc4e0001f05e88bef3525ac759c5dae13aa2f98534d5c1fd46843
 
     public function getDebugInfo()
     {
-        return array (  385 => 167,  381 => 165,  367 => 164,  356 => 163,  339 => 162,  336 => 161,  334 => 160,  331 => 159,  327 => 157,  320 => 155,  316 => 153,  302 => 152,  291 => 151,  274 => 150,  271 => 149,  269 => 148,  262 => 144,  257 => 142,  252 => 140,  248 => 138,  245 => 137,  238 => 135,  233 => 134,  230 => 133,  223 => 131,  219 => 130,  213 => 126,  209 => 125,  200 => 118,  198 => 117,  194 => 115,  187 => 110,  181 => 109,  172 => 100,  169 => 99,  165 => 98,  158 => 96,  154 => 95,  150 => 93,  148 => 92,  145 => 91,  137 => 86,  132 => 83,  130 => 82,  108 => 27,  94 => 15,  80 => 14,  71 => 13,  54 => 12,  48 => 9,  43 => 6,  40 => 5,  33 => 3,  15 => 1,);
+        return array (  414 => 171,  408 => 167,  404 => 165,  390 => 164,  379 => 163,  362 => 162,  359 => 161,  357 => 160,  354 => 159,  350 => 157,  343 => 155,  339 => 153,  325 => 152,  314 => 151,  297 => 150,  294 => 149,  292 => 148,  285 => 144,  280 => 142,  275 => 140,  271 => 138,  268 => 137,  261 => 135,  256 => 134,  253 => 133,  246 => 131,  242 => 130,  236 => 126,  232 => 125,  223 => 118,  221 => 117,  217 => 115,  210 => 110,  196 => 109,  185 => 100,  182 => 99,  165 => 98,  158 => 96,  154 => 95,  150 => 93,  148 => 92,  145 => 91,  137 => 86,  132 => 83,  130 => 82,  108 => 27,  94 => 15,  80 => 14,  71 => 13,  54 => 12,  48 => 9,  43 => 6,  40 => 5,  33 => 3,  15 => 1,);
     }
 
     public function getSourceContext()

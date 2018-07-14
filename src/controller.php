@@ -32,6 +32,23 @@ class Controller
 		//print_r($content);
 	}
 
+	public function gallery($artist_id)
+	{
+		$content = $this -> db -> itemPage($artist_id);
+		
+		/*echo '<pre>';
+		print_r($content);
+		echo '</pre>';
+		die;*/
+
+		if ($this->app->checkFor404($content))
+			return;
+
+		$this->twig->display('gallery.html.twig', array('artist' => $content));
+		
+		return;
+	}
+
 	public function staticPage($page_file)
 	{
 		$content = file_get_contents($page_file);
