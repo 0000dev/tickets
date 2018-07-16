@@ -38,7 +38,7 @@ class __TwigTemplate_1c51194f7ad0ee637e9561069da429f4ba3bd85bbb63cbf33e34bf41420
         ";
         // line 9
         $this->displayBlock('stylesheets', $context, $blocks);
-        // line 22
+        // line 21
         echo "    </head>
 
     <body>
@@ -73,9 +73,9 @@ class __TwigTemplate_1c51194f7ad0ee637e9561069da429f4ba3bd85bbb63cbf33e34bf41420
             </div>
        
         ";
-        // line 55
+        // line 54
         $this->displayBlock('body', $context, $blocks);
-        // line 56
+        // line 55
         echo "
         </div>
 
@@ -97,9 +97,9 @@ class __TwigTemplate_1c51194f7ad0ee637e9561069da429f4ba3bd85bbb63cbf33e34bf41420
         </div>
 
         ";
-        // line 76
+        // line 75
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 79
+        // line 78
         echo "    
     </body>
 </html>
@@ -116,29 +116,28 @@ class __TwigTemplate_1c51194f7ad0ee637e9561069da429f4ba3bd85bbb63cbf33e34bf41420
     public function block_stylesheets($context, array $blocks = array())
     {
         // line 10
-        echo "            <link rel=\"stylesheet\" href=\"https://unpkg.com/purecss@1.0.0/build/pure-min.css\" integrity=\"sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w\" crossorigin=\"anonymous\">
-
+        echo "            <link rel=\"stylesheet\" type=\"text/css\" href=\"/css/pure-min.css\">
             <link rel=\"stylesheet\" type=\"text/css\" href=\"/css/pure-extend.css\">
             <!--[if lte IE 8]>
-                <link rel=\"stylesheet\" href=\"https://unpkg.com/purecss@1.0.0/build/grids-responsive-old-ie-min.css\">
+                <link rel=\"stylesheet\" href=\"/css/grids-responsive-old-ie-min.css\">
             <![endif]-->
             <!--[if gt IE 8]><!-->
-                <link rel=\"stylesheet\" href=\"https://unpkg.com/purecss@1.0.0/build/grids-responsive-min.css\">
+                <link rel=\"stylesheet\" type=\"text/css\" href=\"/css/grids-responsive-min.css\">
             <!--<![endif]-->
             <link rel=\"stylesheet\" type=\"text/css\" href=\"/css/tickets.css\">
             <link rel=\"stylesheet\" type=\"text/css\" href=\"/css/tabs.css\">
         ";
     }
 
-    // line 55
+    // line 54
     public function block_body($context, array $blocks = array())
     {
     }
 
-    // line 76
+    // line 75
     public function block_javascripts($context, array $blocks = array())
     {
-        // line 77
+        // line 76
         echo "
         ";
     }
@@ -150,7 +149,7 @@ class __TwigTemplate_1c51194f7ad0ee637e9561069da429f4ba3bd85bbb63cbf33e34bf41420
 
     public function getDebugInfo()
     {
-        return array (  142 => 77,  139 => 76,  134 => 55,  119 => 10,  116 => 9,  110 => 5,  103 => 79,  101 => 76,  79 => 56,  77 => 55,  42 => 22,  40 => 9,  33 => 5,  27 => 1,);
+        return array (  141 => 76,  138 => 75,  133 => 54,  119 => 10,  116 => 9,  110 => 5,  103 => 78,  101 => 75,  79 => 55,  77 => 54,  42 => 21,  40 => 9,  33 => 5,  27 => 1,);
     }
 
     public function getSourceContext()

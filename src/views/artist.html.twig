@@ -32,7 +32,7 @@
 	</div>
 	<div class="pure-u-1 pure-u-sm-2-5">
 		<center>
-			<p><img src="http://www.npdf.org/wp-content/uploads//2014/02/badge-ad.jpg"></p>
+			<p><img src="/img/badge-ad.jpg"></p>
 		</center>
 	</div>
 </div>
@@ -148,7 +148,7 @@
 			{% if comment == artist.comments[2] %}
 				<div class="neighbors">
 				{% for neighbor in artist.neighbors %}
-					<a href="/{{neighbor['id']}}/{{neighbor['name']|trim|replace({" ":"-"})}}">{{neighbor['name']}} Reviews</a> {% if loop.last == false %} :: {% endif %}
+					<a href="/{{neighbor['id']}}/{{neighbor['name']|trim|replace({" ":"-", ".":""})}}">{{neighbor['name']}} Reviews</a> {% if loop.last == false %} :: {% endif %}
 				{% endfor %}
 				</div>
 			{% endif %}
@@ -160,7 +160,7 @@
 {% if artist.comments|length < 3 %}
 	<div class="neighbors margintop15">
 		{% for neighbor in artist.neighbors %}
-			<a href="/{{neighbor['id']}}/{{neighbor['name']|trim|replace({" ":"-"})}}">{{neighbor['name']}}</a> {% if loop.last == false %} :: {% endif %}
+			<a href="/{{neighbor['id']}}/{{neighbor['name']|trim|replace({" ":"-", ".":""})}}">{{neighbor['name']}}</a> {% if loop.last == false %} :: {% endif %}
 		{% endfor %}
 	</div>
 {% endif %}

@@ -71,8 +71,8 @@ class Helper
 		echo $content['name'];*/
 
 		if ($name !== false)
-		{
-			if (!isset($content['name']) or strpos($content['name'], str_replace('-', ' ', $name)) === false) {
+		{	
+			if (!isset($content['name']) or strpos(str_replace('.', '', $content['name']), str_replace(array('-','.'), array(' ',''), $name)) === false) {
 				$this->show404();
 				return true;
 			}

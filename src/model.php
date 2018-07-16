@@ -177,7 +177,10 @@ class Model
 		$next_page = false;
  
 		if (count($sql_res)>CATEGORY_ITEMS_PER_PAGE)
+		{
 			$next_page = true;
+			array_pop($sql_res);
+		}
 
 		return array('sql_res' => $sql_res, 'next_page' => $next_page);
 

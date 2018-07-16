@@ -13,7 +13,7 @@
 				<a href="/category/{{artist.cats_id[loop.index0]}}">{{category}}</a> {% if loop.last == false %} > {% endif %} 
 			{% endfor %}
 
-			> <b><a href="/{{artist.id}}/{{artist.name|trim|replace({" ":"-"})}}">{{artist.name}}</a></b>
+			> <b><a href="/{{artist.id}}/{{artist.name|trim|replace({" ":"-", ".":""})}}">{{artist.name}}</a></b>
 		</div>
 		
 	</div>
