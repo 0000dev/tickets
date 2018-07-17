@@ -38,7 +38,7 @@ class __TwigTemplate_1c51194f7ad0ee637e9561069da429f4ba3bd85bbb63cbf33e34bf41420
         ";
         // line 9
         $this->displayBlock('stylesheets', $context, $blocks);
-        // line 21
+        // line 24
         echo "    </head>
 
     <body>
@@ -73,9 +73,9 @@ class __TwigTemplate_1c51194f7ad0ee637e9561069da429f4ba3bd85bbb63cbf33e34bf41420
             </div>
        
         ";
-        // line 54
+        // line 57
         $this->displayBlock('body', $context, $blocks);
-        // line 55
+        // line 58
         echo "
         </div>
 
@@ -97,9 +97,9 @@ class __TwigTemplate_1c51194f7ad0ee637e9561069da429f4ba3bd85bbb63cbf33e34bf41420
         </div>
 
         ";
-        // line 75
-        $this->displayBlock('javascripts', $context, $blocks);
         // line 78
+        $this->displayBlock('javascripts', $context, $blocks);
+        // line 81
         echo "    
     </body>
 </html>
@@ -126,18 +126,21 @@ class __TwigTemplate_1c51194f7ad0ee637e9561069da429f4ba3bd85bbb63cbf33e34bf41420
             <!--<![endif]-->
             <link rel=\"stylesheet\" type=\"text/css\" href=\"/css/tickets.css\">
             <link rel=\"stylesheet\" type=\"text/css\" href=\"/css/tabs.css\">
+
+            <script type=\"text/javascript\" src=\"//code.jquery.com/jquery-1.11.0.min.js\"></script>
+            <script type=\"text/javascript\" src=\"/js/jquery.nicescroll.js\"></script>
         ";
     }
 
-    // line 54
+    // line 57
     public function block_body($context, array $blocks = array())
     {
     }
 
-    // line 75
+    // line 78
     public function block_javascripts($context, array $blocks = array())
     {
-        // line 76
+        // line 79
         echo "
         ";
     }
@@ -149,7 +152,7 @@ class __TwigTemplate_1c51194f7ad0ee637e9561069da429f4ba3bd85bbb63cbf33e34bf41420
 
     public function getDebugInfo()
     {
-        return array (  141 => 76,  138 => 75,  133 => 54,  119 => 10,  116 => 9,  110 => 5,  103 => 78,  101 => 75,  79 => 55,  77 => 54,  42 => 21,  40 => 9,  33 => 5,  27 => 1,);
+        return array (  144 => 79,  141 => 78,  136 => 57,  119 => 10,  116 => 9,  110 => 5,  103 => 81,  101 => 78,  79 => 58,  77 => 57,  42 => 24,  40 => 9,  33 => 5,  27 => 1,);
     }
 
     public function getSourceContext()

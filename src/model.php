@@ -198,6 +198,7 @@ class Model
 				artists.name,
 				artists.image,
 				artists.description,
+				artists.tm_id,
 
 				images.image as images,
 

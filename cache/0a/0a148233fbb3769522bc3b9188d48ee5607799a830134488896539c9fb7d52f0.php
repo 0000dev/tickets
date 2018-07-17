@@ -96,7 +96,7 @@ class __TwigTemplate_1911ad7e5abccde34ada6128ea0669f8790fa8f8df2ca0249bb49a966a3
         // line 16
         echo twig_get_attribute($this->env, $this->source, ($context["artist"] ?? null), "id", array());
         echo "/";
-        echo twig_replace_filter(twig_trim_filter(twig_get_attribute($this->env, $this->source, ($context["artist"] ?? null), "name", array())), array(" " => "-"));
+        echo twig_replace_filter(twig_trim_filter(twig_get_attribute($this->env, $this->source, ($context["artist"] ?? null), "name", array())), array(" " => "-", "." => ""));
         echo "\">";
         echo twig_get_attribute($this->env, $this->source, ($context["artist"] ?? null), "name", array());
         echo "</a></b>

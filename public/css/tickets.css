@@ -47,6 +47,8 @@ h1, h2, h3 {
   border:1px solid lightgrey;
 }
 
+
+
 .homepage.bigheader{
   background: url('https://st.depositphotos.com/1063397/4654/i/950/depositphotos_46549179-stock-photo-musician-at-a-concert.jpg');
   height: 600px;
@@ -292,6 +294,32 @@ h1, h2, h3 {
   overflow: auto;
   border: 1px solid lightgrey;
   padding: 15px;
+}
+
+.scheduleblock {
+  max-height: 300px;
+  overflow: auto;
+
+  /*border: 1px solid lightgrey;*/
+}
+
+.schedule{
+  display: inline-block;
+  float: left;
+  margin: 10px;
+  border: 1px solid #eeeeef;
+  padding: 15px;
+  overflow: hidden;
+  width: 215px;
+  height: 160px;
+}
+
+.schedule:hover {
+  background-color: #efeff5;
+}
+
+.schedule img:hover{
+  cursor: pointer;
 }
 
 .artistphotosblock {
