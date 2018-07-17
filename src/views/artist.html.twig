@@ -101,12 +101,12 @@
 			<div class="scheduleblock">
 				{% for s in artist.schedule.data %}
 				 <div class="schedule">	
-					{{s.name|replace({(artist.name|trim):'',':':''})}} <br>
-					{{s.date.start}} - {{s.date.end}} <br>
-					<div style="width:100%; height:23px; overflow:hidden"><a href="">{{s.venue.name}}</a></div> 
-					{{s.venue.state}} - {{s.venue.city}} - {{s.venue.country}}	
+					<div class="item"><img height="13px" src="https://cdn4.iconfinder.com/data/icons/miu/24/device-power-glyph-512.png"/> <i>{{s.name|replace({(artist.name|trim):'',':':''})}}</i></div>
+					<img height="13px" src="https://cdn2.iconfinder.com/data/icons/wirecons-free-vector-icons/32/475340-alarm-clock-512.png"/> {{s.date.start}} - {{s.date.end}} 
+					<div class="item"> <img height="14px" src="https://cdn4.iconfinder.com/data/icons/miu/24/common-star-favorite-bookmark-glyph-512.png"/> {{s.venue.name}}</div> 
+					<div class="item"><img height="14px" src="https://cdn2.iconfinder.com/data/icons/pittogrammi/142/94-512.png"/> {{s.venue.state}} - {{s.venue.city}} - {{s.venue.country}}</div>
 					
-					<img class="tmimage" height="45px" src="http://b2b.ticketmaster.be/sites/default/files/downloads/tmlogo_grey.png"/>
+					<img class="tmimage" height="29px" src="/img/tmlogo_grey.png"/>
 				 </div>
 				{% endfor %}
 			</div>
@@ -122,6 +122,11 @@
 	<div class="pure-g">
 		<div class="pure-u-1">
 			<h4>{{artist.name}} Concert & Tour Photos</h4>	
+		</div>
+	</div>
+
+	<div class="pure-g">
+		<div class="pure-u-1">
 			<div class="artistphotosblock{% if artist.images|length < 5 %} smallphotoblock{% endif %}">
 				<p id="photos">
 			      	{% for image in artist.images %}
@@ -206,8 +211,8 @@
 
 		<form class="pure-form" action="#" method="POST">
 		    <fieldset class="pure-group">
-		        <input name="feedback_name" type="text" class="pure-input-1" placeholder="Your Name">
-		        <input name="feedback_email" type="email" class="pure-input-1" placeholder="Email">
+		        <input autocomplete='name' name="feedback_name" type="text" class="pure-input-1" placeholder="Your Name">
+		        <input autocomplete='email' name="feedback_email" type="email" class="pure-input-1" placeholder="Email">
 		    </fieldset>
 		    <span class="rating">
 		        <input name="feedback_rate" type="radio" class="rating-input" id="rating-input-1-5" name="rating-input-1"/>
