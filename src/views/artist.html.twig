@@ -89,6 +89,27 @@
 	</div>
 {% endif %}
 
+
+
+{% if artist.schedule.data|length > 0 %}
+	<div class="pure-g">
+		<div class="pure-u-1 artistdescriptionblock">
+			{% for s in artist.schedule.data %}
+			<p>
+				{{s.name}} <br>
+				{{s.date.start}} - {{s.date.end}} <br>
+				{{s.venue.name}} <br>
+				{{s.venue.state}} - {{s.venue.city}} - {{s.venue.country}}	
+			</p>
+			{% endfor %}
+		</div>
+	</div>
+{% endif %}
+
+{% if artist.schedule.last_update|length > 0 %}
+	triggering schedule updater
+{% endif %}
+
 {% if artist.images|length > 0 %}
 	<div class="pure-g">
 		<div class="pure-u-1">

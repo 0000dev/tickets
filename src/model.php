@@ -202,11 +202,16 @@ class Model
 				images.image as images,
 
 				categories_names.name as cats,
-				categories_names.id as cats_id
+				categories_names.id as cats_id,
+
+				schedule.data as schedule_data, 
+				schedule.last_updated as schedule_lu
 
 			from artists
 
 			left join images on (artists.id = images.artists_id)
+
+			left join schedule on (artists.id = schedule.artists_id)
 
 			left join categories ON (artists.id = categories.artists_id)
 			left join categories_names ON (categories_names.id = categories.categories_names_id)

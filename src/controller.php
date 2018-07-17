@@ -114,6 +114,17 @@ class Controller
 		if ($this->app->checkFor404($content, $artist_name))
 			return;
 
+		if (isset($content['schedule_data'])) {
+			$content['schedule']['data'] = json_decode($content['schedule_data'],1);
+			
+			$now = time(); // or your date as well
+			$your_date = strtotime($content['schedule_lu']);
+			$datediff = $now - $your_date;
+
+			if (1 < round($datediff / (60 * 60 * 24)))
+				$content['schedule']['last_update'] = true;
+		}
+		
 		$this->twig->display('artist.html.twig', array('artist' => $content));
 		
 		return;
