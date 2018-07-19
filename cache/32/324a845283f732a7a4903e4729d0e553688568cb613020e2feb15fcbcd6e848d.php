@@ -58,7 +58,7 @@ class __TwigTemplate_c57ec2102264b8539ac44f79dc9931c8b57f9cc870d1482a516bb320a77
                 // line 15
                 echo twig_get_attribute($this->env, $this->source, $context["s"], "id", array());
                 echo "/";
-                echo twig_replace_filter(twig_trim_filter(twig_get_attribute($this->env, $this->source, $context["s"], "name", array())), array(" " => "-"));
+                echo twig_replace_filter(twig_trim_filter(twig_get_attribute($this->env, $this->source, $context["s"], "name", array())), array(" " => "-", "." => ""));
                 echo "\"><img class=\"vertical-align\" src=\"";
                 if ((twig_length_filter($this->env, twig_get_attribute($this->env, $this->source, $context["s"], "image", array())) > 0)) {
                     echo " ";
@@ -74,7 +74,7 @@ class __TwigTemplate_c57ec2102264b8539ac44f79dc9931c8b57f9cc870d1482a516bb320a77
                 // line 18
                 echo twig_get_attribute($this->env, $this->source, $context["s"], "id", array());
                 echo "/";
-                echo twig_replace_filter(twig_trim_filter(twig_get_attribute($this->env, $this->source, $context["s"], "name", array())), array(" " => "-"));
+                echo twig_replace_filter(twig_trim_filter(twig_get_attribute($this->env, $this->source, $context["s"], "name", array())), array(" " => "-", "." => ""));
                 echo "\">";
                 echo twig_get_attribute($this->env, $this->source, $context["s"], "name", array());
                 echo "</a></strong>

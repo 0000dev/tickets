@@ -172,9 +172,9 @@ class __TwigTemplate_c5f835dc4e0001f05e88bef3525ac759c5dae13aa2f98534d5c1fd46843
                 echo "</i></div>
 \t\t\t\t\t<img height=\"13px\" src=\"https://cdn2.iconfinder.com/data/icons/wirecons-free-vector-icons/32/475340-alarm-clock-512.png\"/> ";
                 // line 105
-                echo twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["s"], "date", array()), "start", array());
+                echo twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["s"], "when", array()), "date", array());
                 echo " - ";
-                echo twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["s"], "date", array()), "end", array());
+                echo twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["s"], "when", array()), "time", array());
                 echo " 
 \t\t\t\t\t<div class=\"item\"> <img height=\"14px\" src=\"https://cdn4.iconfinder.com/data/icons/miu/24/common-star-favorite-bookmark-glyph-512.png\"/> ";
                 // line 106
@@ -189,7 +189,7 @@ class __TwigTemplate_c5f835dc4e0001f05e88bef3525ac759c5dae13aa2f98534d5c1fd46843
                 echo twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["s"], "venue", array()), "country", array());
                 echo "</div>
 \t\t\t\t\t
-\t\t\t\t\t<img class=\"tmimage\" height=\"29px\" src=\"/img/tmlogo_grey.png\"/>
+\t\t\t\t\t<img class=\"tmimage\" height=\"19px\" src=\"/img/tmlogo_grey.png\"/>
 \t\t\t\t </div>
 \t\t\t\t";
             }
@@ -255,11 +255,9 @@ class __TwigTemplate_c5f835dc4e0001f05e88bef3525ac759c5dae13aa2f98534d5c1fd46843
             foreach ($context['_seq'] as $context["_key"] => $context["image"]) {
                 // line 133
                 echo "
-\t\t\t      \t\t<a href=\"/";
+\t\t\t      \t\t<a href=\"/gallery/";
                 // line 134
                 echo twig_get_attribute($this->env, $this->source, ($context["artist"] ?? null), "id", array());
-                echo "/img/";
-                echo twig_replace_filter($context["image"], array(".jpg" => ""));
                 echo "#img";
                 echo twig_get_attribute($this->env, $this->source, $context["loop"], "index", array());
                 echo "\"><img src=\"http://photos-eu.bazaarvoice.com/photo/2/cGhvdG86dGlja2V0bWFzdGVy/";
@@ -541,7 +539,11 @@ class __TwigTemplate_c5f835dc4e0001f05e88bef3525ac759c5dae13aa2f98534d5c1fd46843
         echo "', '_blank');
 });
 
-\$(\".scheduleblock\").niceScroll();
+\$(\".scheduleblock\").niceScroll({
+ 
+\tautohidemode:'leave',
+ 
+});
 
 </script>
 
@@ -561,7 +563,7 @@ class __TwigTemplate_c5f835dc4e0001f05e88bef3525ac759c5dae13aa2f98534d5c1fd46843
 
     public function getDebugInfo()
     {
-        return array (  538 => 251,  489 => 205,  483 => 201,  479 => 199,  465 => 198,  454 => 197,  437 => 196,  434 => 195,  432 => 194,  429 => 193,  425 => 191,  418 => 189,  414 => 187,  400 => 186,  389 => 185,  372 => 184,  369 => 183,  367 => 182,  360 => 178,  355 => 176,  350 => 174,  346 => 172,  343 => 171,  336 => 169,  331 => 168,  328 => 167,  321 => 165,  317 => 164,  311 => 160,  307 => 159,  298 => 152,  296 => 151,  292 => 149,  285 => 144,  271 => 143,  260 => 134,  257 => 133,  240 => 132,  233 => 130,  224 => 124,  220 => 122,  218 => 121,  215 => 120,  211 => 118,  209 => 117,  206 => 116,  200 => 112,  185 => 107,  181 => 106,  175 => 105,  171 => 104,  168 => 103,  164 => 102,  154 => 95,  150 => 93,  148 => 92,  145 => 91,  137 => 86,  132 => 83,  130 => 82,  108 => 27,  94 => 15,  80 => 14,  71 => 13,  54 => 12,  48 => 9,  43 => 6,  40 => 5,  33 => 3,  15 => 1,);
+        return array (  536 => 251,  487 => 205,  481 => 201,  477 => 199,  463 => 198,  452 => 197,  435 => 196,  432 => 195,  430 => 194,  427 => 193,  423 => 191,  416 => 189,  412 => 187,  398 => 186,  387 => 185,  370 => 184,  367 => 183,  365 => 182,  358 => 178,  353 => 176,  348 => 174,  344 => 172,  341 => 171,  334 => 169,  329 => 168,  326 => 167,  319 => 165,  315 => 164,  309 => 160,  305 => 159,  296 => 152,  294 => 151,  290 => 149,  283 => 144,  269 => 143,  260 => 134,  257 => 133,  240 => 132,  233 => 130,  224 => 124,  220 => 122,  218 => 121,  215 => 120,  211 => 118,  209 => 117,  206 => 116,  200 => 112,  185 => 107,  181 => 106,  175 => 105,  171 => 104,  168 => 103,  164 => 102,  154 => 95,  150 => 93,  148 => 92,  145 => 91,  137 => 86,  132 => 83,  130 => 82,  108 => 27,  94 => 15,  80 => 14,  71 => 13,  54 => 12,  48 => 9,  43 => 6,  40 => 5,  33 => 3,  15 => 1,);
     }
 
     public function getSourceContext()

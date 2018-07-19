@@ -205,14 +205,14 @@ class Model
 				categories_names.name as cats,
 				categories_names.id as cats_id,
 
-				schedule.data as schedule_data, 
-				schedule.last_updated as schedule_lu
+				artists_schedule.data as schedule_data, 
+				artists_schedule.last_updated as schedule_lu
 
 			from artists
 
 			left join images on (artists.id = images.artists_id)
 
-			left join schedule on (artists.id = schedule.artists_id)
+			left join artists_schedule on (artists.id = artists_schedule.artists_id)
 
 			left join categories ON (artists.id = categories.artists_id)
 			left join categories_names ON (categories_names.id = categories.categories_names_id)
@@ -251,7 +251,7 @@ class Model
 
 		$sql_query = '
 
-			(SELECT id,name from artists where id > '.$id.' limit 1)
+			(SELECT id,name from artists where id > '.$id.' limit 2)
 			UNION
 			(SELECT id,name from artists where id = (select max(id) from artists where id < '.$id.'))
 		';

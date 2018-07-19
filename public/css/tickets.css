@@ -299,6 +299,8 @@ h1, h2, h3 {
 .scheduleblock {
   max-height: 300px;
   /*border: 1px solid lightgrey;*/
+  overflow: scroll;
+  padding: 15px;
 }
 
 .schedule{
@@ -309,7 +311,7 @@ h1, h2, h3 {
   padding: 15px;
   overflow: hidden;
   width: 215px;
-  height: 152px;
+  height: 145px;
   font-size:12px;
 }
 
@@ -317,7 +319,7 @@ h1, h2, h3 {
   background-color: #efeff5;
 }
 
-.schedule img:hover{
+.schedule .tmimage:hover{
   cursor: pointer;
 }
 
@@ -381,7 +383,7 @@ h1, h2, h3 {
 
   .scheduleblock {
     max-height: 300px;
-    margin-left: 7%;
+    padding-left: 7%;
   }
 }
 @media (max-width: 800px) {
@@ -393,7 +395,7 @@ h1, h2, h3 {
 
   .scheduleblock {
     max-height: 300px;
-    margin-left: 18%;
+    padding-left: 18%;
   }
 }
 @media (max-width: 400px) {

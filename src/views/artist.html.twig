@@ -102,11 +102,11 @@
 				{% for s in artist.schedule.data %}
 				 <div class="schedule">	
 					<div class="item"><img height="13px" src="https://cdn4.iconfinder.com/data/icons/miu/24/device-power-glyph-512.png"/> <i>{{s.name|replace({(artist.name|trim):'',':':''})}}</i></div>
-					<img height="13px" src="https://cdn2.iconfinder.com/data/icons/wirecons-free-vector-icons/32/475340-alarm-clock-512.png"/> {{s.date.start}} - {{s.date.end}} 
+					<img height="13px" src="https://cdn2.iconfinder.com/data/icons/wirecons-free-vector-icons/32/475340-alarm-clock-512.png"/> {{s.when.date}} - {{s.when.time}} 
 					<div class="item"> <img height="14px" src="https://cdn4.iconfinder.com/data/icons/miu/24/common-star-favorite-bookmark-glyph-512.png"/> {{s.venue.name}}</div> 
 					<div class="item"><img height="14px" src="https://cdn2.iconfinder.com/data/icons/pittogrammi/142/94-512.png"/> {{s.venue.state}} - {{s.venue.city}} - {{s.venue.country}}</div>
 					
-					<img class="tmimage" height="29px" src="/img/tmlogo_grey.png"/>
+					<img class="tmimage" height="19px" src="/img/tmlogo_grey.png"/>
 				 </div>
 				{% endfor %}
 			</div>
@@ -131,7 +131,7 @@
 				<p id="photos">
 			      	{% for image in artist.images %}
 
-			      		<a href="/{{artist.id}}/img/{{ image|replace({'.jpg':''}) }}#img{{loop.index}}"><img src="http://photos-eu.bazaarvoice.com/photo/2/cGhvdG86dGlja2V0bWFzdGVy/{{ image }}"></a>
+			      		<a href="/gallery/{{artist.id}}#img{{loop.index}}"><img src="http://photos-eu.bazaarvoice.com/photo/2/cGhvdG86dGlja2V0bWFzdGVy/{{ image }}"></a>
 
 			      		{# <a href="#img{{loop.index}}">
 			      			<img class="thumbnail" src="http://photos-eu.bazaarvoice.com/photo/2/cGhvdG86dGlja2V0bWFzdGVy/{{ image }}">
@@ -251,7 +251,11 @@ $('.tmimage').click(function(){
 	window.open('https://href.li/?https://www.ticketmaster.com/{{artist.name|replace({' ':'-'})}}/artist/{{artist.tm_id}}', '_blank');
 });
 
-$(".scheduleblock").niceScroll();
+$(".scheduleblock").niceScroll({
+ 
+	autohidemode:'leave',
+ 
+});
 
 </script>
 

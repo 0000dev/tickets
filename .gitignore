@@ -1,3 +1,4 @@
 /vendor/*
 !/vendor/rawInclude
+!/vendor/rawScripts
 /src/config.php

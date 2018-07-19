@@ -62,8 +62,9 @@ Router::route('/feedbackpost', function() use($controller){
 });
 
 // gallery page
+/*([a-fA-F0-9-]{36}*/
 
-Router::route('/([0-9]+)/img/([a-fA-F0-9-]{36})', function($artist_id) use($controller){
+Router::route('/gallery/([0-9]+)', function($artist_id) use($controller){
 
 	$controller -> gallery($artist_id);
 	//echo '<center><img src="http://photos-eu.bazaarvoice.com/photo/2/cGhvdG86dGlja2V0bWFzdGVy/'.$image_id.'"></center>';
