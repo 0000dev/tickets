@@ -14,7 +14,21 @@ CREATE TABLE `artists` (
   `description` text,
   `image` varchar(250) DEFAULT NULL,
   `tm_id` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  FULLTEXT KEY `name` (`name`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
+DROP TABLE IF EXISTS `artists_schedule`;
+CREATE TABLE `artists_schedule` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `artists_id` int(11) NOT NULL,
+  `data` text NOT NULL,
+  `update_trigger` int(11) DEFAULT NULL,
+  `last_updated` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  KEY `artists_id` (`artists_id`),
+  CONSTRAINT `artists_schedule_ibfk_2` FOREIGN KEY (`artists_id`) REFERENCES `artists` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 
@@ -75,4 +89,30 @@ CREATE TABLE `images` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 
--- 2018-07-09 21:29:11
+DROP TABLE IF EXISTS `venues`;
+CREATE TABLE `venues` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(250) NOT NULL,
+  `image_small` varchar(250) DEFAULT NULL,
+  `image_big` varchar(250) DEFAULT NULL,
+  `address` text,
+  `details` text,
+  `tm_id` int(11) DEFAULT NULL,
+  `tm_api_id` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
+DROP TABLE IF EXISTS `venues_schedule`;
+CREATE TABLE `venues_schedule` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `venues_id` int(11) NOT NULL,
+  `data` text NOT NULL,
+  `update_trigger` int(11) DEFAULT NULL,
+  `last_updated` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  KEY `artists_id` (`venues_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
+-- 2018-07-19 15:50:03
