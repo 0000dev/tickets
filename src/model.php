@@ -47,6 +47,96 @@ class Model
 		
 	}
 
+	public function venuePage($id)
+	{
+		$sql_query = '
+
+			SELECT
+				
+				venues.id,
+				venues.name,
+				venues.image_small,
+				venues.image_big,
+				venues.address,
+				venues.details
+
+			from venues
+			
+			where
+			venues.id = :id
+		';
+
+		$stmt = $this->db->prepare($sql_query); // stmt = statement
+		$stmt -> execute([':id' => $id]);
+		
+		$sql_res = $stmt -> fetchAll();
+
+		$res['content'] = $sql_res[0];
+
+		$sql_query = '
+
+			(SELECT id,name from venues where id > '.$id.' limit 2)
+			UNION
+			(SELECT id,name from venues where id = (select max(id) from venues where id < '.$id.'))
+		';
+
+		$stmt = $this->db->prepare($sql_query);
+		$stmt -> execute();
+		
+		$sql_res = $stmt -> fetchAll();
+
+		$res['neighbors'] = array();
+
+		foreach ($sql_res as $key => $value) {
+			$res['neighbors'][] = array('name'=>$value['name'], 'id'=>$value['id']);
+		}
+
+		return $res;
+		
+	}
+
+	public function venueList($page)
+	{
+
+		$offset = $page;
+		if ($page>0)
+			$offset = $page-1;
+
+		$sql_query = '
+
+			SELECT
+				
+				venues.id,
+				venues.name,
+				venues.image_small,
+				venues.image_big,
+				venues.address,
+				venues.details
+
+			from venues
+			
+			limit '.(CATEGORY_ITEMS_PER_PAGE+1).'
+			offset '.($offset*CATEGORY_ITEMS_PER_PAGE).'
+		';
+
+		$stmt = $this->db->prepare($sql_query); // stmt = statement
+		$stmt -> execute();
+		
+		$sql_res = $stmt -> fetchAll();
+
+		$next_page = false;
+ 
+		if (count($sql_res)>CATEGORY_ITEMS_PER_PAGE)
+		{
+			$next_page = true;
+			array_pop($sql_res);
+		}
+
+		return array('sql_res' => $sql_res, 'next_page' => $next_page);
+		
+	}
+
+
 	public function homePage() {
 
 		$result = array();

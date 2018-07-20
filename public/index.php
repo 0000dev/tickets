@@ -48,26 +48,42 @@ Router::route('/', function() use($controller){
 });
 
 // artist page
-
 Router::route('/([0-9]+)/([^/]+)', function($id, $artist_name) use($controller){
 
 	$controller -> itemPage($id, $artist_name);
 
 });
 
+// for posting comments. not active
 Router::route('/feedbackpost', function() use($controller){
 
 	$_POST  = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
 	print_r($_POST);
 });
 
-// gallery page
-/*([a-fA-F0-9-]{36}*/
-
+// artist gallery page. previous regex: ([a-fA-F0-9-]{36}
 Router::route('/gallery/([0-9]+)', function($artist_id) use($controller){
 
 	$controller -> gallery($artist_id);
 	//echo '<center><img src="http://photos-eu.bazaarvoice.com/photo/2/cGhvdG86dGlja2V0bWFzdGVy/'.$image_id.'"></center>';
+
+});
+
+// venue page
+Router::route('/venue/([0-9]+)/([^/]+)', function($id, $venue_name) use($controller){
+
+	//print_r($venue_name);
+	$controller -> venuePage($id, $venue_name);
+
+});
+
+Router::route('/venues(|/[0-9]+)', function($page) use($controller){
+
+	if ($page != null)
+		$page = str_replace('/', '', $page);
+	
+	//print_r($venue_name);
+	$controller -> venueList($page);
 
 });
 
@@ -80,6 +96,8 @@ Router::route('/category/([0-9]+)(|/[0-9]+)', function($cat_id, $page) use($cont
 
 });
 
+
+// static pages
 Router::route('/page/([-a-z0-9]+)', function($page_file) use($controller){
 
 	$page = STATIC_PAGES_CONTENT_FOLDER.'/'.$page_file.'.txt';

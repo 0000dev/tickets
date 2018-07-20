@@ -171,6 +171,13 @@ h1, h2, h3 {
   /*background:white;*/
 }
 
+.toppanel .venueimage{
+  height:150px;
+  margin-top:50px;
+  /*background:white;*/
+}
+
+
 .comments .stars{
   float:left;
 }
