@@ -147,7 +147,8 @@ class Controller
 		if (isset($content['details']))
 			$content['details'] = json_decode($content['details'],1);
 
-		//print_r($content);
+		if (isset($content['schedule_data']))
+			$content['schedule_data'] = json_decode($content['schedule_data'],1);
 		
 		/*echo '<pre>';
 		print_r($content);

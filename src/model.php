@@ -58,10 +58,15 @@ class Model
 				venues.image_small,
 				venues.image_big,
 				venues.address,
-				venues.details
+				venues.details,
 
-			from venues
-			
+				venues_schedule.data as schedule_data,
+				venues_schedule.last_updated as shedule_lu
+
+				from venues
+
+			left join venues_schedule on (venues.id = venues_schedule.venues_id)
+		
 			where
 			venues.id = :id
 		';
