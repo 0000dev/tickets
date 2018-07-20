@@ -14,6 +14,7 @@ CREATE TABLE `artists` (
   `description` text,
   `image` varchar(250) DEFAULT NULL,
   `tm_id` int(11) DEFAULT NULL,
+  `date_created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   FULLTEXT KEY `name` (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -115,4 +116,4 @@ CREATE TABLE `venues_schedule` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 
--- 2018-07-19 15:50:03
+-- 2018-07-20 16:21:29
