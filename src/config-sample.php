@@ -21,10 +21,26 @@ define('STATIC_PAGES_CONTENT_FOLDER', __DIR__.'/pages');
 
 define('CATEGORY_ITEMS_PER_PAGE', 10);
 
-define('POSTPONED_COMMENT_PUBLISH', true);
-define('COMMENTS_START_PUBLISH_DATE', '2018-06-20');
-define('PUBLISH_ONE_COMMENT_EACH_DAYS', 3); 
 define('MAX_COMMENTS_PER_PAGE', 100);
+/*
+	If false then there will be MAX_COMMENTS_PER_PAGE on page on ALL PAGES no matter other other conditions
+*/
+define('POSTPONED_COMMENT_PUBLISH', true); 
+define('PUBLISH_ONE_COMMENT_EACH_DAYS', 3); 
+/*	
+	If POSTPONED_COMMENT_PUBLISH == true
+	3 comments to be displayed even if artists.date_created == 0 and calculated number of comments is also <3
+	
+	This does not touch those artists that are published before FIRST_ARTISTS_LATEST_DATE (i call them FIRST ARTISTS). Those will have MINIMUM_COMMENTS_FIRST_ARTISTS 
+*/
+define('MINIMUM_COMMENTS', 3);  
+/*
+	All artists that are published before FIRST_ARTISTS_LATEST_DATE will have MINIMUM_COMMENTS_FIRST_ARTISTS from start.
+	All the rest will have MINIMUM_COMMENTS if POSTPONED_COMMENT_PUBLISH == true and MAX_COMMENTS_PER_PAGE otherwise
+*/
+define('FIRST_ARTISTS_LATEST_DATE', '2018-08-20'); 
+define('MINIMUM_COMMENTS_FIRST_ARTISTS', 30);
+
 
 if (PHP_SAPI == 'cli-server') {
     // To help the built-in PHP dev server, check if the request was actually for

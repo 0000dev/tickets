@@ -289,6 +289,7 @@ class Model
 				artists.image,
 				artists.description,
 				artists.tm_id,
+				artists.date_created,
 
 				images.image as images,
 
@@ -358,13 +359,12 @@ class Model
 		}
 
 		// comments
-
 		$max_comments = MAX_COMMENTS_PER_PAGE;
 
 		if (defined('POSTPONED_COMMENT_PUBLISH') and POSTPONED_COMMENT_PUBLISH === true) {
 
 			$now = time(); 
-			$start_date = strtotime(COMMENTS_START_PUBLISH_DATE); 
+			$start_date = strtotime($res['date_created']);
 			$datediff = $now - $start_date;
 			$datediff =  round($datediff / (60 * 60 * 24));
 
@@ -372,8 +372,16 @@ class Model
 
 			$max_comments = round($datediff / $x); // 1 comment each $x days
 
-			if ($max_comments<0)
-				$max_comments = 1;
+			if ($max_comments<1)
+				$max_comments = MINIMUM_COMMENTS;
+
+			// making early added artists have MINIMUM_COMMENTS_FIRST_ARTISTS comments
+			if (strtotime($res['date_created']) < strtotime(FIRST_ARTISTS_LATEST_DATE) and $max_comments < MINIMUM_COMMENTS_FIRST_ARTISTS)
+				$max_comments = MINIMUM_COMMENTS_FIRST_ARTISTS;
+
+			// no more than MAX_COMMENTS_PER_PAGE will be displayed
+			if ($max_comments > MAX_COMMENTS_PER_PAGE)
+				$max_comments = MAX_COMMENTS_PER_PAGE;
 		}
 
 
