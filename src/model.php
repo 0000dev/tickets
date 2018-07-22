@@ -172,7 +172,7 @@ class Model
 
 			group by comments.artists_id
 
-			limit 100
+			limit 10
 		';
 
 		$stmt = $this->db->prepare($sql_query); // stmt = statement
@@ -185,9 +185,35 @@ class Model
 			SELECT
 				
 				artists.id,
-				artists.name
+				artists.name,
+				artists.image
 
 			from artists
+
+			where artists.image is not NULL
+			
+			limit 100		
+		';
+
+		$stmt = $this->db->prepare($sql_query); // stmt = statement
+		$stmt -> execute();
+		
+		$sql_res = $stmt -> fetchAll();
+
+		$result['artists'] = $sql_res;
+
+
+		$sql_query = '
+
+			SELECT
+				
+				venues.id,
+				venues.name,
+				venues.image_small as image
+
+			from venues
+
+			where venues.image_small is not NULL
 			
 			limit 5			
 		';
@@ -197,7 +223,7 @@ class Model
 		
 		$sql_res = $stmt -> fetchAll();
 
-		$result['artists'] = $sql_res;
+		$result['venues'] = $sql_res;
 
 		return $result;
 	}
@@ -347,7 +373,7 @@ class Model
 
 		$sql_query = '
 
-			(SELECT id,name from artists where id > '.$id.' limit 2)
+			(SELECT id,name from artists where id > '.$id.' limit 4)
 			UNION
 			(SELECT id,name from artists where id = (select max(id) from artists where id < '.$id.'))
 		';

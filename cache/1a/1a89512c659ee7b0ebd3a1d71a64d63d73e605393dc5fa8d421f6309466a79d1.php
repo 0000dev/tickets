@@ -166,21 +166,21 @@ class __TwigTemplate_c5f835dc4e0001f05e88bef3525ac759c5dae13aa2f98534d5c1fd46843
             foreach ($context['_seq'] as $context["_key"] => $context["s"]) {
                 // line 103
                 echo "\t\t\t\t <div class=\"schedule\">\t
-\t\t\t\t\t<div class=\"item\"><img height=\"13px\" src=\"https://cdn4.iconfinder.com/data/icons/miu/24/device-power-glyph-512.png\"/> <i>";
+\t\t\t\t\t<div class=\"item\"><i>";
                 // line 104
                 echo twig_replace_filter(twig_get_attribute($this->env, $this->source, $context["s"], "name", array()), array(twig_trim_filter(twig_get_attribute($this->env, $this->source, ($context["artist"] ?? null), "name", array())) => "", ":" => ""));
                 echo "</i></div>
-\t\t\t\t\t<img height=\"13px\" src=\"https://cdn2.iconfinder.com/data/icons/wirecons-free-vector-icons/32/475340-alarm-clock-512.png\"/> ";
+\t\t\t\t\t<i class=\"fas fa-clock\"></i> ";
                 // line 105
                 echo twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["s"], "when", array()), "date", array());
                 echo " - ";
                 echo twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["s"], "when", array()), "time", array());
                 echo " 
-\t\t\t\t\t<div class=\"item\"> <img height=\"14px\" src=\"https://cdn4.iconfinder.com/data/icons/miu/24/common-star-favorite-bookmark-glyph-512.png\"/> ";
+\t\t\t\t\t<div class=\"item\"> <i class=\"fas fa-thumbtack\"></i> ";
                 // line 106
                 echo twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["s"], "venue", array()), "name", array());
                 echo "</div> 
-\t\t\t\t\t<div class=\"item\"><img height=\"14px\" src=\"https://cdn2.iconfinder.com/data/icons/pittogrammi/142/94-512.png\"/> ";
+\t\t\t\t\t<div class=\"item\"><i class=\"fas fa-map-marker-alt\"></i> ";
                 // line 107
                 echo twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["s"], "venue", array()), "state", array());
                 echo " - ";
@@ -531,7 +531,7 @@ class __TwigTemplate_c5f835dc4e0001f05e88bef3525ac759c5dae13aa2f98534d5c1fd46843
 });
 
 \$('.tmimage').click(function(){
-\twindow.open('https://href.li/?https://www.ticketmaster.com/";
+\twindow.open('http://href.li/?http://www.ticketmaster.com/";
         // line 251
         echo twig_replace_filter(twig_get_attribute($this->env, $this->source, ($context["artist"] ?? null), "name", array()), array(" " => "-"));
         echo "/artist/";

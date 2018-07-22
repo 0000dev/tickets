@@ -67,15 +67,34 @@ class Helper
 	public function checkFor404(array $content, $name = false)
 	{	
 
-		/*echo str_replace('-', ' ', $name);
-		echo $content['name'];*/
+		//echo str_replace(array('-','.'), array(' ',''), $name).PHP_EOL;
+		//echo $content['name'];
+
 
 		if ($name !== false)
 		{	
-			if (!isset($content['name']) or strpos(str_replace('.', '', $content['name']), str_replace(array('-','.'), array(' ',''), $name)) === false) {
+
+			if (!isset($content['name'])) {
 				$this->show404();
 				return true;
 			}
+
+			$name = urldecode($name);
+
+			$content['name'] = str_replace(array('-','.'), array(' ',''), $content['name']);
+			$name = str_replace(array('-','.','  '), array(' ','',' '), $name);
+
+			$content['name'] = preg_replace('/\s+/', ' ',$content['name']);
+			$name = preg_replace('/\s+/', ' ',$name);
+
+			/*echo $content['name'].PHP_EOL;
+			echo $name;*/
+			 
+			if (strpos($content['name'], $name) === false) {
+				$this->show404();
+				return true;
+			}
+
 		} else {
 
 			if (!isset($content['name'])) {

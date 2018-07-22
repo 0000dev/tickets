@@ -20,6 +20,8 @@
 
 	Для этих артистов сходу будет выводится MINIMUM_COMMENTS_FIRST_ARTISTS коментов. Для остальных - сразу MINIMUM_COMMENTS + будет расти каждые PUBLISH_ONE_COMMENT_EACH_DAYS дней
 
+- научить парсер работать с прокси от proxium
+
 */
 
 

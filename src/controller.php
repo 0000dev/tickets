@@ -62,6 +62,9 @@ class Controller
 
 		$model = $this -> db -> homePage();
 
+		$model['footer_links'] = array_slice($model['artists'], 51, 100);
+		$model['artists'] = array_slice($model['artists'], 0, 50);
+
 		/*echo '<pre>';
 		print_r($model);
 		echo '</pre>';
@@ -71,7 +74,7 @@ class Controller
 
 		//$model['comments'] = array_slice($model['comments'], 0,10);
 
-		$this->twig->display('home.html.twig', array('comments' => $model['comments'], 'artists' => $model['artists']));
+		$this->twig->display('home.html.twig', array('comments' => $model['comments'], 'artists' => $model['artists'], 'venues' => $model['venues'], 'footer_links' => $model['footer_links']));
 		
 		return;
 	}

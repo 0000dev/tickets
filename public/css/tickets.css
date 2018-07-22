@@ -145,6 +145,12 @@ h1, h2, h3 {
 }
 
 
+.venuescheduledetails {
+  padding:5px;
+  font-size:12px;
+  padding-left: 15px;
+}
+
 .venueouter{
   /*margin:50px auto;*/
   height: 133px;

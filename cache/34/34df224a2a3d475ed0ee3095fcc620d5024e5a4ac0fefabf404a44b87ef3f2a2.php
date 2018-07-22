@@ -38,7 +38,7 @@ class __TwigTemplate_1c51194f7ad0ee637e9561069da429f4ba3bd85bbb63cbf33e34bf41420
         ";
         // line 9
         $this->displayBlock('stylesheets', $context, $blocks);
-        // line 25
+        // line 26
         echo "    </head>
 
     <body>
@@ -73,9 +73,9 @@ class __TwigTemplate_1c51194f7ad0ee637e9561069da429f4ba3bd85bbb63cbf33e34bf41420
             </div>
        
         ";
-        // line 58
-        $this->displayBlock('body', $context, $blocks);
         // line 59
+        $this->displayBlock('body', $context, $blocks);
+        // line 60
         echo "
         </div>
 
@@ -97,9 +97,9 @@ class __TwigTemplate_1c51194f7ad0ee637e9561069da429f4ba3bd85bbb63cbf33e34bf41420
         </div>
 
         ";
-        // line 79
+        // line 80
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 82
+        // line 83
         echo "    
     </body>
 </html>
@@ -126,6 +126,7 @@ class __TwigTemplate_1c51194f7ad0ee637e9561069da429f4ba3bd85bbb63cbf33e34bf41420
             <!--<![endif]-->
             <link rel=\"stylesheet\" type=\"text/css\" href=\"/css/tickets.css\">
             <link rel=\"stylesheet\" type=\"text/css\" href=\"/css/tabs.css\">
+            <link rel=\"stylesheet\" href=\"/css/fontawesome-all.min.css\">
 
             <script type=\"text/javascript\" src=\"//code.jquery.com/jquery-1.11.0.min.js\"></script>
             <script type=\"text/javascript\" src=\"/js/jquery.nicescroll.js\"></script>
@@ -133,15 +134,15 @@ class __TwigTemplate_1c51194f7ad0ee637e9561069da429f4ba3bd85bbb63cbf33e34bf41420
         ";
     }
 
-    // line 58
+    // line 59
     public function block_body($context, array $blocks = array())
     {
     }
 
-    // line 79
+    // line 80
     public function block_javascripts($context, array $blocks = array())
     {
-        // line 80
+        // line 81
         echo "
         ";
     }
@@ -153,7 +154,7 @@ class __TwigTemplate_1c51194f7ad0ee637e9561069da429f4ba3bd85bbb63cbf33e34bf41420
 
     public function getDebugInfo()
     {
-        return array (  145 => 80,  142 => 79,  137 => 58,  119 => 10,  116 => 9,  110 => 5,  103 => 82,  101 => 79,  79 => 59,  77 => 58,  42 => 25,  40 => 9,  33 => 5,  27 => 1,);
+        return array (  146 => 81,  143 => 80,  138 => 59,  119 => 10,  116 => 9,  110 => 5,  103 => 83,  101 => 80,  79 => 60,  77 => 59,  42 => 26,  40 => 9,  33 => 5,  27 => 1,);
     }
 
     public function getSourceContext()
