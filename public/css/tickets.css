@@ -1,7 +1,6 @@
 
 html {
   color: #444;
-  font-family: "Droid Serif";
 }
 
 h1, h2, h3 {
@@ -50,15 +49,29 @@ h1, h2, h3 {
 
 
 .homepage.bigheader{
-  background: url('https://st.depositphotos.com/1063397/4654/i/950/depositphotos_46549179-stock-photo-musician-at-a-concert.jpg');
+  background: url('/img/homepage-drums.jpg');
   height: 600px;
   background-size: cover;
+}
+
+.bigheader form{
+  padding:15%;
+  width:100%;
+}
+
+.bigheader form input {
+  width:100%;
+  height:50px;
 }
 
 .homepage .searchlinediv{
   padding:40px;
   background-color:#fff9;
   border-radius: 10px;
+}
+
+.slickslider {
+  overflow:hidden;
 }
 
 .slickslider .comments{
@@ -151,12 +164,22 @@ h1, h2, h3 {
   padding-left: 15px;
 }
 
+.venueschedulecontainer{
+  margin:5px;
+  border:1px solid #ddd;
+  width:100%;
+}
+
 .venueouter{
   /*margin:50px auto;*/
   height: 133px;
   background: #f7f7f7;
   border-right:1px solid #ddd;
   padding: 20px;
+}
+
+.venueouter img {
+  max-width:200px;
 }
 
 .vertical-align {
@@ -170,6 +193,8 @@ h1, h2, h3 {
 
 .header h1 {
   margin-bottom: 0px;
+  line-height: 1em;
+  font-size: 1.7em;
 }
 
 .header .crumps{

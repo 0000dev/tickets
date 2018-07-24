@@ -179,7 +179,7 @@ class __TwigTemplate_75e387d02b257108763bf940b2b4937393255c4450a3bbae9d128e90f62
             }
             foreach ($context['_seq'] as $context["_key"] => $context["s"]) {
                 // line 71
-                echo "\t\t";
+                echo "\t\t\t";
                 if (((twig_get_attribute($this->env, $this->source, $context["loop"], "index0", array()) % ($context["cols"] ?? null)) == 0)) {
                     // line 72
                     echo "\t\t\t<div class=\"pure-g\">
@@ -188,12 +188,12 @@ class __TwigTemplate_75e387d02b257108763bf940b2b4937393255c4450a3bbae9d128e90f62
                 // line 74
                 echo "\t\t\t<div class=\"pure-u-1 pure-u-md-1-2\">
 \t\t\t\t<div class=\"pure-g \">
-\t\t\t\t\t<div style=\"margin:5px;border:1px solid #ddd;width:100%\">
+\t\t\t\t\t<div class=\"venueschedulecontainer\">
 \t\t\t\t\t\t<div class=\"pure-u-2-5 venueouter\">
 \t\t\t\t\t\t\t<img class=\"vertical-align\" src=\"";
                 // line 78
                 echo twig_get_attribute($this->env, $this->source, $context["s"], "image", array());
-                echo "\" width=\"100%\" style=\"max-width:200px;\">
+                echo "\" width=\"100%\">
 \t\t\t\t\t\t</div>
 \t\t\t\t\t\t<div class=\"pure-u-3-5\">
 \t\t\t\t\t\t\t<div class=\"venuescheduledetails\">
@@ -238,7 +238,7 @@ class __TwigTemplate_75e387d02b257108763bf940b2b4937393255c4450a3bbae9d128e90f62
                 if ((((twig_get_attribute($this->env, $this->source, $context["loop"], "index0", array()) % ($context["cols"] ?? null)) == (($context["cols"] ?? null) - 1)) || twig_get_attribute($this->env, $this->source, $context["loop"], "last", array()))) {
                     // line 94
                     echo "\t\t\t</div>
-\t\t";
+\t\t\t";
                 }
                 // line 96
                 echo "\t";

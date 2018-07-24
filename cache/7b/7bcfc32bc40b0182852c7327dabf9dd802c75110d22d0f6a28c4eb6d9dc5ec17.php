@@ -14,6 +14,7 @@ class __TwigTemplate_f2afd59d2e2ee6ee9c7780d56f4d552421c1c1ee1dc685691e096c5effe
         // line 1
         $this->parent = $this->loadTemplate("base.html.twig", "static_page.html.twig", 1);
         $this->blocks = array(
+            'title' => array($this, 'block_title'),
             'body' => array($this, 'block_body'),
         );
     }
@@ -29,14 +30,21 @@ class __TwigTemplate_f2afd59d2e2ee6ee9c7780d56f4d552421c1c1ee1dc685691e096c5effe
     }
 
     // line 3
+    public function block_title($context, array $blocks = array())
+    {
+        echo twig_capitalize_string_filter($this->env, ($context["title"] ?? null));
+        echo " Page ";
+    }
+
+    // line 5
     public function block_body($context, array $blocks = array())
     {
-        // line 4
+        // line 6
         echo "
 <div class=\"pure-g\">
 \t<div class=\"pure-u-1 setborder margintop15 padding10\">
 \t\t";
-        // line 7
+        // line 9
         echo ($context["content"] ?? null);
         echo "
 \t</div>
@@ -56,7 +64,7 @@ class __TwigTemplate_f2afd59d2e2ee6ee9c7780d56f4d552421c1c1ee1dc685691e096c5effe
 
     public function getDebugInfo()
     {
-        return array (  40 => 7,  35 => 4,  32 => 3,  15 => 1,);
+        return array (  48 => 9,  43 => 6,  40 => 5,  33 => 3,  15 => 1,);
     }
 
     public function getSourceContext()

@@ -14,6 +14,7 @@ class __TwigTemplate_c57ec2102264b8539ac44f79dc9931c8b57f9cc870d1482a516bb320a77
         // line 1
         $this->parent = $this->loadTemplate("base.html.twig", "search.html.twig", 1);
         $this->blocks = array(
+            'title' => array($this, 'block_title'),
             'body' => array($this, 'block_body'),
         );
     }
@@ -29,33 +30,39 @@ class __TwigTemplate_c57ec2102264b8539ac44f79dc9931c8b57f9cc870d1482a516bb320a77
     }
 
     // line 3
+    public function block_title($context, array $blocks = array())
+    {
+        echo "Search";
+    }
+
+    // line 5
     public function block_body($context, array $blocks = array())
     {
-        // line 4
+        // line 6
         echo "
 ";
-        // line 5
+        // line 7
         if ((twig_length_filter($this->env, ($context["content"] ?? null)) > 0)) {
-            // line 6
+            // line 8
             echo "
 \t<h3> Looking for \"";
-            // line 7
+            // line 9
             echo ($context["search_phrase"] ?? null);
             echo "\" </h3>
 
 \t";
-            // line 9
+            // line 11
             $context['_parent'] = $context;
             $context['_seq'] = twig_ensure_traversable(($context["content"] ?? null));
             foreach ($context['_seq'] as $context["_key"] => $context["s"]) {
-                // line 10
+                // line 12
                 echo "
 \t\t\t<div class=\"pure-g\">
 \t\t\t\t<div class=\"pure-u-1 setborder margintop15 padding10\">
 \t\t\t\t\t<div class=\"pure-g\">
 \t\t\t\t\t\t<div class=\"pure-u-1 pure-u-sm-2-5 pure-u-md-1-5\">
 \t\t\t\t\t\t\t<a href=\"/";
-                // line 15
+                // line 17
                 echo twig_get_attribute($this->env, $this->source, $context["s"], "id", array());
                 echo "/";
                 echo twig_replace_filter(twig_trim_filter(twig_get_attribute($this->env, $this->source, $context["s"], "name", array())), array(" " => "-", "." => ""));
@@ -71,7 +78,7 @@ class __TwigTemplate_c57ec2102264b8539ac44f79dc9931c8b57f9cc870d1482a516bb320a77
 \t\t\t\t\t\t</div>
 \t\t\t\t\t\t<div class=\"pure-u-1 pure-u-sm-3-5 pure-u-md-4-5\">
 \t\t\t\t\t\t\t<strong><a href=\"/";
-                // line 18
+                // line 20
                 echo twig_get_attribute($this->env, $this->source, $context["s"], "id", array());
                 echo "/";
                 echo twig_replace_filter(twig_trim_filter(twig_get_attribute($this->env, $this->source, $context["s"], "name", array())), array(" " => "-", "." => ""));
@@ -79,7 +86,7 @@ class __TwigTemplate_c57ec2102264b8539ac44f79dc9931c8b57f9cc870d1482a516bb320a77
                 echo twig_get_attribute($this->env, $this->source, $context["s"], "name", array());
                 echo "</a></strong>
 \t\t\t\t\t\t\t<p>";
-                // line 19
+                // line 21
                 echo (((twig_length_filter($this->env, twig_get_attribute($this->env, $this->source, $context["s"], "description", array())) > 300)) ? ((twig_slice($this->env, twig_get_attribute($this->env, $this->source, $context["s"], "description", array()), 0, 300) . "...")) : (twig_get_attribute($this->env, $this->source, $context["s"], "description", array())));
                 echo "</p>
 \t\t\t\t\t\t</div>
@@ -93,20 +100,20 @@ class __TwigTemplate_c57ec2102264b8539ac44f79dc9931c8b57f9cc870d1482a516bb320a77
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['s'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 27
+            // line 29
             echo "
 ";
         } else {
-            // line 29
+            // line 31
             echo "
 \t<h3> Nothing found </h3>
 
 ";
         }
-        // line 33
+        // line 35
         echo "
 ";
-        // line 42
+        // line 44
         echo "
 ";
     }
@@ -123,7 +130,7 @@ class __TwigTemplate_c57ec2102264b8539ac44f79dc9931c8b57f9cc870d1482a516bb320a77
 
     public function getDebugInfo()
     {
-        return array (  110 => 42,  107 => 33,  101 => 29,  97 => 27,  83 => 19,  75 => 18,  59 => 15,  52 => 10,  48 => 9,  43 => 7,  40 => 6,  38 => 5,  35 => 4,  32 => 3,  15 => 1,);
+        return array (  117 => 44,  114 => 35,  108 => 31,  104 => 29,  90 => 21,  82 => 20,  66 => 17,  59 => 12,  55 => 11,  50 => 9,  47 => 8,  45 => 7,  42 => 6,  39 => 5,  33 => 3,  15 => 1,);
     }
 
     public function getSourceContext()

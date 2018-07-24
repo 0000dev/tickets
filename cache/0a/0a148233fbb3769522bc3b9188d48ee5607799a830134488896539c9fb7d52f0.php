@@ -33,7 +33,7 @@ class __TwigTemplate_1911ad7e5abccde34ada6128ea0669f8790fa8f8df2ca0249bb49a966a3
     public function block_title($context, array $blocks = array())
     {
         echo twig_get_attribute($this->env, $this->source, ($context["artist"] ?? null), "name", array());
-        echo " Tour and Concert Feedbacks";
+        echo " Concert Photos Added by Fans";
     }
 
     // line 5

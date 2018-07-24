@@ -41,12 +41,12 @@ class __TwigTemplate_688ff1a4c9f7255cc5795438390eb029a0789799cd56ef05ff42121ef37
 
 <body>
 
-\t<div class=\"homepage bigheader\">
+\t<div class=\"homepage bigheader\" id=\"bigheader\">
 
-\t\t<form  action=\"/search\" method=\"POST\" style=\"padding:15%; width:100%\">
+\t\t<form  action=\"/search\" method=\"POST\">
 \t\t\t<div class=\"searchlinediv\">
 \t\t\t<div class=\"searchlinediv\"> 
-\t\t\t\t<input name=\"search\" placeholder=\"What are you looking for?\" onkeydown=\"if (event.keyCode == 13) myFunction(this.value)\" type=\"text\"  style='width:100%;height:50px;' />
+\t\t\t\t<input name=\"search\" placeholder=\" &nbsp; What are you looking for?\" onkeydown=\"if (event.keyCode == 13) myFunction(this.value)\" type=\"text\" />
 \t\t\t</div>
 \t\t\t</div>
 \t\t</form>
@@ -180,7 +180,7 @@ class __TwigTemplate_688ff1a4c9f7255cc5795438390eb029a0789799cd56ef05ff42121ef37
 \t<div class=\"pure-g\">
 \t\t<div class=\"pure-u-1\">
 \t \t\t
-\t \t\t<h4>Popular Venues</h4>
+\t \t\t<h4>Latest Added Venues</h4>
 
 \t\t\t<div class=\"home artistphotosblock\">
 \t\t\t\t<p id=\"photos\">
@@ -237,13 +237,14 @@ class __TwigTemplate_688ff1a4c9f7255cc5795438390eb029a0789799cd56ef05ff42121ef37
 \t\t\t<div class=\"pure-u-1-3\">
 \t\t\t\t
 \t\t\t\t<b>Recently added</b>
-\t\t\t\t<div class=\"slickslider\" style=\"overflow:hidden;\">
+\t\t\t\t<div class=\"slickslider\">
 \t\t\t\t
 
-";
+\t\t\t\t";
         // line 143
         $context["cols"] = 3;
         // line 144
+        echo "\t\t\t\t";
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["footer_links"] ?? null));
         $context['loop'] = array(
@@ -261,16 +262,16 @@ class __TwigTemplate_688ff1a4c9f7255cc5795438390eb029a0789799cd56ef05ff42121ef37
         }
         foreach ($context['_seq'] as $context["_key"] => $context["f"]) {
             // line 145
-            echo "\t";
+            echo "\t\t\t\t\t";
             if (((twig_get_attribute($this->env, $this->source, $context["loop"], "index0", array()) % ($context["cols"] ?? null)) == 0)) {
                 // line 146
-                echo "\t\t<div>
-\t\t<ul>
-\t";
+                echo "\t\t\t\t\t\t<div>
+\t\t\t\t\t\t<ul>
+\t\t\t\t\t";
             }
             // line 149
             echo "
-\t<li><a href=\"/";
+\t\t\t\t\t<li><a href=\"/";
             // line 150
             echo twig_get_attribute($this->env, $this->source, $context["f"], "id", array());
             echo "/";
@@ -279,17 +280,17 @@ class __TwigTemplate_688ff1a4c9f7255cc5795438390eb029a0789799cd56ef05ff42121ef37
             echo twig_get_attribute($this->env, $this->source, $context["f"], "name", array());
             echo "</a></li>
 
-\t";
+\t\t\t\t\t";
             // line 152
             if ((((twig_get_attribute($this->env, $this->source, $context["loop"], "index0", array()) % ($context["cols"] ?? null)) == (($context["cols"] ?? null) - 1)) || twig_get_attribute($this->env, $this->source, $context["loop"], "last", array()))) {
                 // line 153
-                echo "\t\t</ul>
-\t\t</div>
-\t";
+                echo "\t\t\t\t\t\t</ul>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t";
             }
             // line 156
             echo "
-";
+\t\t\t\t";
             ++$context['loop']['index0'];
             ++$context['loop']['index'];
             $context['loop']['first'] = false;
@@ -304,10 +305,7 @@ class __TwigTemplate_688ff1a4c9f7255cc5795438390eb029a0789799cd56ef05ff42121ef37
         $context = array_intersect_key($context, $_parent) + $_parent;
         // line 158
         echo "
-";
-        // line 260
-        echo "
-\t\t\t\t
+\t\t\t
 \t\t\t\t</div>
 
 \t\t\t</div>
@@ -343,6 +341,9 @@ class __TwigTemplate_688ff1a4c9f7255cc5795438390eb029a0789799cd56ef05ff42121ef37
 \t    nextArrow: false
 \t  });
 \t});
+
+\tdocument.getElementById(\"bigheader\").style.height = \"100vh\";
+
 </script>
 </html>
 ";
@@ -390,7 +391,7 @@ class __TwigTemplate_688ff1a4c9f7255cc5795438390eb029a0789799cd56ef05ff42121ef37
 
     public function getDebugInfo()
     {
-        return array (  361 => 10,  358 => 9,  352 => 5,  309 => 260,  306 => 158,  291 => 156,  286 => 153,  284 => 152,  275 => 150,  272 => 149,  267 => 146,  264 => 145,  247 => 144,  245 => 143,  209 => 109,  194 => 107,  190 => 106,  174 => 92,  159 => 90,  155 => 89,  145 => 81,  134 => 76,  129 => 74,  121 => 69,  117 => 67,  114 => 66,  107 => 64,  102 => 63,  99 => 62,  92 => 60,  88 => 59,  79 => 57,  73 => 54,  65 => 48,  61 => 47,  40 => 28,  38 => 9,  31 => 5,  25 => 1,);
+        return array (  362 => 10,  359 => 9,  353 => 5,  307 => 158,  292 => 156,  287 => 153,  285 => 152,  276 => 150,  273 => 149,  268 => 146,  265 => 145,  247 => 144,  245 => 143,  209 => 109,  194 => 107,  190 => 106,  174 => 92,  159 => 90,  155 => 89,  145 => 81,  134 => 76,  129 => 74,  121 => 69,  117 => 67,  114 => 66,  107 => 64,  102 => 63,  99 => 62,  92 => 60,  88 => 59,  79 => 57,  73 => 54,  65 => 48,  61 => 47,  40 => 28,  38 => 9,  31 => 5,  25 => 1,);
     }
 
     public function getSourceContext()

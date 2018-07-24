@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{ artist.name }} Tour and Concert Feedbacks{% endblock %}
+{% block title %}{{ artist.name }} Tour and Concert Feedbacks. Tickets and Scedule{% endblock %}
 
 {% block body %}
 
@@ -92,7 +92,7 @@
 {% if artist.schedule.data|length > 0 %}
 	<div class="pure-g">
 		<div class="pure-u-1">
-			<h4>{{artist.name}} Tour Schedule</h4>	
+			<h4>{{artist.name}} Tickets and Tour Schedule</h4>	
 		</div>
 	</div>
 
@@ -115,7 +115,7 @@
 {% endif %}
 
 {% if artist.schedule.last_update|length > 0 %}
-	triggering schedule updater
+	{# triggering schedule updater #}
 {% endif %}
 
 {% if artist.images|length > 0 %}

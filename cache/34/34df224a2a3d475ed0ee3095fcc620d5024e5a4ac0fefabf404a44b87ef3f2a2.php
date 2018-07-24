@@ -64,8 +64,10 @@ class __TwigTemplate_1c51194f7ad0ee637e9561069da429f4ba3bd85bbb63cbf33e34bf41420
                     <div class=\"pure-menu pure-menu-horizontal custom-menu-3 custom-can-transform\">
                         <ul class=\"pure-menu-list\">
                             <li class=\"pure-menu-item\"><a href=\"/category/16\" class=\"pure-menu-link\">Rock & Pop</a></li>
-                            <li class=\"pure-menu-item\"><a href=\"/category/18\" class=\"pure-menu-link\">Musicals</a></li>
+                            
                             <li class=\"pure-menu-item\"><a href=\"/category/19\" class=\"pure-menu-link\">Rap & Hip-Hop</a></li>
+
+                            <li class=\"pure-menu-item\"><a href=\"/venues\" class=\"pure-menu-link\">Venues</a></li>
                        
                         </ul>
                     </div>
@@ -73,9 +75,9 @@ class __TwigTemplate_1c51194f7ad0ee637e9561069da429f4ba3bd85bbb63cbf33e34bf41420
             </div>
        
         ";
-        // line 59
+        // line 61
         $this->displayBlock('body', $context, $blocks);
-        // line 60
+        // line 62
         echo "
         </div>
 
@@ -97,9 +99,9 @@ class __TwigTemplate_1c51194f7ad0ee637e9561069da429f4ba3bd85bbb63cbf33e34bf41420
         </div>
 
         ";
-        // line 80
+        // line 82
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 83
+        // line 85
         echo "    
     </body>
 </html>
@@ -134,15 +136,15 @@ class __TwigTemplate_1c51194f7ad0ee637e9561069da429f4ba3bd85bbb63cbf33e34bf41420
         ";
     }
 
-    // line 59
+    // line 61
     public function block_body($context, array $blocks = array())
     {
     }
 
-    // line 80
+    // line 82
     public function block_javascripts($context, array $blocks = array())
     {
-        // line 81
+        // line 83
         echo "
         ";
     }
@@ -154,7 +156,7 @@ class __TwigTemplate_1c51194f7ad0ee637e9561069da429f4ba3bd85bbb63cbf33e34bf41420
 
     public function getDebugInfo()
     {
-        return array (  146 => 81,  143 => 80,  138 => 59,  119 => 10,  116 => 9,  110 => 5,  103 => 83,  101 => 80,  79 => 60,  77 => 59,  42 => 26,  40 => 9,  33 => 5,  27 => 1,);
+        return array (  148 => 83,  145 => 82,  140 => 61,  121 => 10,  118 => 9,  112 => 5,  105 => 85,  103 => 82,  81 => 62,  79 => 61,  42 => 26,  40 => 9,  33 => 5,  27 => 1,);
     }
 
     public function getSourceContext()

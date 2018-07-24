@@ -48,11 +48,11 @@ class Controller
 		return;
 	}
 
-	public function staticPage($page_file)
+	public function staticPage($page_file, $title)
 	{
 		$content = file_get_contents($page_file);
 
-		$this->twig->display('static_page.html.twig', array('content' => $content));
+		$this->twig->display('static_page.html.twig', array('content' => $content, 'title' => $title));
 
 		return;
 	}

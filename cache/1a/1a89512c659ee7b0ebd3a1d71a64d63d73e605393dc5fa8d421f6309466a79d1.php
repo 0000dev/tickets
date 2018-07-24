@@ -33,7 +33,7 @@ class __TwigTemplate_c5f835dc4e0001f05e88bef3525ac759c5dae13aa2f98534d5c1fd46843
     public function block_title($context, array $blocks = array())
     {
         echo twig_get_attribute($this->env, $this->source, ($context["artist"] ?? null), "name", array());
-        echo " Tour and Concert Feedbacks";
+        echo " Tour and Concert Feedbacks. Tickets and Scedule";
     }
 
     // line 5
@@ -152,7 +152,7 @@ class __TwigTemplate_c5f835dc4e0001f05e88bef3525ac759c5dae13aa2f98534d5c1fd46843
 \t\t\t<h4>";
             // line 95
             echo twig_get_attribute($this->env, $this->source, ($context["artist"] ?? null), "name", array());
-            echo " Tour Schedule</h4>\t
+            echo " Tickets and Tour Schedule</h4>\t
 \t\t</div>
 \t</div>
 
@@ -208,8 +208,7 @@ class __TwigTemplate_c5f835dc4e0001f05e88bef3525ac759c5dae13aa2f98534d5c1fd46843
         // line 117
         if ((twig_length_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["artist"] ?? null), "schedule", array()), "last_update", array())) > 0)) {
             // line 118
-            echo "\ttriggering schedule updater
-";
+            echo "\t";
         }
         // line 120
         echo "
@@ -563,7 +562,7 @@ class __TwigTemplate_c5f835dc4e0001f05e88bef3525ac759c5dae13aa2f98534d5c1fd46843
 
     public function getDebugInfo()
     {
-        return array (  536 => 251,  487 => 205,  481 => 201,  477 => 199,  463 => 198,  452 => 197,  435 => 196,  432 => 195,  430 => 194,  427 => 193,  423 => 191,  416 => 189,  412 => 187,  398 => 186,  387 => 185,  370 => 184,  367 => 183,  365 => 182,  358 => 178,  353 => 176,  348 => 174,  344 => 172,  341 => 171,  334 => 169,  329 => 168,  326 => 167,  319 => 165,  315 => 164,  309 => 160,  305 => 159,  296 => 152,  294 => 151,  290 => 149,  283 => 144,  269 => 143,  260 => 134,  257 => 133,  240 => 132,  233 => 130,  224 => 124,  220 => 122,  218 => 121,  215 => 120,  211 => 118,  209 => 117,  206 => 116,  200 => 112,  185 => 107,  181 => 106,  175 => 105,  171 => 104,  168 => 103,  164 => 102,  154 => 95,  150 => 93,  148 => 92,  145 => 91,  137 => 86,  132 => 83,  130 => 82,  108 => 27,  94 => 15,  80 => 14,  71 => 13,  54 => 12,  48 => 9,  43 => 6,  40 => 5,  33 => 3,  15 => 1,);
+        return array (  535 => 251,  486 => 205,  480 => 201,  476 => 199,  462 => 198,  451 => 197,  434 => 196,  431 => 195,  429 => 194,  426 => 193,  422 => 191,  415 => 189,  411 => 187,  397 => 186,  386 => 185,  369 => 184,  366 => 183,  364 => 182,  357 => 178,  352 => 176,  347 => 174,  343 => 172,  340 => 171,  333 => 169,  328 => 168,  325 => 167,  318 => 165,  314 => 164,  308 => 160,  304 => 159,  295 => 152,  293 => 151,  289 => 149,  282 => 144,  268 => 143,  259 => 134,  256 => 133,  239 => 132,  232 => 130,  223 => 124,  219 => 122,  217 => 121,  214 => 120,  211 => 118,  209 => 117,  206 => 116,  200 => 112,  185 => 107,  181 => 106,  175 => 105,  171 => 104,  168 => 103,  164 => 102,  154 => 95,  150 => 93,  148 => 92,  145 => 91,  137 => 86,  132 => 83,  130 => 82,  108 => 27,  94 => 15,  80 => 14,  71 => 13,  54 => 12,  48 => 9,  43 => 6,  40 => 5,  33 => 3,  15 => 1,);
     }
 
     public function getSourceContext()
