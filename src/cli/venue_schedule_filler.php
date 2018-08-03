@@ -1,4 +1,5 @@
 <?php
+error_reporting(E_ERROR | E_WARNING | E_PARSE);
 
 // 2DO - include config с доступам в бд, чтоб они были в однон месте
 
@@ -45,12 +46,27 @@ $stmt = $db->prepare($q);
 $stmt -> execute();
 $res = $stmt -> fetchAll();
 
+$c = 0;
+
 foreach ($res as $v) {
 	
 	$arr = array();
 
+	if ($v['tm_api_id'] !== 'KovZpZAJvInA' and $c == 0) {
+		$c++;
+		continue;
+	}
+
 	$json = file_get_contents($tm_url.$v['tm_api_id']);
 	$json = json_decode($json,1);
+
+	if (!isset($json['_embedded']['events']))
+	{
+		echo 'ERROR: '.$tm_url.$v['tm_api_id'].PHP_EOL;
+		continue;
+	}
+	else
+		echo $tm_url.$v['tm_api_id'].PHP_EOL;
 
 	foreach ($json['_embedded']['events'] as $z) {
 
@@ -69,7 +85,7 @@ foreach ($res as $v) {
 		'seatmap' 			=>	$z['seatmap']['staticUrl']
 		];
 
-		if (count($arr)>=10)
+		if (count($arr)>=20)
 			break;
 	}
 

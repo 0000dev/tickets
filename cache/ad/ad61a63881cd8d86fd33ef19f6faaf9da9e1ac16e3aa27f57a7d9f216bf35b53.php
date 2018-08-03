@@ -65,7 +65,7 @@ class __TwigTemplate_75e387d02b257108763bf940b2b4937393255c4450a3bbae9d128e90f62
             echo twig_get_attribute($this->env, $this->source, ($context["venue"] ?? null), "image_small", array());
             echo " ";
         } else {
-            echo " /img/noimage.jpg ";
+            echo " /img/noimage-venue.jpg ";
         }
         echo "\"/>
 \t\t 

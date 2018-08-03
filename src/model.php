@@ -440,6 +440,45 @@ class Model
 		
 		$res['comments'] = $stmt -> fetchAll();
 
+		if (count($res['comments'])<1)
+		{
+			$sql_query = '
+
+			SELECT
+
+				comments.artists_id,
+				comments.text as text,
+				comments.title as title,
+				comments.rating as rating,
+				comments.author as author,
+
+				comment_details.details as details,
+
+				artists.id as artists_id,
+				artists.name as artists_name,
+				artists.image as artists_image
+
+			from comments 
+
+			join artists ON (artists.id = comments.artists_id)
+			join comment_details ON (comment_details.id = comments.comment_details_id)	
+			
+			where
+				artists.image is not null
+			and 
+				artists_id > '.$id.'
+
+			group by comments.artists_id
+
+			limit 10
+			';
+
+			$stmt = $this->db->prepare($sql_query); // stmt = statement
+			$stmt -> execute();
+
+			$res['other_artists_comments'] = $sql_res = $stmt -> fetchAll();
+		}
+
 		return $res;
 
 		/*if (count($res['comment_text'])>0) {

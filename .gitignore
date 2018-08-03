@@ -1,3 +1,4 @@
 /vendor/*
 !/vendor/rawInclude
 /src/config.php
+/tickets.sql.gz

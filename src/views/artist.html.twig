@@ -182,7 +182,7 @@
 			{% if comment == artist.comments[2] %}
 				<div class="neighbors">
 				{% for neighbor in artist.neighbors %}
-					<a href="/{{neighbor['id']}}/{{neighbor['name']|trim|replace({" ":"-", ".":""})}}">{{neighbor['name']}} Reviews</a> {% if loop.last == false %} :: {% endif %}
+					<a href="/{{neighbor['id']}}/{{neighbor['name']|trim|replace({" ":"-", ".":""})}}">{{neighbor['name']}}</a> {% if loop.last == false %} :: {% endif %}
 				{% endfor %}
 				</div>
 			{% endif %}
@@ -194,10 +194,75 @@
 {% if artist.comments|length < 3 %}
 	<div class="neighbors margintop15">
 		{% for neighbor in artist.neighbors %}
-			<a href="/{{neighbor['id']}}/{{neighbor['name']|trim|replace({" ":"-", ".":""})}}">{{neighbor['name']}}</a> {% if loop.last == false %} :: {% endif %}
+
+			{% if artist.other_artists_comments|length > 0 %}
+				{% set foo = artist.other_artists_comments|json_encode %}
+			{% else %}
+				{% set foo = '' %}
+			{% endif %}
+
+			{% if neighbor['name'] not in foo %}
+
+				<a href="/{{neighbor['id']}}/{{neighbor['name']|trim|replace({" ":"-", ".":""})}}">{{neighbor['name']}}</a> {% if loop.last == false %} :: {% endif %}
+
+			{% endif %}		
+
 		{% endfor %}
 	</div>
 {% endif %}
+
+
+{# other artists comments #}
+
+
+{% if artist.other_artists_comments|length > 0 %}
+
+	<div class="pure-g">
+		<div class="pure-u-1">
+			<h4>Fan Reviews</h4>
+
+			There are <b>no reviews about {{artist.name}}</b> for now, but check out reviews about other artists below.
+
+			<br>
+			<br>
+		</div>
+	</div>
+
+	{% for comment in artist.other_artists_comments %}
+
+	<div class="pure-g comments">
+
+		<div class="pure-u-1-4">
+				<a href="/{{ comment.artists_id }}/{{ comment.artists_name|trim|replace({" ":"-"}) }}"><img src="{{ comment.artists_image }}" width="90%" /></a>
+		</div>
+
+		<div class="pure-u-3-4">
+			<div>{{comment.artists_name}}</div>
+			<div  class="stars">
+				{% for i in 1..comment.rating %}
+					★
+				{% endfor %}
+				{% if comment.rating<5 %}
+					{% for i in 1..5-comment.rating %}
+						☆
+					{% endfor %}
+				{% endif %}
+			</div> 
+
+			<div class="username"><strong>{{ comment.author }}</strong></div>
+			<div class="feebacktext">
+			{{ comment.text|replace({'\\u2019':"'",'\\u201d':'','\\u201c':'','\\u2013':' ','\\n':"<br>"}) }}
+			</div>
+			<span class="placeandtime">{{ comment.details }}</span>
+		</div>
+	</div>
+		
+	{% endfor %}
+
+{% endif %}
+
+ 
+
 
 
 <div class="pure-g">

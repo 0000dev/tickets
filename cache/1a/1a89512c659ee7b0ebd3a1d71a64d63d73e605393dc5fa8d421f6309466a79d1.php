@@ -389,7 +389,7 @@ class __TwigTemplate_c5f835dc4e0001f05e88bef3525ac759c5dae13aa2f98534d5c1fd46843
                         echo twig_replace_filter(twig_trim_filter((($__internal_81ccf322d0988ca0aa9ae9943d772c435c5ff01fb50b956278e245e40ae66ab9 = $context["neighbor"]) && is_array($__internal_81ccf322d0988ca0aa9ae9943d772c435c5ff01fb50b956278e245e40ae66ab9) || $__internal_81ccf322d0988ca0aa9ae9943d772c435c5ff01fb50b956278e245e40ae66ab9 instanceof ArrayAccess ? ($__internal_81ccf322d0988ca0aa9ae9943d772c435c5ff01fb50b956278e245e40ae66ab9["name"] ?? null) : null)), array(" " => "-", "." => ""));
                         echo "\">";
                         echo (($__internal_add9db1f328aaed12ef1a33890510da978cc9cf3e50f6769d368473a9c90c217 = $context["neighbor"]) && is_array($__internal_add9db1f328aaed12ef1a33890510da978cc9cf3e50f6769d368473a9c90c217) || $__internal_add9db1f328aaed12ef1a33890510da978cc9cf3e50f6769d368473a9c90c217 instanceof ArrayAccess ? ($__internal_add9db1f328aaed12ef1a33890510da978cc9cf3e50f6769d368473a9c90c217["name"] ?? null) : null);
-                        echo " Reviews</a> ";
+                        echo "</a> ";
                         if ((twig_get_attribute($this->env, $this->source, $context["loop"], "last", array()) == false)) {
                             echo " :: ";
                         }
@@ -448,18 +448,48 @@ class __TwigTemplate_c5f835dc4e0001f05e88bef3525ac759c5dae13aa2f98534d5c1fd46843
             }
             foreach ($context['_seq'] as $context["_key"] => $context["neighbor"]) {
                 // line 197
-                echo "\t\t\t<a href=\"/";
-                echo (($__internal_128c19eb75d89ae9acc1294da2e091b433005202cb9b9351ea0c5dd5f69ee105 = $context["neighbor"]) && is_array($__internal_128c19eb75d89ae9acc1294da2e091b433005202cb9b9351ea0c5dd5f69ee105) || $__internal_128c19eb75d89ae9acc1294da2e091b433005202cb9b9351ea0c5dd5f69ee105 instanceof ArrayAccess ? ($__internal_128c19eb75d89ae9acc1294da2e091b433005202cb9b9351ea0c5dd5f69ee105["id"] ?? null) : null);
-                echo "/";
-                echo twig_replace_filter(twig_trim_filter((($__internal_921de08f973aabd87ecb31654784e2efda7404f12bd27e8e56991608c76e7779 = $context["neighbor"]) && is_array($__internal_921de08f973aabd87ecb31654784e2efda7404f12bd27e8e56991608c76e7779) || $__internal_921de08f973aabd87ecb31654784e2efda7404f12bd27e8e56991608c76e7779 instanceof ArrayAccess ? ($__internal_921de08f973aabd87ecb31654784e2efda7404f12bd27e8e56991608c76e7779["name"] ?? null) : null)), array(" " => "-", "." => ""));
-                echo "\">";
-                echo (($__internal_3e040fa9f9bcf48a8b054d0953f4fffdaf331dc44bc1d96f1bb45abb085e61d1 = $context["neighbor"]) && is_array($__internal_3e040fa9f9bcf48a8b054d0953f4fffdaf331dc44bc1d96f1bb45abb085e61d1) || $__internal_3e040fa9f9bcf48a8b054d0953f4fffdaf331dc44bc1d96f1bb45abb085e61d1 instanceof ArrayAccess ? ($__internal_3e040fa9f9bcf48a8b054d0953f4fffdaf331dc44bc1d96f1bb45abb085e61d1["name"] ?? null) : null);
-                echo "</a> ";
-                if ((twig_get_attribute($this->env, $this->source, $context["loop"], "last", array()) == false)) {
-                    echo " :: ";
-                }
+                echo "
+\t\t\t";
                 // line 198
-                echo "\t\t";
+                if ((twig_length_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["artist"] ?? null), "other_artists_comments", array())) > 0)) {
+                    // line 199
+                    echo "\t\t\t\t";
+                    $context["foo"] = json_encode(twig_get_attribute($this->env, $this->source, ($context["artist"] ?? null), "other_artists_comments", array()));
+                    // line 200
+                    echo "\t\t\t";
+                } else {
+                    // line 201
+                    echo "\t\t\t\t";
+                    $context["foo"] = "";
+                    // line 202
+                    echo "\t\t\t";
+                }
+                // line 203
+                echo "
+\t\t\t";
+                // line 204
+                if (!twig_in_filter((($__internal_128c19eb75d89ae9acc1294da2e091b433005202cb9b9351ea0c5dd5f69ee105 = $context["neighbor"]) && is_array($__internal_128c19eb75d89ae9acc1294da2e091b433005202cb9b9351ea0c5dd5f69ee105) || $__internal_128c19eb75d89ae9acc1294da2e091b433005202cb9b9351ea0c5dd5f69ee105 instanceof ArrayAccess ? ($__internal_128c19eb75d89ae9acc1294da2e091b433005202cb9b9351ea0c5dd5f69ee105["name"] ?? null) : null), ($context["foo"] ?? null))) {
+                    // line 205
+                    echo "
+\t\t\t\t<a href=\"/";
+                    // line 206
+                    echo (($__internal_921de08f973aabd87ecb31654784e2efda7404f12bd27e8e56991608c76e7779 = $context["neighbor"]) && is_array($__internal_921de08f973aabd87ecb31654784e2efda7404f12bd27e8e56991608c76e7779) || $__internal_921de08f973aabd87ecb31654784e2efda7404f12bd27e8e56991608c76e7779 instanceof ArrayAccess ? ($__internal_921de08f973aabd87ecb31654784e2efda7404f12bd27e8e56991608c76e7779["id"] ?? null) : null);
+                    echo "/";
+                    echo twig_replace_filter(twig_trim_filter((($__internal_3e040fa9f9bcf48a8b054d0953f4fffdaf331dc44bc1d96f1bb45abb085e61d1 = $context["neighbor"]) && is_array($__internal_3e040fa9f9bcf48a8b054d0953f4fffdaf331dc44bc1d96f1bb45abb085e61d1) || $__internal_3e040fa9f9bcf48a8b054d0953f4fffdaf331dc44bc1d96f1bb45abb085e61d1 instanceof ArrayAccess ? ($__internal_3e040fa9f9bcf48a8b054d0953f4fffdaf331dc44bc1d96f1bb45abb085e61d1["name"] ?? null) : null)), array(" " => "-", "." => ""));
+                    echo "\">";
+                    echo (($__internal_bd1cf16c37e30917ff4f54b7320429bcc2bb63615cd8a735bfe06a3f1b5c82a0 = $context["neighbor"]) && is_array($__internal_bd1cf16c37e30917ff4f54b7320429bcc2bb63615cd8a735bfe06a3f1b5c82a0) || $__internal_bd1cf16c37e30917ff4f54b7320429bcc2bb63615cd8a735bfe06a3f1b5c82a0 instanceof ArrayAccess ? ($__internal_bd1cf16c37e30917ff4f54b7320429bcc2bb63615cd8a735bfe06a3f1b5c82a0["name"] ?? null) : null);
+                    echo "</a> ";
+                    if ((twig_get_attribute($this->env, $this->source, $context["loop"], "last", array()) == false)) {
+                        echo " :: ";
+                    }
+                    // line 207
+                    echo "
+\t\t\t";
+                }
+                // line 208
+                echo "\t\t
+
+\t\t";
                 ++$context['loop']['index0'];
                 ++$context['loop']['index'];
                 $context['loop']['first'] = false;
@@ -472,17 +502,131 @@ class __TwigTemplate_c5f835dc4e0001f05e88bef3525ac759c5dae13aa2f98534d5c1fd46843
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['neighbor'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 199
+            // line 211
             echo "\t</div>
 ";
         }
-        // line 201
+        // line 213
         echo "
+
+";
+        // line 216
+        echo "
+
+";
+        // line 218
+        if ((twig_length_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["artist"] ?? null), "other_artists_comments", array())) > 0)) {
+            // line 219
+            echo "
+\t<div class=\"pure-g\">
+\t\t<div class=\"pure-u-1\">
+\t\t\t<h4>Fan Reviews</h4>
+
+\t\t\tThere are <b>no reviews about ";
+            // line 224
+            echo twig_get_attribute($this->env, $this->source, ($context["artist"] ?? null), "name", array());
+            echo "</b> for now, but check out reviews about other artists below.
+
+\t\t\t<br>
+\t\t\t<br>
+\t\t</div>
+\t</div>
+
+\t";
+            // line 231
+            $context['_parent'] = $context;
+            $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, ($context["artist"] ?? null), "other_artists_comments", array()));
+            foreach ($context['_seq'] as $context["_key"] => $context["comment"]) {
+                // line 232
+                echo "
+\t<div class=\"pure-g comments\">
+
+\t\t<div class=\"pure-u-1-4\">
+\t\t\t\t<a href=\"/";
+                // line 236
+                echo twig_get_attribute($this->env, $this->source, $context["comment"], "artists_id", array());
+                echo "/";
+                echo twig_replace_filter(twig_trim_filter(twig_get_attribute($this->env, $this->source, $context["comment"], "artists_name", array())), array(" " => "-"));
+                echo "\"><img src=\"";
+                echo twig_get_attribute($this->env, $this->source, $context["comment"], "artists_image", array());
+                echo "\" width=\"90%\" /></a>
+\t\t</div>
+
+\t\t<div class=\"pure-u-3-4\">
+\t\t\t<div>";
+                // line 240
+                echo twig_get_attribute($this->env, $this->source, $context["comment"], "artists_name", array());
+                echo "</div>
+\t\t\t<div  class=\"stars\">
+\t\t\t\t";
+                // line 242
+                $context['_parent'] = $context;
+                $context['_seq'] = twig_ensure_traversable(range(1, twig_get_attribute($this->env, $this->source, $context["comment"], "rating", array())));
+                foreach ($context['_seq'] as $context["_key"] => $context["i"]) {
+                    // line 243
+                    echo "\t\t\t\t\t★
+\t\t\t\t";
+                }
+                $_parent = $context['_parent'];
+                unset($context['_seq'], $context['_iterated'], $context['_key'], $context['i'], $context['_parent'], $context['loop']);
+                $context = array_intersect_key($context, $_parent) + $_parent;
+                // line 245
+                echo "\t\t\t\t";
+                if ((twig_get_attribute($this->env, $this->source, $context["comment"], "rating", array()) < 5)) {
+                    // line 246
+                    echo "\t\t\t\t\t";
+                    $context['_parent'] = $context;
+                    $context['_seq'] = twig_ensure_traversable(range(1, (5 - twig_get_attribute($this->env, $this->source, $context["comment"], "rating", array()))));
+                    foreach ($context['_seq'] as $context["_key"] => $context["i"]) {
+                        // line 247
+                        echo "\t\t\t\t\t\t☆
+\t\t\t\t\t";
+                    }
+                    $_parent = $context['_parent'];
+                    unset($context['_seq'], $context['_iterated'], $context['_key'], $context['i'], $context['_parent'], $context['loop']);
+                    $context = array_intersect_key($context, $_parent) + $_parent;
+                    // line 249
+                    echo "\t\t\t\t";
+                }
+                // line 250
+                echo "\t\t\t</div> 
+
+\t\t\t<div class=\"username\"><strong>";
+                // line 252
+                echo twig_get_attribute($this->env, $this->source, $context["comment"], "author", array());
+                echo "</strong></div>
+\t\t\t<div class=\"feebacktext\">
+\t\t\t";
+                // line 254
+                echo twig_replace_filter(twig_get_attribute($this->env, $this->source, $context["comment"], "text", array()), array("\\u2019" => "'", "\\u201d" => "", "\\u201c" => "", "\\u2013" => " ", "\\n" => "<br>"));
+                echo "
+\t\t\t</div>
+\t\t\t<span class=\"placeandtime\">";
+                // line 256
+                echo twig_get_attribute($this->env, $this->source, $context["comment"], "details", array());
+                echo "</span>
+\t\t</div>
+\t</div>
+\t\t
+\t";
+            }
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['comment'], $context['_parent'], $context['loop']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
+            // line 261
+            echo "
+";
+        }
+        // line 263
+        echo "
+ 
+
+
 
 <div class=\"pure-g\">
 \t<div class=\"pure-u-1\">
 \t\t[Temporary disabled] ";
-        // line 205
+        // line 270
         echo twig_get_attribute($this->env, $this->source, ($context["artist"] ?? null), "name", array());
         echo " needs your feedback
 \t</div>
@@ -531,7 +675,7 @@ class __TwigTemplate_c5f835dc4e0001f05e88bef3525ac759c5dae13aa2f98534d5c1fd46843
 
 \$('.tmimage').click(function(){
 \twindow.open('http://href.li/?http://www.ticketmaster.com/";
-        // line 251
+        // line 316
         echo twig_replace_filter(twig_get_attribute($this->env, $this->source, ($context["artist"] ?? null), "name", array()), array(" " => "-"));
         echo "/artist/";
         echo twig_get_attribute($this->env, $this->source, ($context["artist"] ?? null), "tm_id", array());
@@ -562,7 +706,7 @@ class __TwigTemplate_c5f835dc4e0001f05e88bef3525ac759c5dae13aa2f98534d5c1fd46843
 
     public function getDebugInfo()
     {
-        return array (  535 => 251,  486 => 205,  480 => 201,  476 => 199,  462 => 198,  451 => 197,  434 => 196,  431 => 195,  429 => 194,  426 => 193,  422 => 191,  415 => 189,  411 => 187,  397 => 186,  386 => 185,  369 => 184,  366 => 183,  364 => 182,  357 => 178,  352 => 176,  347 => 174,  343 => 172,  340 => 171,  333 => 169,  328 => 168,  325 => 167,  318 => 165,  314 => 164,  308 => 160,  304 => 159,  295 => 152,  293 => 151,  289 => 149,  282 => 144,  268 => 143,  259 => 134,  256 => 133,  239 => 132,  232 => 130,  223 => 124,  219 => 122,  217 => 121,  214 => 120,  211 => 118,  209 => 117,  206 => 116,  200 => 112,  185 => 107,  181 => 106,  175 => 105,  171 => 104,  168 => 103,  164 => 102,  154 => 95,  150 => 93,  148 => 92,  145 => 91,  137 => 86,  132 => 83,  130 => 82,  108 => 27,  94 => 15,  80 => 14,  71 => 13,  54 => 12,  48 => 9,  43 => 6,  40 => 5,  33 => 3,  15 => 1,);
+        return array (  679 => 316,  630 => 270,  621 => 263,  617 => 261,  606 => 256,  601 => 254,  596 => 252,  592 => 250,  589 => 249,  582 => 247,  577 => 246,  574 => 245,  567 => 243,  563 => 242,  558 => 240,  547 => 236,  541 => 232,  537 => 231,  527 => 224,  520 => 219,  518 => 218,  514 => 216,  510 => 213,  506 => 211,  490 => 208,  486 => 207,  476 => 206,  473 => 205,  471 => 204,  468 => 203,  465 => 202,  462 => 201,  459 => 200,  456 => 199,  454 => 198,  451 => 197,  434 => 196,  431 => 195,  429 => 194,  426 => 193,  422 => 191,  415 => 189,  411 => 187,  397 => 186,  386 => 185,  369 => 184,  366 => 183,  364 => 182,  357 => 178,  352 => 176,  347 => 174,  343 => 172,  340 => 171,  333 => 169,  328 => 168,  325 => 167,  318 => 165,  314 => 164,  308 => 160,  304 => 159,  295 => 152,  293 => 151,  289 => 149,  282 => 144,  268 => 143,  259 => 134,  256 => 133,  239 => 132,  232 => 130,  223 => 124,  219 => 122,  217 => 121,  214 => 120,  211 => 118,  209 => 117,  206 => 116,  200 => 112,  185 => 107,  181 => 106,  175 => 105,  171 => 104,  168 => 103,  164 => 102,  154 => 95,  150 => 93,  148 => 92,  145 => 91,  137 => 86,  132 => 83,  130 => 82,  108 => 27,  94 => 15,  80 => 14,  71 => 13,  54 => 12,  48 => 9,  43 => 6,  40 => 5,  33 => 3,  15 => 1,);
     }
 
     public function getSourceContext()

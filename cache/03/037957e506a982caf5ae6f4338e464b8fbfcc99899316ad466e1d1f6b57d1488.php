@@ -102,8 +102,6 @@ class __TwigTemplate_eb309e77f1754b8d1856af1f646ea70189dc2881d4deb4f8ec9e45d3963
             $context["next_page"] = (($context["curr_page"] ?? null) + 1);
             // line 31
             echo "\t\t<a href=\"/venues/";
-            echo ($context["cat_id"] ?? null);
-            echo "/";
             echo ($context["next_page"] ?? null);
             echo "\">Next</a>
 \t</div>
@@ -127,7 +125,7 @@ class __TwigTemplate_eb309e77f1754b8d1856af1f646ea70189dc2881d4deb4f8ec9e45d3963
 
     public function getDebugInfo()
     {
-        return array (  114 => 35,  104 => 31,  102 => 30,  98 => 28,  96 => 27,  93 => 26,  79 => 18,  71 => 17,  55 => 14,  47 => 8,  43 => 7,  38 => 5,  35 => 4,  32 => 3,  15 => 1,);
+        return array (  112 => 35,  104 => 31,  102 => 30,  98 => 28,  96 => 27,  93 => 26,  79 => 18,  71 => 17,  55 => 14,  47 => 8,  43 => 7,  38 => 5,  35 => 4,  32 => 3,  15 => 1,);
     }
 
     public function getSourceContext()

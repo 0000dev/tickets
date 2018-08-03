@@ -20,15 +20,17 @@ $db = new PDO($dsn, DB_USER, DB_PASS, $opt);
 
 $url = $argv[1];
 
+echo $url.PHP_EOL;
+
 $venue = array(
 
-	'name' 			=> 'NULL',
-	'image_small' 	=> 'NULL',
-	'image_big'		=> 'NULL',
-	'address' 		=> 'NULL',
-	'details'		=> 'NULL',
-	'tm_id' 		=> 'NULL',
-	'tm_api_id' 	=> 'NULL'
+	'name' 			=> null,
+	'image_small' 	=> null,
+	'image_big'		=> null,
+	'address' 		=> null,
+	'details'		=> null,
+	'tm_id' 		=> null,
+	'tm_api_id' 	=> null
 
 );
 
@@ -42,7 +44,7 @@ $json = file_get_contents('https://app.ticketmaster.com/discovery/v2/venues.json
 $json = @json_decode($json, 1);
 
 if (!isset($json['_embedded']['venues'][0]))
-	die ('stopping in oder not to fill db with possible trash');
+	die ('...stopping in oder not to fill db with possible trash'.PHP_EOL);
 
 $v = $json['_embedded']['venues'][0];
 $t = $json['_embedded']['venues'][0]['url'];
@@ -52,8 +54,22 @@ preg_match('#venue%2F([0-9]+)#i', $t, $ok);
 if (isset($v['id'])) $venue['tm_api_id'] = $v['id'];
 if (isset($v['name'])) $venue['name'] = $v['name'];
 if (isset($ok[1])) $venue['tm_id'] = $ok[1];
-if (isset($v['images'][1]['url'])) $venue['image_small'] = $v['images'][1]['url'];
-if (isset($v['images'][0]['url'])) $venue['image_big'] = $v['images'][0]['url'];
+/*if (isset($v['images'][1]['url'])) $venue['image_small'] = $v['images'][1]['url'];
+if (isset($v['images'][0]['url'])) $venue['image_big'] = $v['images'][0]['url'];*/
+
+if (isset($v['images']))
+{
+	foreach ($v['images'] as $key => $value) {
+
+		$value = $value['url'];
+
+		if (strstr($value, '/dam/v/'))
+			$venue['image_big'] = $value;
+		elseif (strstr($value, '/dbimages/'))
+			$venue['image_small'] = $value;
+	}
+}
+
 if (isset($v['address']['line1']) and isset($v['city']['name']) and isset($v['state']['stateCode']) and isset($v['country']['countryCode'])) $venue['address'] = $v['address']['line1'].', '.$v['city']['name'].', '.$v['state']['stateCode'].', '.$v['country']['countryCode'];
 if (isset($v['boxOfficeInfo'])) $venue['details'] = json_encode($v['boxOfficeInfo']);
 
