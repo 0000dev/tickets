@@ -383,7 +383,7 @@ h1, h2, h3 {
 }
 
 .artistphotosblock {
-  max-height: 300px;
+  max-height: 500px;
   overflow: scroll;
   border: 1px solid lightgrey;
   padding: 15px;
@@ -395,7 +395,7 @@ h1, h2, h3 {
 }
 
 .smallphotoblock{
-  max-height: 200px !important;
+  max-height: 300px !important;
   overflow: auto;
 }
 
@@ -457,6 +457,19 @@ h1, h2, h3 {
   -webkit-column-count: 1;
   column-count:         1;
   }
+}
+
+#photos > img {
+  display: block;
+  width: 200px;
+  transition: .1s transform;
+  transform: translateZ(0); /* hack */
+}
+
+#photos > img:hover {
+  z-index: 1;
+  transform: scale(1.7,1.7);
+  transition: .3s transform;
 }
 
 /* Image grid end */

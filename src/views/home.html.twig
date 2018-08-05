@@ -54,7 +54,7 @@
 				<img src="{{ comment.artists_image }}" width="90%" />
 			</div>
 			<div class="pure-u-3-4">
-				<div class="commentsheader"><a href="/{{ comment.artists_id }}/{{ comment.artists_name|trim|replace({" ":"-"}) }}">{{ comment.artists_name }}</a></div>
+				<div class="commentsheader"><a href="/{{ comment.artists_id }}/{{ comment.artists_name|trim|replace({" ":"-", ".":"", "/":"","+":""})}}">{{ comment.artists_name }}</a></div>
 				<div  class="stars">
 					{% for i in 1..comment.rating %}
 						★
@@ -87,7 +87,7 @@
 				<p id="photos">
 
 			    {% for a in artists %}
-			    	<a href="/{{a.id}}/{{a.name|trim|replace({" ":"-", ".":""})}}"><img src="{{a.image}}" title="{{a.name}}" /></a>
+			    	<a href="/{{a.id}}/{{a.name|trim|replace({" ":"-", ".":"", "/":"","+":""})}}"><img src="{{a.image}}" title="{{a.name}}" /></a>
 			    {% endfor %}
 			      
 				</p>
@@ -104,7 +104,7 @@
 				<p id="photos">
 
 			    {% for a in venues %}
-			    	<a href="/venue/{{a.id}}/{{a.name|trim|replace({" ":"-", ".":""})}}"><img src="{{a.image}}" title="{{a.name}}" /></a>
+			    	<a href="/venue/{{a.id}}/{{a.name|trim|replace({" ":"-", ".":"", "/":"","+":""})}}"><img src="{{a.image}}" title="{{a.name}}" /></a>
 			    {% endfor %}
 			      
 				</p>
@@ -147,7 +147,7 @@
 						<ul>
 					{% endif %}
 
-					<li><a href="/{{f.id}}/{{f.name|trim|replace({" ":"-", ".":""})}}">{{f.name}}</a></li>
+					<li><a href="/{{f.id}}/{{f.name|trim|replace({" ":"-", ".":"", "/":"","+":""})}}">{{f.name}}</a></li>
 
 					{% if (loop.index0 % cols == cols - 1 or loop.last) %}
 						</ul>

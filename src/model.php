@@ -283,8 +283,8 @@ class Model
 			
 			where
 			categories.categories_names_id = '.$id.' 
-			and 
-			artists.description is NOT NULL
+			
+			ORDER BY `description` DESC
 
 			limit '.(CATEGORY_ITEMS_PER_PAGE+1).'
 			offset '.($offset*CATEGORY_ITEMS_PER_PAGE).'

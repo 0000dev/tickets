@@ -47,7 +47,7 @@ class __TwigTemplate_c57ec2102264b8539ac44f79dc9931c8b57f9cc870d1482a516bb320a77
             echo "
 \t<h3> Looking for \"";
             // line 9
-            echo twig_escape_filter($this->env, ($context["search_phrase"] ?? null), "html", null, true);
+            echo ($context["search_phrase"] ?? null);
             echo "\" </h3>
 
 \t";
@@ -63,13 +63,13 @@ class __TwigTemplate_c57ec2102264b8539ac44f79dc9931c8b57f9cc870d1482a516bb320a77
 \t\t\t\t\t\t<div class=\"pure-u-1 pure-u-sm-2-5 pure-u-md-1-5\">
 \t\t\t\t\t\t\t<a href=\"/";
                 // line 17
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["s"], "id", array()), "html", null, true);
+                echo twig_get_attribute($this->env, $this->source, $context["s"], "id", array());
                 echo "/";
-                echo twig_escape_filter($this->env, twig_replace_filter(twig_trim_filter(twig_get_attribute($this->env, $this->source, $context["s"], "name", array())), array(" " => "-", "." => "", "/" => "")), "html", null, true);
+                echo twig_replace_filter(twig_trim_filter(twig_get_attribute($this->env, $this->source, $context["s"], "name", array())), array(" " => "-", "." => "", "/" => "", "+" => ""));
                 echo "\"><img class=\"vertical-align\" src=\"";
                 if ((twig_length_filter($this->env, twig_get_attribute($this->env, $this->source, $context["s"], "image", array())) > 0)) {
                     echo " ";
-                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["s"], "image", array()), "html", null, true);
+                    echo twig_get_attribute($this->env, $this->source, $context["s"], "image", array());
                     echo " ";
                 } else {
                     echo " /img/noimage.jpg ";
@@ -79,15 +79,15 @@ class __TwigTemplate_c57ec2102264b8539ac44f79dc9931c8b57f9cc870d1482a516bb320a77
 \t\t\t\t\t\t<div class=\"pure-u-1 pure-u-sm-3-5 pure-u-md-4-5\">
 \t\t\t\t\t\t\t<strong><a href=\"/";
                 // line 20
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["s"], "id", array()), "html", null, true);
+                echo twig_get_attribute($this->env, $this->source, $context["s"], "id", array());
                 echo "/";
-                echo twig_escape_filter($this->env, twig_replace_filter(twig_trim_filter(twig_get_attribute($this->env, $this->source, $context["s"], "name", array())), array(" " => "-", "." => "", "/" => "")), "html", null, true);
+                echo twig_replace_filter(twig_trim_filter(twig_get_attribute($this->env, $this->source, $context["s"], "name", array())), array(" " => "-", "." => "", "/" => "", "+" => ""));
                 echo "\">";
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["s"], "name", array()), "html", null, true);
+                echo twig_get_attribute($this->env, $this->source, $context["s"], "name", array());
                 echo "</a></strong>
 \t\t\t\t\t\t\t<p>";
                 // line 21
-                echo twig_escape_filter($this->env, (((twig_length_filter($this->env, twig_get_attribute($this->env, $this->source, $context["s"], "description", array())) > 300)) ? ((twig_slice($this->env, twig_get_attribute($this->env, $this->source, $context["s"], "description", array()), 0, 300) . "...")) : (twig_get_attribute($this->env, $this->source, $context["s"], "description", array()))), "html", null, true);
+                echo (((twig_length_filter($this->env, twig_get_attribute($this->env, $this->source, $context["s"], "description", array())) > 300)) ? ((twig_slice($this->env, twig_get_attribute($this->env, $this->source, $context["s"], "description", array()), 0, 300) . "...")) : (twig_get_attribute($this->env, $this->source, $context["s"], "description", array())));
                 echo "</p>
 \t\t\t\t\t\t</div>
 \t\t\t\t\t</div>

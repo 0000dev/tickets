@@ -70,17 +70,17 @@ class __TwigTemplate_688ff1a4c9f7255cc5795438390eb029a0789799cd56ef05ff42121ef37
 \t\t\t<div class=\"pure-u-1-4\">
 \t\t\t\t<img src=\"";
             // line 54
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["comment"], "artists_image", array()), "html", null, true);
+            echo twig_get_attribute($this->env, $this->source, $context["comment"], "artists_image", array());
             echo "\" width=\"90%\" />
 \t\t\t</div>
 \t\t\t<div class=\"pure-u-3-4\">
 \t\t\t\t<div class=\"commentsheader\"><a href=\"/";
             // line 57
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["comment"], "artists_id", array()), "html", null, true);
+            echo twig_get_attribute($this->env, $this->source, $context["comment"], "artists_id", array());
             echo "/";
-            echo twig_escape_filter($this->env, twig_replace_filter(twig_trim_filter(twig_get_attribute($this->env, $this->source, $context["comment"], "artists_name", array())), array(" " => "-")), "html", null, true);
+            echo twig_replace_filter(twig_trim_filter(twig_get_attribute($this->env, $this->source, $context["comment"], "artists_name", array())), array(" " => "-", "." => "", "/" => "", "+" => ""));
             echo "\">";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["comment"], "artists_name", array()), "html", null, true);
+            echo twig_get_attribute($this->env, $this->source, $context["comment"], "artists_name", array());
             echo "</a></div>
 \t\t\t\t<div  class=\"stars\">
 \t\t\t\t\t";
@@ -118,7 +118,7 @@ class __TwigTemplate_688ff1a4c9f7255cc5795438390eb029a0789799cd56ef05ff42121ef37
 
 \t\t\t\t<div class=\"username\"><strong>";
             // line 69
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["comment"], "author", array()), "html", null, true);
+            echo twig_get_attribute($this->env, $this->source, $context["comment"], "author", array());
             echo "</strong></div>
 \t\t\t\t<div class=\"feebacktext\">
 \t\t\t\t
@@ -126,12 +126,12 @@ class __TwigTemplate_688ff1a4c9f7255cc5795438390eb029a0789799cd56ef05ff42121ef37
 
 \t\t\t\t\t";
             // line 74
-            echo twig_escape_filter($this->env, (((twig_length_filter($this->env, twig_get_attribute($this->env, $this->source, $context["comment"], "text", array())) > 300)) ? ((twig_slice($this->env, twig_get_attribute($this->env, $this->source, $context["comment"], "text", array()), 0, 300) . "...")) : (twig_replace_filter(twig_get_attribute($this->env, $this->source, $context["comment"], "text", array()), array("\\u2019" => "'", "\\u201d" => "", "\\u201c" => "", "\\u2013" => " ", "\\n" => "<br>")))), "html", null, true);
+            echo (((twig_length_filter($this->env, twig_get_attribute($this->env, $this->source, $context["comment"], "text", array())) > 300)) ? ((twig_slice($this->env, twig_get_attribute($this->env, $this->source, $context["comment"], "text", array()), 0, 300) . "...")) : (twig_replace_filter(twig_get_attribute($this->env, $this->source, $context["comment"], "text", array()), array("\\u2019" => "'", "\\u201d" => "", "\\u201c" => "", "\\u2013" => " ", "\\n" => "<br>"))));
             echo "
 \t\t\t\t</div>
 \t\t\t\t<span class=\"placeandtime\">";
             // line 76
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["comment"], "details", array()), "html", null, true);
+            echo twig_get_attribute($this->env, $this->source, $context["comment"], "details", array());
             echo "</span>
 \t\t\t</div>
 \t\t</div>
@@ -157,13 +157,13 @@ class __TwigTemplate_688ff1a4c9f7255cc5795438390eb029a0789799cd56ef05ff42121ef37
         foreach ($context['_seq'] as $context["_key"] => $context["a"]) {
             // line 90
             echo "\t\t\t    \t<a href=\"/";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["a"], "id", array()), "html", null, true);
+            echo twig_get_attribute($this->env, $this->source, $context["a"], "id", array());
             echo "/";
-            echo twig_escape_filter($this->env, twig_replace_filter(twig_trim_filter(twig_get_attribute($this->env, $this->source, $context["a"], "name", array())), array(" " => "-", "." => "")), "html", null, true);
+            echo twig_replace_filter(twig_trim_filter(twig_get_attribute($this->env, $this->source, $context["a"], "name", array())), array(" " => "-", "." => "", "/" => "", "+" => ""));
             echo "\"><img src=\"";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["a"], "image", array()), "html", null, true);
+            echo twig_get_attribute($this->env, $this->source, $context["a"], "image", array());
             echo "\" title=\"";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["a"], "name", array()), "html", null, true);
+            echo twig_get_attribute($this->env, $this->source, $context["a"], "name", array());
             echo "\" /></a>
 \t\t\t    ";
         }
@@ -192,13 +192,13 @@ class __TwigTemplate_688ff1a4c9f7255cc5795438390eb029a0789799cd56ef05ff42121ef37
         foreach ($context['_seq'] as $context["_key"] => $context["a"]) {
             // line 107
             echo "\t\t\t    \t<a href=\"/venue/";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["a"], "id", array()), "html", null, true);
+            echo twig_get_attribute($this->env, $this->source, $context["a"], "id", array());
             echo "/";
-            echo twig_escape_filter($this->env, twig_replace_filter(twig_trim_filter(twig_get_attribute($this->env, $this->source, $context["a"], "name", array())), array(" " => "-", "." => "")), "html", null, true);
+            echo twig_replace_filter(twig_trim_filter(twig_get_attribute($this->env, $this->source, $context["a"], "name", array())), array(" " => "-", "." => "", "/" => "", "+" => ""));
             echo "\"><img src=\"";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["a"], "image", array()), "html", null, true);
+            echo twig_get_attribute($this->env, $this->source, $context["a"], "image", array());
             echo "\" title=\"";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["a"], "name", array()), "html", null, true);
+            echo twig_get_attribute($this->env, $this->source, $context["a"], "name", array());
             echo "\" /></a>
 \t\t\t    ";
         }
@@ -273,11 +273,11 @@ class __TwigTemplate_688ff1a4c9f7255cc5795438390eb029a0789799cd56ef05ff42121ef37
             echo "
 \t\t\t\t\t<li><a href=\"/";
             // line 150
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["f"], "id", array()), "html", null, true);
+            echo twig_get_attribute($this->env, $this->source, $context["f"], "id", array());
             echo "/";
-            echo twig_escape_filter($this->env, twig_replace_filter(twig_trim_filter(twig_get_attribute($this->env, $this->source, $context["f"], "name", array())), array(" " => "-", "." => "")), "html", null, true);
+            echo twig_replace_filter(twig_trim_filter(twig_get_attribute($this->env, $this->source, $context["f"], "name", array())), array(" " => "-", "." => "", "/" => "", "+" => ""));
             echo "\">";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["f"], "name", array()), "html", null, true);
+            echo twig_get_attribute($this->env, $this->source, $context["f"], "name", array());
             echo "</a></li>
 
 \t\t\t\t\t";

@@ -43,6 +43,9 @@ class Controller
 		if ($this->app->checkFor404($content))
 			return;
 
+		if (isset($content['images']) and !is_array($content['images']))
+			$content['images'] = array($content['images']);
+
 		$this->twig->display('gallery.html.twig', array('artist' => $content));
 		
 		return;
@@ -102,6 +105,9 @@ class Controller
 			if (1 < round($datediff / (60 * 60 * 24)))
 				$content['schedule']['last_update'] = true;
 		}
+
+		if (isset($content['images']) and !is_array($content['images']))
+			$content['images'] = array($content['images']);
 		
 		$this->twig->display('artist.html.twig', array('artist' => $content));
 		
