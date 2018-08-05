@@ -43,6 +43,11 @@ class __TwigTemplate_1c51194f7ad0ee637e9561069da429f4ba3bd85bbb63cbf33e34bf41420
 
     <body>
 
+        ";
+        // line 30
+        echo twig_escape_filter($this->env, ($context["defaultStrategy"] ?? null), "html", null, true);
+        echo "
+
         <div class=\"content\">
 
             <!-- top header menu / better to do with native menu? -->
@@ -63,9 +68,9 @@ class __TwigTemplate_1c51194f7ad0ee637e9561069da429f4ba3bd85bbb63cbf33e34bf41420
                 <div class=\"pure-u-1 pure-u-md-2-5\">
                     <div class=\"pure-menu pure-menu-horizontal custom-menu-3 custom-can-transform\">
                         <ul class=\"pure-menu-list\">
-                            <li class=\"pure-menu-item\"><a href=\"/category/16\" class=\"pure-menu-link\">Rock & Pop</a></li>
+                            <li class=\"pure-menu-item\"><a href=\"/category/5\" class=\"pure-menu-link\">Rock & Pop</a></li>
                             
-                            <li class=\"pure-menu-item\"><a href=\"/category/19\" class=\"pure-menu-link\">Rap & Hip-Hop</a></li>
+                            <li class=\"pure-menu-item\"><a href=\"/category/7\" class=\"pure-menu-link\">Rap & Hip-Hop</a></li>
 
                             <li class=\"pure-menu-item\"><a href=\"/venues\" class=\"pure-menu-link\">Venues</a></li>
                        
@@ -75,9 +80,9 @@ class __TwigTemplate_1c51194f7ad0ee637e9561069da429f4ba3bd85bbb63cbf33e34bf41420
             </div>
        
         ";
-        // line 61
+        // line 63
         $this->displayBlock('body', $context, $blocks);
-        // line 62
+        // line 64
         echo "
         </div>
 
@@ -99,9 +104,9 @@ class __TwigTemplate_1c51194f7ad0ee637e9561069da429f4ba3bd85bbb63cbf33e34bf41420
         </div>
 
         ";
-        // line 82
+        // line 84
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 85
+        // line 87
         echo "    
     </body>
 </html>
@@ -136,15 +141,15 @@ class __TwigTemplate_1c51194f7ad0ee637e9561069da429f4ba3bd85bbb63cbf33e34bf41420
         ";
     }
 
-    // line 61
+    // line 63
     public function block_body($context, array $blocks = array())
     {
     }
 
-    // line 82
+    // line 84
     public function block_javascripts($context, array $blocks = array())
     {
-        // line 83
+        // line 85
         echo "
         ";
     }
@@ -154,9 +159,14 @@ class __TwigTemplate_1c51194f7ad0ee637e9561069da429f4ba3bd85bbb63cbf33e34bf41420
         return "base.html.twig";
     }
 
+    public function isTraitable()
+    {
+        return false;
+    }
+
     public function getDebugInfo()
     {
-        return array (  148 => 83,  145 => 82,  140 => 61,  121 => 10,  118 => 9,  112 => 5,  105 => 85,  103 => 82,  81 => 62,  79 => 61,  42 => 26,  40 => 9,  33 => 5,  27 => 1,);
+        return array (  153 => 85,  150 => 84,  145 => 63,  126 => 10,  123 => 9,  117 => 5,  110 => 87,  108 => 84,  86 => 64,  84 => 63,  48 => 30,  42 => 26,  40 => 9,  33 => 5,  27 => 1,);
     }
 
     public function getSourceContext()

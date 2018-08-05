@@ -32,7 +32,7 @@ class __TwigTemplate_b7bd53135cead116b671423229640d049e9805261f70e7290ed9945d66c
     // line 3
     public function block_title($context, array $blocks = array())
     {
-        echo twig_get_attribute($this->env, $this->source, (($__internal_7cd7461123377b8c9c1b6a01f46c7bbd94bd12e59266005df5e93029ddbc0ec5 = ($context["category"] ?? null)) && is_array($__internal_7cd7461123377b8c9c1b6a01f46c7bbd94bd12e59266005df5e93029ddbc0ec5) || $__internal_7cd7461123377b8c9c1b6a01f46c7bbd94bd12e59266005df5e93029ddbc0ec5 instanceof ArrayAccess ? ($__internal_7cd7461123377b8c9c1b6a01f46c7bbd94bd12e59266005df5e93029ddbc0ec5[0] ?? null) : null), "cats", array());
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (($__internal_7cd7461123377b8c9c1b6a01f46c7bbd94bd12e59266005df5e93029ddbc0ec5 = ($context["category"] ?? null)) && is_array($__internal_7cd7461123377b8c9c1b6a01f46c7bbd94bd12e59266005df5e93029ddbc0ec5) || $__internal_7cd7461123377b8c9c1b6a01f46c7bbd94bd12e59266005df5e93029ddbc0ec5 instanceof ArrayAccess ? ($__internal_7cd7461123377b8c9c1b6a01f46c7bbd94bd12e59266005df5e93029ddbc0ec5[0] ?? null) : null), "cats", array()), "html", null, true);
         echo " Artists";
     }
 
@@ -43,14 +43,14 @@ class __TwigTemplate_b7bd53135cead116b671423229640d049e9805261f70e7290ed9945d66c
         echo "
 \t<h3> ";
         // line 7
-        echo twig_get_attribute($this->env, $this->source, (($__internal_3e28b7f596c58d7729642bcf2acc6efc894803703bf5fa7e74cd8d2aa1f8c68a = ($context["category"] ?? null)) && is_array($__internal_3e28b7f596c58d7729642bcf2acc6efc894803703bf5fa7e74cd8d2aa1f8c68a) || $__internal_3e28b7f596c58d7729642bcf2acc6efc894803703bf5fa7e74cd8d2aa1f8c68a instanceof ArrayAccess ? ($__internal_3e28b7f596c58d7729642bcf2acc6efc894803703bf5fa7e74cd8d2aa1f8c68a[0] ?? null) : null), "cats", array());
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (($__internal_3e28b7f596c58d7729642bcf2acc6efc894803703bf5fa7e74cd8d2aa1f8c68a = ($context["category"] ?? null)) && is_array($__internal_3e28b7f596c58d7729642bcf2acc6efc894803703bf5fa7e74cd8d2aa1f8c68a) || $__internal_3e28b7f596c58d7729642bcf2acc6efc894803703bf5fa7e74cd8d2aa1f8c68a instanceof ArrayAccess ? ($__internal_3e28b7f596c58d7729642bcf2acc6efc894803703bf5fa7e74cd8d2aa1f8c68a[0] ?? null) : null), "cats", array()), "html", null, true);
         echo " </h3>
 
 ";
         // line 9
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["category"] ?? null));
-        foreach ($context['_seq'] as $context["_key"] => $context["cat"]) {
+        foreach ($context['_seq'] as $context["_key"] => $context["a"]) {
             // line 10
             echo "
 \t
@@ -60,13 +60,13 @@ class __TwigTemplate_b7bd53135cead116b671423229640d049e9805261f70e7290ed9945d66c
 \t\t\t\t\t<div class=\"pure-u-1 pure-u-sm-2-5 pure-u-md-1-5\">
 \t\t\t\t\t\t<a href=\"/";
             // line 16
-            echo twig_get_attribute($this->env, $this->source, $context["cat"], "id", array());
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["a"], "id", array()), "html", null, true);
             echo "/";
-            echo twig_replace_filter(twig_trim_filter(twig_get_attribute($this->env, $this->source, $context["cat"], "name", array())), array(" " => "-", "." => ""));
+            echo twig_escape_filter($this->env, twig_replace_filter(twig_trim_filter(twig_get_attribute($this->env, $this->source, $context["a"], "name", array())), array(" " => "-", "." => "", "/" => "")), "html", null, true);
             echo "\"><img class=\"vertical-align\" src=\"";
-            if ((twig_length_filter($this->env, twig_get_attribute($this->env, $this->source, $context["cat"], "image", array())) > 0)) {
+            if ((twig_length_filter($this->env, twig_get_attribute($this->env, $this->source, $context["a"], "image", array())) > 0)) {
                 echo " ";
-                echo twig_get_attribute($this->env, $this->source, $context["cat"], "image", array());
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["a"], "image", array()), "html", null, true);
                 echo " ";
             } else {
                 echo " /img/noimage.jpg ";
@@ -76,15 +76,15 @@ class __TwigTemplate_b7bd53135cead116b671423229640d049e9805261f70e7290ed9945d66c
 \t\t\t\t\t<div class=\"pure-u-1 pure-u-sm-3-5 pure-u-md-4-5\">
 \t\t\t\t\t\t<strong><a href=\"/";
             // line 19
-            echo twig_get_attribute($this->env, $this->source, $context["cat"], "id", array());
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["a"], "id", array()), "html", null, true);
             echo "/";
-            echo twig_replace_filter(twig_trim_filter(twig_get_attribute($this->env, $this->source, $context["cat"], "name", array())), array(" " => "-", "." => ""));
+            echo twig_escape_filter($this->env, twig_replace_filter(twig_trim_filter(twig_get_attribute($this->env, $this->source, $context["a"], "name", array())), array(" " => "-", "." => "", "/" => "")), "html", null, true);
             echo "\">";
-            echo twig_get_attribute($this->env, $this->source, $context["cat"], "name", array());
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["a"], "name", array()), "html", null, true);
             echo "</a></strong>
 \t\t\t\t\t\t<p>";
             // line 20
-            echo (((twig_length_filter($this->env, twig_get_attribute($this->env, $this->source, $context["cat"], "description", array())) > 300)) ? ((twig_slice($this->env, twig_get_attribute($this->env, $this->source, $context["cat"], "description", array()), 0, 300) . "...")) : (twig_get_attribute($this->env, $this->source, $context["cat"], "description", array())));
+            echo twig_escape_filter($this->env, (((twig_length_filter($this->env, twig_get_attribute($this->env, $this->source, $context["a"], "description", array())) > 300)) ? ((twig_slice($this->env, twig_get_attribute($this->env, $this->source, $context["a"], "description", array()), 0, 300) . "...")) : (twig_get_attribute($this->env, $this->source, $context["a"], "description", array()))), "html", null, true);
             echo "</p>
 \t\t\t\t\t</div>
 \t\t\t\t</div>
@@ -95,7 +95,7 @@ class __TwigTemplate_b7bd53135cead116b671423229640d049e9805261f70e7290ed9945d66c
 ";
         }
         $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['cat'], $context['_parent'], $context['loop']);
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['a'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
         // line 28
         echo "
@@ -110,9 +110,9 @@ class __TwigTemplate_b7bd53135cead116b671423229640d049e9805261f70e7290ed9945d66c
             $context["next_page"] = (($context["curr_page"] ?? null) + 1);
             // line 33
             echo "\t\t<a href=\"/category/";
-            echo ($context["cat_id"] ?? null);
+            echo twig_escape_filter($this->env, ($context["cat_id"] ?? null), "html", null, true);
             echo "/";
-            echo ($context["next_page"] ?? null);
+            echo twig_escape_filter($this->env, ($context["next_page"] ?? null), "html", null, true);
             echo "\">Next</a>
 \t</div>
 </div>

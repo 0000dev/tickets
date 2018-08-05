@@ -120,7 +120,9 @@ class __TwigTemplate_c5f835dc4e0001f05e88bef3525ac759c5dae13aa2f98534d5c1fd46843
 \t</div>
 \t<div class=\"pure-u-1 pure-u-sm-2-5\">
 \t\t<center>
-\t\t\t<p><img src=\"/img/badge-ad.jpg\"></p>
+\t\t\t<p>";
+        // line 35
+        echo "</p>
 \t\t</center>
 \t</div>
 </div>
@@ -134,7 +136,7 @@ class __TwigTemplate_c5f835dc4e0001f05e88bef3525ac759c5dae13aa2f98534d5c1fd46843
 \t\t\t<p>
 \t\t\t\t";
             // line 86
-            echo twig_get_attribute($this->env, $this->source, ($context["artist"] ?? null), "description", array());
+            echo twig_replace_filter(twig_get_attribute($this->env, $this->source, ($context["artist"] ?? null), "description", array()), array("&#39;" => "'"));
             echo "
 \t\t\t</p>
 \t\t</div>
@@ -386,7 +388,7 @@ class __TwigTemplate_c5f835dc4e0001f05e88bef3525ac759c5dae13aa2f98534d5c1fd46843
                         echo "\t\t\t\t\t<a href=\"/";
                         echo (($__internal_b0b3d6199cdf4d15a08b3fb98fe017ecb01164300193d18d78027218d843fc57 = $context["neighbor"]) && is_array($__internal_b0b3d6199cdf4d15a08b3fb98fe017ecb01164300193d18d78027218d843fc57) || $__internal_b0b3d6199cdf4d15a08b3fb98fe017ecb01164300193d18d78027218d843fc57 instanceof ArrayAccess ? ($__internal_b0b3d6199cdf4d15a08b3fb98fe017ecb01164300193d18d78027218d843fc57["id"] ?? null) : null);
                         echo "/";
-                        echo twig_replace_filter(twig_trim_filter((($__internal_81ccf322d0988ca0aa9ae9943d772c435c5ff01fb50b956278e245e40ae66ab9 = $context["neighbor"]) && is_array($__internal_81ccf322d0988ca0aa9ae9943d772c435c5ff01fb50b956278e245e40ae66ab9) || $__internal_81ccf322d0988ca0aa9ae9943d772c435c5ff01fb50b956278e245e40ae66ab9 instanceof ArrayAccess ? ($__internal_81ccf322d0988ca0aa9ae9943d772c435c5ff01fb50b956278e245e40ae66ab9["name"] ?? null) : null)), array(" " => "-", "." => ""));
+                        echo twig_replace_filter(twig_trim_filter((($__internal_81ccf322d0988ca0aa9ae9943d772c435c5ff01fb50b956278e245e40ae66ab9 = $context["neighbor"]) && is_array($__internal_81ccf322d0988ca0aa9ae9943d772c435c5ff01fb50b956278e245e40ae66ab9) || $__internal_81ccf322d0988ca0aa9ae9943d772c435c5ff01fb50b956278e245e40ae66ab9 instanceof ArrayAccess ? ($__internal_81ccf322d0988ca0aa9ae9943d772c435c5ff01fb50b956278e245e40ae66ab9["name"] ?? null) : null)), array(" " => "-", "." => "", "/" => ""));
                         echo "\">";
                         echo (($__internal_add9db1f328aaed12ef1a33890510da978cc9cf3e50f6769d368473a9c90c217 = $context["neighbor"]) && is_array($__internal_add9db1f328aaed12ef1a33890510da978cc9cf3e50f6769d368473a9c90c217) || $__internal_add9db1f328aaed12ef1a33890510da978cc9cf3e50f6769d368473a9c90c217 instanceof ArrayAccess ? ($__internal_add9db1f328aaed12ef1a33890510da978cc9cf3e50f6769d368473a9c90c217["name"] ?? null) : null);
                         echo "</a> ";
@@ -475,7 +477,7 @@ class __TwigTemplate_c5f835dc4e0001f05e88bef3525ac759c5dae13aa2f98534d5c1fd46843
                     // line 206
                     echo (($__internal_921de08f973aabd87ecb31654784e2efda7404f12bd27e8e56991608c76e7779 = $context["neighbor"]) && is_array($__internal_921de08f973aabd87ecb31654784e2efda7404f12bd27e8e56991608c76e7779) || $__internal_921de08f973aabd87ecb31654784e2efda7404f12bd27e8e56991608c76e7779 instanceof ArrayAccess ? ($__internal_921de08f973aabd87ecb31654784e2efda7404f12bd27e8e56991608c76e7779["id"] ?? null) : null);
                     echo "/";
-                    echo twig_replace_filter(twig_trim_filter((($__internal_3e040fa9f9bcf48a8b054d0953f4fffdaf331dc44bc1d96f1bb45abb085e61d1 = $context["neighbor"]) && is_array($__internal_3e040fa9f9bcf48a8b054d0953f4fffdaf331dc44bc1d96f1bb45abb085e61d1) || $__internal_3e040fa9f9bcf48a8b054d0953f4fffdaf331dc44bc1d96f1bb45abb085e61d1 instanceof ArrayAccess ? ($__internal_3e040fa9f9bcf48a8b054d0953f4fffdaf331dc44bc1d96f1bb45abb085e61d1["name"] ?? null) : null)), array(" " => "-", "." => ""));
+                    echo twig_replace_filter(twig_trim_filter((($__internal_3e040fa9f9bcf48a8b054d0953f4fffdaf331dc44bc1d96f1bb45abb085e61d1 = $context["neighbor"]) && is_array($__internal_3e040fa9f9bcf48a8b054d0953f4fffdaf331dc44bc1d96f1bb45abb085e61d1) || $__internal_3e040fa9f9bcf48a8b054d0953f4fffdaf331dc44bc1d96f1bb45abb085e61d1 instanceof ArrayAccess ? ($__internal_3e040fa9f9bcf48a8b054d0953f4fffdaf331dc44bc1d96f1bb45abb085e61d1["name"] ?? null) : null)), array(" " => "-", "." => "", "/" => ""));
                     echo "\">";
                     echo (($__internal_bd1cf16c37e30917ff4f54b7320429bcc2bb63615cd8a735bfe06a3f1b5c82a0 = $context["neighbor"]) && is_array($__internal_bd1cf16c37e30917ff4f54b7320429bcc2bb63615cd8a735bfe06a3f1b5c82a0) || $__internal_bd1cf16c37e30917ff4f54b7320429bcc2bb63615cd8a735bfe06a3f1b5c82a0 instanceof ArrayAccess ? ($__internal_bd1cf16c37e30917ff4f54b7320429bcc2bb63615cd8a735bfe06a3f1b5c82a0["name"] ?? null) : null);
                     echo "</a> ";
@@ -542,21 +544,21 @@ class __TwigTemplate_c5f835dc4e0001f05e88bef3525ac759c5dae13aa2f98534d5c1fd46843
 \t<div class=\"pure-g comments\">
 
 \t\t<div class=\"pure-u-1-4\">
-\t\t\t\t<a href=\"/";
+\t\t\t\t<img src=\"";
                 // line 236
-                echo twig_get_attribute($this->env, $this->source, $context["comment"], "artists_id", array());
-                echo "/";
-                echo twig_replace_filter(twig_trim_filter(twig_get_attribute($this->env, $this->source, $context["comment"], "artists_name", array())), array(" " => "-"));
-                echo "\"><img src=\"";
                 echo twig_get_attribute($this->env, $this->source, $context["comment"], "artists_image", array());
-                echo "\" width=\"90%\" /></a>
+                echo "\" width=\"90%\" />
 \t\t</div>
 
 \t\t<div class=\"pure-u-3-4\">
-\t\t\t<div>";
+\t\t\t<div><a href=\"/";
                 // line 240
+                echo twig_get_attribute($this->env, $this->source, $context["comment"], "artists_id", array());
+                echo "/";
+                echo twig_replace_filter(twig_trim_filter(twig_get_attribute($this->env, $this->source, $context["comment"], "artists_name", array())), array(" " => "-", "." => "", "/" => ""));
+                echo "\">";
                 echo twig_get_attribute($this->env, $this->source, $context["comment"], "artists_name", array());
-                echo "</div>
+                echo "</a></div>
 \t\t\t<div  class=\"stars\">
 \t\t\t\t";
                 // line 242
@@ -706,7 +708,7 @@ class __TwigTemplate_c5f835dc4e0001f05e88bef3525ac759c5dae13aa2f98534d5c1fd46843
 
     public function getDebugInfo()
     {
-        return array (  679 => 316,  630 => 270,  621 => 263,  617 => 261,  606 => 256,  601 => 254,  596 => 252,  592 => 250,  589 => 249,  582 => 247,  577 => 246,  574 => 245,  567 => 243,  563 => 242,  558 => 240,  547 => 236,  541 => 232,  537 => 231,  527 => 224,  520 => 219,  518 => 218,  514 => 216,  510 => 213,  506 => 211,  490 => 208,  486 => 207,  476 => 206,  473 => 205,  471 => 204,  468 => 203,  465 => 202,  462 => 201,  459 => 200,  456 => 199,  454 => 198,  451 => 197,  434 => 196,  431 => 195,  429 => 194,  426 => 193,  422 => 191,  415 => 189,  411 => 187,  397 => 186,  386 => 185,  369 => 184,  366 => 183,  364 => 182,  357 => 178,  352 => 176,  347 => 174,  343 => 172,  340 => 171,  333 => 169,  328 => 168,  325 => 167,  318 => 165,  314 => 164,  308 => 160,  304 => 159,  295 => 152,  293 => 151,  289 => 149,  282 => 144,  268 => 143,  259 => 134,  256 => 133,  239 => 132,  232 => 130,  223 => 124,  219 => 122,  217 => 121,  214 => 120,  211 => 118,  209 => 117,  206 => 116,  200 => 112,  185 => 107,  181 => 106,  175 => 105,  171 => 104,  168 => 103,  164 => 102,  154 => 95,  150 => 93,  148 => 92,  145 => 91,  137 => 86,  132 => 83,  130 => 82,  108 => 27,  94 => 15,  80 => 14,  71 => 13,  54 => 12,  48 => 9,  43 => 6,  40 => 5,  33 => 3,  15 => 1,);
+        return array (  681 => 316,  632 => 270,  623 => 263,  619 => 261,  608 => 256,  603 => 254,  598 => 252,  594 => 250,  591 => 249,  584 => 247,  579 => 246,  576 => 245,  569 => 243,  565 => 242,  556 => 240,  549 => 236,  543 => 232,  539 => 231,  529 => 224,  522 => 219,  520 => 218,  516 => 216,  512 => 213,  508 => 211,  492 => 208,  488 => 207,  478 => 206,  475 => 205,  473 => 204,  470 => 203,  467 => 202,  464 => 201,  461 => 200,  458 => 199,  456 => 198,  453 => 197,  436 => 196,  433 => 195,  431 => 194,  428 => 193,  424 => 191,  417 => 189,  413 => 187,  399 => 186,  388 => 185,  371 => 184,  368 => 183,  366 => 182,  359 => 178,  354 => 176,  349 => 174,  345 => 172,  342 => 171,  335 => 169,  330 => 168,  327 => 167,  320 => 165,  316 => 164,  310 => 160,  306 => 159,  297 => 152,  295 => 151,  291 => 149,  284 => 144,  270 => 143,  261 => 134,  258 => 133,  241 => 132,  234 => 130,  225 => 124,  221 => 122,  219 => 121,  216 => 120,  213 => 118,  211 => 117,  208 => 116,  202 => 112,  187 => 107,  183 => 106,  177 => 105,  173 => 104,  170 => 103,  166 => 102,  156 => 95,  152 => 93,  150 => 92,  147 => 91,  139 => 86,  134 => 83,  132 => 82,  125 => 35,  108 => 27,  94 => 15,  80 => 14,  71 => 13,  54 => 12,  48 => 9,  43 => 6,  40 => 5,  33 => 3,  15 => 1,);
     }
 
     public function getSourceContext()

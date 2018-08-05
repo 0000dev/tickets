@@ -14,10 +14,10 @@
 				<div class="pure-u-1 setborder margintop15 padding10">
 					<div class="pure-g">
 						<div class="pure-u-1 pure-u-sm-2-5 pure-u-md-1-5">
-							<a href="/{{s.id}}/{{s.name|trim|replace({" ":"-", ".":""})}}"><img class="vertical-align" src="{% if s.image|length > 0 %} {{s.image}} {% else %} /img/noimage.jpg {% endif %}" width="95%" /></a>
+							<a href="/{{s.id}}/{{s.name|trim|replace({" ":"-", ".":"", "/":""})}}"><img class="vertical-align" src="{% if s.image|length > 0 %} {{s.image}} {% else %} /img/noimage.jpg {% endif %}" width="95%" /></a>
 						</div>
 						<div class="pure-u-1 pure-u-sm-3-5 pure-u-md-4-5">
-							<strong><a href="/{{s.id}}/{{s.name|trim|replace({" ":"-", ".":""})}}">{{s.name}}</a></strong>
+							<strong><a href="/{{s.id}}/{{s.name|trim|replace({" ":"-", ".":"", "/":""})}}">{{s.name}}</a></strong>
 							<p>{{ s.description|length > 300 ? s.description|slice(0, 300) ~ '...' : s.description }}</p>
 						</div>
 					</div>

@@ -32,7 +32,7 @@ class __TwigTemplate_f2afd59d2e2ee6ee9c7780d56f4d552421c1c1ee1dc685691e096c5effe
     // line 3
     public function block_title($context, array $blocks = array())
     {
-        echo twig_capitalize_string_filter($this->env, ($context["title"] ?? null));
+        echo twig_escape_filter($this->env, twig_capitalize_string_filter($this->env, ($context["title"] ?? null)), "html", null, true);
         echo " Page ";
     }
 
@@ -45,7 +45,7 @@ class __TwigTemplate_f2afd59d2e2ee6ee9c7780d56f4d552421c1c1ee1dc685691e096c5effe
 \t<div class=\"pure-u-1 setborder margintop15 padding10\">
 \t\t";
         // line 9
-        echo ($context["content"] ?? null);
+        echo twig_escape_filter($this->env, ($context["content"] ?? null), "html", null, true);
         echo "
 \t</div>
 </div>
