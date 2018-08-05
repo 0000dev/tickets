@@ -45,7 +45,7 @@ class __TwigTemplate_1c51194f7ad0ee637e9561069da429f4ba3bd85bbb63cbf33e34bf41420
 
         ";
         // line 30
-        echo twig_escape_filter($this->env, ($context["defaultStrategy"] ?? null), "html", null, true);
+        echo ($context["defaultStrategy"] ?? null);
         echo "
 
         <div class=\"content\">
