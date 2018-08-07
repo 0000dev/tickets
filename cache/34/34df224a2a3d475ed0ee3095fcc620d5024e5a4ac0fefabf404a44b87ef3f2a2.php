@@ -56,7 +56,7 @@ class __TwigTemplate_1c51194f7ad0ee637e9561069da429f4ba3bd85bbb63cbf33e34bf41420
                     <div class=\"pure-menu\">
 
                         <a href=\"/\" class=\"pure-menu-heading custom-brand\">
-                            <img class=\"logo\" src=\"/img/logo.png\"/>
+                            <img class=\"logo\" src=\"/img/logo2.png\"/>
                             FansVoice
                         </a>
                         <a href=\"#\" class=\"custom-toggle\" id=\"toggle\"><s class=\"bar\"></s><s class=\"bar\"></s></a>
