@@ -54,7 +54,11 @@ class __TwigTemplate_1c51194f7ad0ee637e9561069da429f4ba3bd85bbb63cbf33e34bf41420
             <div class=\"custom-wrapper pure-g\" id=\"menu\">
                 <div class=\"pure-u-1 pure-u-md-1-5\">
                     <div class=\"pure-menu\">
-                        <a href=\"/\" class=\"pure-menu-heading custom-brand\">FansVoice</a>
+
+                        <a href=\"/\" class=\"pure-menu-heading custom-brand\">
+                            <img class=\"logo\" src=\"/img/logo.png\"/>
+                            FansVoice
+                        </a>
                         <a href=\"#\" class=\"custom-toggle\" id=\"toggle\"><s class=\"bar\"></s><s class=\"bar\"></s></a>
                     </div>
                 </div>
@@ -80,9 +84,9 @@ class __TwigTemplate_1c51194f7ad0ee637e9561069da429f4ba3bd85bbb63cbf33e34bf41420
             </div>
        
         ";
-        // line 63
+        // line 67
         $this->displayBlock('body', $context, $blocks);
-        // line 64
+        // line 68
         echo "
         </div>
 
@@ -104,9 +108,9 @@ class __TwigTemplate_1c51194f7ad0ee637e9561069da429f4ba3bd85bbb63cbf33e34bf41420
         </div>
 
         ";
-        // line 84
+        // line 88
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 87
+        // line 91
         echo "    
     </body>
 </html>
@@ -141,15 +145,15 @@ class __TwigTemplate_1c51194f7ad0ee637e9561069da429f4ba3bd85bbb63cbf33e34bf41420
         ";
     }
 
-    // line 63
+    // line 67
     public function block_body($context, array $blocks = array())
     {
     }
 
-    // line 84
+    // line 88
     public function block_javascripts($context, array $blocks = array())
     {
-        // line 85
+        // line 89
         echo "
         ";
     }
@@ -166,7 +170,7 @@ class __TwigTemplate_1c51194f7ad0ee637e9561069da429f4ba3bd85bbb63cbf33e34bf41420
 
     public function getDebugInfo()
     {
-        return array (  153 => 85,  150 => 84,  145 => 63,  126 => 10,  123 => 9,  117 => 5,  110 => 87,  108 => 84,  86 => 64,  84 => 63,  48 => 30,  42 => 26,  40 => 9,  33 => 5,  27 => 1,);
+        return array (  157 => 89,  154 => 88,  149 => 67,  130 => 10,  127 => 9,  121 => 5,  114 => 91,  112 => 88,  90 => 68,  88 => 67,  48 => 30,  42 => 26,  40 => 9,  33 => 5,  27 => 1,);
     }
 
     public function getSourceContext()

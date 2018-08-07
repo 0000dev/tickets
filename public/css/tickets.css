@@ -21,6 +21,14 @@ h1, h2, h3 {
   height:100px;
 }
 
+.logo{
+  height: 35px;
+  float: left;
+  padding-top: -29px;
+  margin: -6px;
+  padding-right: 12px;
+}
+
 .comments {
   border:1px solid lightgrey;
   padding: 20px;
