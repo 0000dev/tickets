@@ -197,7 +197,7 @@ class __TwigTemplate_75e387d02b257108763bf940b2b4937393255c4450a3bbae9d128e90f62
                 echo twig_get_attribute($this->env, $this->source, $context["s"], "name", array());
                 echo "\" class=\"vertical-align\" src=\"";
                 echo twig_get_attribute($this->env, $this->source, $context["s"], "image", array());
-                echo "\" width=\"100%\">
+                echo "\">
 \t\t\t\t\t\t</div>
 \t\t\t\t\t\t<div class=\"pure-u-3-5\">
 \t\t\t\t\t\t\t<div class=\"venuescheduledetails\">
@@ -231,7 +231,7 @@ class __TwigTemplate_75e387d02b257108763bf940b2b4937393255c4450a3bbae9d128e90f62
 \t\t\t\t\t\t\t\t<a href=\"http://href.li/?";
                 // line 87
                 echo twig_get_attribute($this->env, $this->source, $context["s"], "url", array());
-                echo "\"><img alt=\"tmbutton\" width=\"100px\" src=\"/img/tmlogo_grey.png\"></a>
+                echo "\"><img alt=\"tmbutton\" width=\"100\" src=\"/img/tmlogo_grey.png\"></a>
 \t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t</div>
 \t\t\t\t\t</div>
