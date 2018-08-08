@@ -58,8 +58,10 @@ class __TwigTemplate_75e387d02b257108763bf940b2b4937393255c4450a3bbae9d128e90f62
 \t\t\t<p>
 \t\t\t\t<div class=\"venueimage\">
 \t\t\t\t 
-\t\t\t\t<img src=\"";
+\t\t\t\t<img alt=\"";
         // line 21
+        echo twig_get_attribute($this->env, $this->source, ($context["venue"] ?? null), "name", array());
+        echo "\" src=\"";
         if ((twig_length_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["venue"] ?? null), "image_small", array())) > 0)) {
             echo " ";
             echo twig_get_attribute($this->env, $this->source, ($context["venue"] ?? null), "image_small", array());
@@ -81,7 +83,7 @@ class __TwigTemplate_75e387d02b257108763bf940b2b4937393255c4450a3bbae9d128e90f62
 \t</div>
 \t<div class=\"pure-u-1 pure-u-sm-2-5\">
 \t\t<center>
-\t\t\t<p><img src=\"/img/badge-ad.jpg\"></p>
+\t\t\t<p><img alt=\"ad\" src=\"/img/badge-ad.jpg\"></p>
 \t\t</center>
 \t</div>
 </div>
@@ -190,8 +192,10 @@ class __TwigTemplate_75e387d02b257108763bf940b2b4937393255c4450a3bbae9d128e90f62
 \t\t\t\t<div class=\"pure-g \">
 \t\t\t\t\t<div class=\"venueschedulecontainer\">
 \t\t\t\t\t\t<div class=\"pure-u-2-5 venueouter\">
-\t\t\t\t\t\t\t<img class=\"vertical-align\" src=\"";
+\t\t\t\t\t\t\t<img alt=\"";
                 // line 78
+                echo twig_get_attribute($this->env, $this->source, $context["s"], "name", array());
+                echo "\" class=\"vertical-align\" src=\"";
                 echo twig_get_attribute($this->env, $this->source, $context["s"], "image", array());
                 echo "\" width=\"100%\">
 \t\t\t\t\t\t</div>
@@ -227,7 +231,7 @@ class __TwigTemplate_75e387d02b257108763bf940b2b4937393255c4450a3bbae9d128e90f62
 \t\t\t\t\t\t\t\t<a href=\"http://href.li/?";
                 // line 87
                 echo twig_get_attribute($this->env, $this->source, $context["s"], "url", array());
-                echo "\"><img width=\"100px\" src=\"/img/tmlogo_grey.png\"></a>
+                echo "\"><img alt=\"tmbutton\" width=\"100px\" src=\"/img/tmlogo_grey.png\"></a>
 \t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t</div>
 \t\t\t\t\t</div>
@@ -330,7 +334,7 @@ class __TwigTemplate_75e387d02b257108763bf940b2b4937393255c4450a3bbae9d128e90f62
 
     public function getDebugInfo()
     {
-        return array (  315 => 108,  311 => 106,  297 => 105,  286 => 104,  269 => 103,  266 => 102,  264 => 101,  259 => 98,  244 => 96,  240 => 94,  238 => 93,  229 => 87,  214 => 86,  210 => 84,  206 => 83,  202 => 82,  195 => 78,  189 => 74,  185 => 72,  182 => 71,  164 => 70,  162 => 69,  156 => 66,  152 => 64,  150 => 63,  147 => 62,  140 => 57,  134 => 55,  132 => 54,  129 => 53,  123 => 51,  121 => 50,  118 => 49,  112 => 47,  110 => 46,  107 => 45,  101 => 43,  99 => 42,  93 => 38,  91 => 37,  75 => 24,  63 => 21,  48 => 9,  43 => 6,  40 => 5,  33 => 3,  15 => 1,);
+        return array (  319 => 108,  315 => 106,  301 => 105,  290 => 104,  273 => 103,  270 => 102,  268 => 101,  263 => 98,  248 => 96,  244 => 94,  242 => 93,  233 => 87,  218 => 86,  214 => 84,  210 => 83,  206 => 82,  197 => 78,  191 => 74,  187 => 72,  184 => 71,  166 => 70,  164 => 69,  158 => 66,  154 => 64,  152 => 63,  149 => 62,  142 => 57,  136 => 55,  134 => 54,  131 => 53,  125 => 51,  123 => 50,  120 => 49,  114 => 47,  112 => 46,  109 => 45,  103 => 43,  101 => 42,  95 => 38,  93 => 37,  77 => 24,  63 => 21,  48 => 9,  43 => 6,  40 => 5,  33 => 3,  15 => 1,);
     }
 
     public function getSourceContext()
