@@ -139,8 +139,8 @@ class __TwigTemplate_1c51194f7ad0ee637e9561069da429f4ba3bd85bbb63cbf33e34bf41420
             <link rel=\"stylesheet\" type=\"text/css\" href=\"/css/tabs.css\">
             <link rel=\"stylesheet\" href=\"/css/fontawesome-all.min.css\">
 
-            <script type=\"text/javascript\" src=\"//code.jquery.com/jquery-1.11.0.min.js\"></script>
-            <script type=\"text/javascript\" src=\"/js/jquery.nicescroll.js\"></script>
+            <script src=\"//code.jquery.com/jquery-1.11.0.min.js\"></script>
+            <script src=\"/js/jquery.nicescroll.js\"></script>
 
         ";
     }

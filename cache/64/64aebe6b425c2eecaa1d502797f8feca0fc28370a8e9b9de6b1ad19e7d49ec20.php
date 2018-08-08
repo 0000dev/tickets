@@ -73,7 +73,7 @@ class __TwigTemplate_688ff1a4c9f7255cc5795438390eb029a0789799cd56ef05ff42121ef37
             echo twig_get_attribute($this->env, $this->source, $context["comment"], "artists_name", array());
             echo " Image\" src=\"";
             echo twig_get_attribute($this->env, $this->source, $context["comment"], "artists_image", array());
-            echo "\" width=\"90%\" />
+            echo "\" class=\"homepageimage\" />
 \t\t\t</div>
 \t\t\t<div class=\"pure-u-3-4\">
 \t\t\t\t<div class=\"commentsheader\"><a href=\"/";
@@ -199,7 +199,9 @@ class __TwigTemplate_688ff1a4c9f7255cc5795438390eb029a0789799cd56ef05ff42121ef37
             echo twig_get_attribute($this->env, $this->source, $context["a"], "id", array());
             echo "/";
             echo twig_replace_filter(twig_trim_filter(twig_get_attribute($this->env, $this->source, $context["a"], "name", array())), array(" " => "-", "." => "", "/" => "", "+" => ""));
-            echo "\"><img src=\"";
+            echo "\"><img alt=\"";
+            echo twig_get_attribute($this->env, $this->source, $context["a"], "name", array());
+            echo "\" src=\"";
             echo twig_get_attribute($this->env, $this->source, $context["a"], "image", array());
             echo "\" title=\"";
             echo twig_get_attribute($this->env, $this->source, $context["a"], "name", array());
@@ -331,7 +333,7 @@ class __TwigTemplate_688ff1a4c9f7255cc5795438390eb029a0789799cd56ef05ff42121ef37
 \t</div>
 </div>
 
-<script type=\"text/javascript\">
+<script>
     \$(document).ready(function(){
 \t  \$('.slickslider').slick({
 \t\tslidesToShow: 1,
@@ -395,7 +397,7 @@ class __TwigTemplate_688ff1a4c9f7255cc5795438390eb029a0789799cd56ef05ff42121ef37
 
     public function getDebugInfo()
     {
-        return array (  366 => 10,  363 => 9,  357 => 5,  311 => 158,  296 => 156,  291 => 153,  289 => 152,  280 => 150,  277 => 149,  272 => 146,  269 => 145,  251 => 144,  249 => 143,  213 => 109,  198 => 107,  194 => 106,  178 => 92,  161 => 90,  157 => 89,  147 => 81,  136 => 76,  131 => 74,  123 => 69,  119 => 67,  116 => 66,  109 => 64,  104 => 63,  101 => 62,  94 => 60,  90 => 59,  81 => 57,  73 => 54,  65 => 48,  61 => 47,  40 => 28,  38 => 9,  31 => 5,  25 => 1,);
+        return array (  368 => 10,  365 => 9,  359 => 5,  313 => 158,  298 => 156,  293 => 153,  291 => 152,  282 => 150,  279 => 149,  274 => 146,  271 => 145,  253 => 144,  251 => 143,  215 => 109,  198 => 107,  194 => 106,  178 => 92,  161 => 90,  157 => 89,  147 => 81,  136 => 76,  131 => 74,  123 => 69,  119 => 67,  116 => 66,  109 => 64,  104 => 63,  101 => 62,  94 => 60,  90 => 59,  81 => 57,  73 => 54,  65 => 48,  61 => 47,  40 => 28,  38 => 9,  31 => 5,  25 => 1,);
     }
 
     public function getSourceContext()

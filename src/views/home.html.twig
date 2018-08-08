@@ -104,7 +104,7 @@
 				<p class="photos">
 
 			    {% for a in venues %}
-			    	<a href="/venue/{{a.id}}/{{a.name|trim|replace({" ":"-", ".":"", "/":"","+":""})}}"><img src="{{a.image}}" title="{{a.name}}" /></a>
+			    	<a href="/venue/{{a.id}}/{{a.name|trim|replace({" ":"-", ".":"", "/":"","+":""})}}"><img alt="{{a.name}}" src="{{a.image}}" title="{{a.name}}" /></a>
 			    {% endfor %}
 			      
 				</p>
@@ -178,7 +178,7 @@
 	</div>
 </div>
 
-<script type="text/javascript">
+<script>
     $(document).ready(function(){
 	  $('.slickslider').slick({
 		slidesToShow: 1,
