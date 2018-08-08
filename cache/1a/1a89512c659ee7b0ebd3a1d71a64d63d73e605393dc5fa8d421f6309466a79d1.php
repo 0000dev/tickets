@@ -103,11 +103,13 @@ class __TwigTemplate_c5f835dc4e0001f05e88bef3525ac759c5dae13aa2f98534d5c1fd46843
         echo "
 \t<div class=\"pure-u-1\">
 \t\t<center>
-\t\t\t<p>
+\t\t\t<p></p>
 \t\t\t<div class=\"artistimage\">
 \t\t\t\t
-\t\t\t\t\t<img class=\"vertical-align\" src=\"";
+\t\t\t\t\t<img alt=\"";
         // line 44
+        echo twig_get_attribute($this->env, $this->source, ($context["artist"] ?? null), "name", array());
+        echo "\" class=\"vertical-align\" src=\"";
         if ((twig_length_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["artist"] ?? null), "image", array())) > 0)) {
             echo " ";
             echo twig_get_attribute($this->env, $this->source, ($context["artist"] ?? null), "image", array());
@@ -118,7 +120,7 @@ class __TwigTemplate_c5f835dc4e0001f05e88bef3525ac759c5dae13aa2f98534d5c1fd46843
         echo "\"/>
 \t\t \t\t
 \t\t\t</div>
-\t\t\t</p>
+\t\t\t<p></p>
 \t\t</center>
 \t</div>
 </div>
@@ -236,6 +238,19 @@ class __TwigTemplate_c5f835dc4e0001f05e88bef3525ac759c5dae13aa2f98534d5c1fd46843
             // line 144
             $context['_parent'] = $context;
             $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, ($context["artist"] ?? null), "images", array()));
+            $context['loop'] = array(
+              'parent' => $context['_parent'],
+              'index0' => 0,
+              'index'  => 1,
+              'first'  => true,
+            );
+            if (is_array($context['_seq']) || (is_object($context['_seq']) && $context['_seq'] instanceof Countable)) {
+                $length = count($context['_seq']);
+                $context['loop']['revindex0'] = $length - 1;
+                $context['loop']['revindex'] = $length;
+                $context['loop']['length'] = $length;
+                $context['loop']['last'] = 1 === $length;
+            }
             foreach ($context['_seq'] as $context["_key"] => $context["image"]) {
                 // line 145
                 echo "
@@ -245,11 +260,21 @@ class __TwigTemplate_c5f835dc4e0001f05e88bef3525ac759c5dae13aa2f98534d5c1fd46843
 \t\t\t      \t\t";
                 // line 155
                 echo "
-\t\t\t      \t\t<img class=\"thumbnail\" src=\"https://photos-eu.bazaarvoice.com/photo/2/cGhvdG86dGlja2V0bWFzdGVy/";
+\t\t\t      \t\t<img class=\"thumbnail\" alt=\"picture # ";
                 // line 156
+                echo twig_get_attribute($this->env, $this->source, $context["loop"], "index", array());
+                echo "\" src=\"https://photos-eu.bazaarvoice.com/photo/2/cGhvdG86dGlja2V0bWFzdGVy/";
                 echo $context["image"];
                 echo "\">
 \t\t\t      \t";
+                ++$context['loop']['index0'];
+                ++$context['loop']['index'];
+                $context['loop']['first'] = false;
+                if (isset($context['loop']['length'])) {
+                    --$context['loop']['revindex0'];
+                    --$context['loop']['revindex'];
+                    $context['loop']['last'] = 0 === $context['loop']['revindex0'];
+                }
             }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['image'], $context['_parent'], $context['loop']);
@@ -682,7 +707,7 @@ class __TwigTemplate_c5f835dc4e0001f05e88bef3525ac759c5dae13aa2f98534d5c1fd46843
 
     public function getDebugInfo()
     {
-        return array (  655 => 330,  606 => 284,  597 => 277,  593 => 275,  582 => 270,  577 => 268,  572 => 266,  568 => 264,  565 => 263,  558 => 261,  553 => 260,  550 => 259,  543 => 257,  539 => 256,  530 => 254,  523 => 250,  517 => 246,  513 => 245,  503 => 238,  496 => 233,  494 => 232,  490 => 230,  486 => 227,  482 => 225,  466 => 222,  462 => 221,  452 => 220,  449 => 219,  447 => 218,  444 => 217,  441 => 216,  438 => 215,  435 => 214,  432 => 213,  430 => 212,  427 => 211,  410 => 210,  407 => 209,  405 => 208,  402 => 207,  398 => 205,  391 => 203,  387 => 201,  373 => 200,  362 => 199,  345 => 198,  342 => 197,  340 => 196,  333 => 192,  328 => 190,  323 => 188,  319 => 186,  316 => 185,  309 => 183,  304 => 182,  301 => 181,  294 => 179,  290 => 178,  284 => 174,  280 => 173,  271 => 166,  269 => 165,  265 => 163,  258 => 158,  250 => 156,  247 => 155,  244 => 147,  241 => 145,  237 => 144,  230 => 142,  221 => 136,  217 => 134,  215 => 133,  212 => 132,  209 => 130,  207 => 129,  204 => 128,  198 => 124,  183 => 119,  179 => 118,  173 => 117,  169 => 116,  166 => 115,  162 => 114,  152 => 107,  148 => 105,  146 => 104,  143 => 103,  135 => 98,  130 => 95,  128 => 94,  111 => 44,  103 => 38,  94 => 15,  80 => 14,  71 => 13,  54 => 12,  48 => 9,  43 => 6,  40 => 5,  33 => 3,  15 => 1,);
+        return array (  680 => 330,  631 => 284,  622 => 277,  618 => 275,  607 => 270,  602 => 268,  597 => 266,  593 => 264,  590 => 263,  583 => 261,  578 => 260,  575 => 259,  568 => 257,  564 => 256,  555 => 254,  548 => 250,  542 => 246,  538 => 245,  528 => 238,  521 => 233,  519 => 232,  515 => 230,  511 => 227,  507 => 225,  491 => 222,  487 => 221,  477 => 220,  474 => 219,  472 => 218,  469 => 217,  466 => 216,  463 => 215,  460 => 214,  457 => 213,  455 => 212,  452 => 211,  435 => 210,  432 => 209,  430 => 208,  427 => 207,  423 => 205,  416 => 203,  412 => 201,  398 => 200,  387 => 199,  370 => 198,  367 => 197,  365 => 196,  358 => 192,  353 => 190,  348 => 188,  344 => 186,  341 => 185,  334 => 183,  329 => 182,  326 => 181,  319 => 179,  315 => 178,  309 => 174,  305 => 173,  296 => 166,  294 => 165,  290 => 163,  283 => 158,  265 => 156,  262 => 155,  259 => 147,  256 => 145,  239 => 144,  232 => 142,  223 => 136,  219 => 134,  217 => 133,  214 => 132,  211 => 130,  209 => 129,  206 => 128,  200 => 124,  185 => 119,  181 => 118,  175 => 117,  171 => 116,  168 => 115,  164 => 114,  154 => 107,  150 => 105,  148 => 104,  145 => 103,  137 => 98,  132 => 95,  130 => 94,  111 => 44,  103 => 38,  94 => 15,  80 => 14,  71 => 13,  54 => 12,  48 => 9,  43 => 6,  40 => 5,  33 => 3,  15 => 1,);
     }
 
     public function getSourceContext()

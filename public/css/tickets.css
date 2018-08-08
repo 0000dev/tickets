@@ -217,6 +217,7 @@ h1, h2, h3 {
   height:250px;
   width:305px;
   /*background:white;*/
+  margin: auto;
 }
 
 .toppanel .venueimage{
