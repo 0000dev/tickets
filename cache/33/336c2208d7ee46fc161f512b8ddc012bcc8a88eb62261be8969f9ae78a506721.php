@@ -63,7 +63,9 @@ class __TwigTemplate_b7bd53135cead116b671423229640d049e9805261f70e7290ed9945d66c
             echo twig_get_attribute($this->env, $this->source, $context["a"], "id", array());
             echo "/";
             echo twig_replace_filter(twig_trim_filter(twig_get_attribute($this->env, $this->source, $context["a"], "name", array())), array(" " => "-", "." => "", "/" => "", "+" => ""));
-            echo "\"><img class=\"vertical-align\" src=\"";
+            echo "\"><img alt=\"";
+            echo twig_get_attribute($this->env, $this->source, $context["a"], "name", array());
+            echo "\" class=\"vertical-align\" src=\"";
             if ((twig_length_filter($this->env, twig_get_attribute($this->env, $this->source, $context["a"], "image", array())) > 0)) {
                 echo " ";
                 echo twig_get_attribute($this->env, $this->source, $context["a"], "image", array());
@@ -135,7 +137,7 @@ class __TwigTemplate_b7bd53135cead116b671423229640d049e9805261f70e7290ed9945d66c
 
     public function getDebugInfo()
     {
-        return array (  122 => 37,  112 => 33,  110 => 32,  106 => 30,  104 => 29,  101 => 28,  87 => 20,  79 => 19,  63 => 16,  55 => 10,  51 => 9,  46 => 7,  43 => 6,  40 => 5,  33 => 3,  15 => 1,);
+        return array (  124 => 37,  114 => 33,  112 => 32,  108 => 30,  106 => 29,  103 => 28,  89 => 20,  81 => 19,  63 => 16,  55 => 10,  51 => 9,  46 => 7,  43 => 6,  40 => 5,  33 => 3,  15 => 1,);
     }
 
     public function getSourceContext()

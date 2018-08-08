@@ -489,6 +489,9 @@ h1, h2, h3 {
   width: 90%;
 }
 
+.listimage{
+  width: 95%;
+}
 /** LIGHTBOX MARKUP begin **/ 
 
 .lightbox {
