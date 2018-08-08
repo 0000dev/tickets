@@ -68,8 +68,10 @@ class __TwigTemplate_688ff1a4c9f7255cc5795438390eb029a0789799cd56ef05ff42121ef37
 \t\t\t
 
 \t\t\t<div class=\"pure-u-1-4\">
-\t\t\t\t<img src=\"";
+\t\t\t\t<img alt=\"";
             // line 54
+            echo twig_get_attribute($this->env, $this->source, $context["comment"], "artists_name", array());
+            echo " Image\" src=\"";
             echo twig_get_attribute($this->env, $this->source, $context["comment"], "artists_image", array());
             echo "\" width=\"90%\" />
 \t\t\t</div>
@@ -148,7 +150,7 @@ class __TwigTemplate_688ff1a4c9f7255cc5795438390eb029a0789799cd56ef05ff42121ef37
 \t\t<div class=\"pure-u-1\">
 \t 
 \t\t\t<div class=\"home artistphotosblock\">
-\t\t\t\t<p id=\"photos\">
+\t\t\t\t<p class=\"photos\">
 
 \t\t\t    ";
         // line 89
@@ -160,7 +162,9 @@ class __TwigTemplate_688ff1a4c9f7255cc5795438390eb029a0789799cd56ef05ff42121ef37
             echo twig_get_attribute($this->env, $this->source, $context["a"], "id", array());
             echo "/";
             echo twig_replace_filter(twig_trim_filter(twig_get_attribute($this->env, $this->source, $context["a"], "name", array())), array(" " => "-", "." => "", "/" => "", "+" => ""));
-            echo "\"><img src=\"";
+            echo "\"><img alt=\"";
+            echo twig_get_attribute($this->env, $this->source, $context["a"], "name", array());
+            echo "\" src=\"";
             echo twig_get_attribute($this->env, $this->source, $context["a"], "image", array());
             echo "\" title=\"";
             echo twig_get_attribute($this->env, $this->source, $context["a"], "name", array());
@@ -183,7 +187,7 @@ class __TwigTemplate_688ff1a4c9f7255cc5795438390eb029a0789799cd56ef05ff42121ef37
 \t \t\t<h4>Latest Added Venues</h4>
 
 \t\t\t<div class=\"home artistphotosblock\">
-\t\t\t\t<p id=\"photos\">
+\t\t\t\t<p class=\"photos\">
 
 \t\t\t    ";
         // line 106
@@ -327,8 +331,6 @@ class __TwigTemplate_688ff1a4c9f7255cc5795438390eb029a0789799cd56ef05ff42121ef37
 \t</div>
 </div>
 
-</body>
-
 <script type=\"text/javascript\">
     \$(document).ready(function(){
 \t  \$('.slickslider').slick({
@@ -343,8 +345,10 @@ class __TwigTemplate_688ff1a4c9f7255cc5795438390eb029a0789799cd56ef05ff42121ef37
 \t});
 
 \tdocument.getElementById(\"bigheader\").style.height = \"100vh\";
-
 </script>
+
+</body>
+
 </html>
 ";
     }
@@ -391,7 +395,7 @@ class __TwigTemplate_688ff1a4c9f7255cc5795438390eb029a0789799cd56ef05ff42121ef37
 
     public function getDebugInfo()
     {
-        return array (  362 => 10,  359 => 9,  353 => 5,  307 => 158,  292 => 156,  287 => 153,  285 => 152,  276 => 150,  273 => 149,  268 => 146,  265 => 145,  247 => 144,  245 => 143,  209 => 109,  194 => 107,  190 => 106,  174 => 92,  159 => 90,  155 => 89,  145 => 81,  134 => 76,  129 => 74,  121 => 69,  117 => 67,  114 => 66,  107 => 64,  102 => 63,  99 => 62,  92 => 60,  88 => 59,  79 => 57,  73 => 54,  65 => 48,  61 => 47,  40 => 28,  38 => 9,  31 => 5,  25 => 1,);
+        return array (  366 => 10,  363 => 9,  357 => 5,  311 => 158,  296 => 156,  291 => 153,  289 => 152,  280 => 150,  277 => 149,  272 => 146,  269 => 145,  251 => 144,  249 => 143,  213 => 109,  198 => 107,  194 => 106,  178 => 92,  161 => 90,  157 => 89,  147 => 81,  136 => 76,  131 => 74,  123 => 69,  119 => 67,  116 => 66,  109 => 64,  104 => 63,  101 => 62,  94 => 60,  90 => 59,  81 => 57,  73 => 54,  65 => 48,  61 => 47,  40 => 28,  38 => 9,  31 => 5,  25 => 1,);
     }
 
     public function getSourceContext()

@@ -51,7 +51,7 @@
 			
 
 			<div class="pure-u-1-4">
-				<img src="{{ comment.artists_image }}" width="90%" />
+				<img alt="{{ comment.artists_name }} Image" src="{{ comment.artists_image }}" width="90%" />
 			</div>
 			<div class="pure-u-3-4">
 				<div class="commentsheader"><a href="/{{ comment.artists_id }}/{{ comment.artists_name|trim|replace({" ":"-", ".":"", "/":"","+":""})}}">{{ comment.artists_name }}</a></div>
@@ -84,10 +84,10 @@
 		<div class="pure-u-1">
 	 
 			<div class="home artistphotosblock">
-				<p id="photos">
+				<p class="photos">
 
 			    {% for a in artists %}
-			    	<a href="/{{a.id}}/{{a.name|trim|replace({" ":"-", ".":"", "/":"","+":""})}}"><img src="{{a.image}}" title="{{a.name}}" /></a>
+			    	<a href="/{{a.id}}/{{a.name|trim|replace({" ":"-", ".":"", "/":"","+":""})}}"><img alt="{{a.name}}" src="{{a.image}}" title="{{a.name}}" /></a>
 			    {% endfor %}
 			      
 				</p>
@@ -101,7 +101,7 @@
 	 		<h4>Latest Added Venues</h4>
 
 			<div class="home artistphotosblock">
-				<p id="photos">
+				<p class="photos">
 
 			    {% for a in venues %}
 			    	<a href="/venue/{{a.id}}/{{a.name|trim|replace({" ":"-", ".":"", "/":"","+":""})}}"><img src="{{a.image}}" title="{{a.name}}" /></a>
@@ -178,8 +178,6 @@
 	</div>
 </div>
 
-</body>
-
 <script type="text/javascript">
     $(document).ready(function(){
 	  $('.slickslider').slick({
@@ -194,6 +192,8 @@
 	});
 
 	document.getElementById("bigheader").style.height = "100vh";
-
 </script>
+
+</body>
+
 </html>
