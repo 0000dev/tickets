@@ -483,6 +483,10 @@ h1, h2, h3 {
 /* Image grid end */
 
 
+.homepageimage{
+  width: 90%;
+}
+
 /** LIGHTBOX MARKUP begin **/ 
 
 .lightbox {

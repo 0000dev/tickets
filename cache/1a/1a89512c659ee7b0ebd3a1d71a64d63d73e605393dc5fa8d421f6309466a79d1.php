@@ -103,9 +103,9 @@ class __TwigTemplate_c5f835dc4e0001f05e88bef3525ac759c5dae13aa2f98534d5c1fd46843
         echo "
 \t<div class=\"pure-u-1\">
 \t\t<center>
-\t\t\t
+\t\t\t<p>
 \t\t\t<div class=\"artistimage\">
-\t\t\t\t<p>
+\t\t\t\t
 \t\t\t\t\t<img class=\"vertical-align\" src=\"";
         // line 44
         if ((twig_length_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["artist"] ?? null), "image", array())) > 0)) {
@@ -116,9 +116,9 @@ class __TwigTemplate_c5f835dc4e0001f05e88bef3525ac759c5dae13aa2f98534d5c1fd46843
             echo " /img/noimage.jpg ";
         }
         echo "\"/>
-\t\t \t\t</p>
+\t\t \t\t
 \t\t\t</div>
-\t\t\t
+\t\t\t</p>
 \t\t</center>
 \t</div>
 </div>
