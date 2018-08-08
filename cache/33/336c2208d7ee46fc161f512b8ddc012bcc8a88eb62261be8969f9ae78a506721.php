@@ -65,7 +65,7 @@ class __TwigTemplate_b7bd53135cead116b671423229640d049e9805261f70e7290ed9945d66c
             echo twig_replace_filter(twig_trim_filter(twig_get_attribute($this->env, $this->source, $context["a"], "name", array())), array(" " => "-", "." => "", "/" => "", "+" => ""));
             echo "\"><img alt=\"";
             echo twig_get_attribute($this->env, $this->source, $context["a"], "name", array());
-            echo "\" class=\"vertical-align\" src=\"";
+            echo "\" class=\"vertical-align listimage\" src=\"";
             if ((twig_length_filter($this->env, twig_get_attribute($this->env, $this->source, $context["a"], "image", array())) > 0)) {
                 echo " ";
                 echo twig_get_attribute($this->env, $this->source, $context["a"], "image", array());
@@ -73,7 +73,7 @@ class __TwigTemplate_b7bd53135cead116b671423229640d049e9805261f70e7290ed9945d66c
             } else {
                 echo " /img/noimage.jpg ";
             }
-            echo "\" width=\"95%\" /></a>
+            echo "\" /></a>
 \t\t\t\t\t</div>
 \t\t\t\t\t<div class=\"pure-u-1 pure-u-sm-3-5 pure-u-md-4-5\">
 \t\t\t\t\t\t<strong><a href=\"/";
