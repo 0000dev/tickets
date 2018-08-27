@@ -1,3 +1,5 @@
+/LISTS/
+/LISTS/*
 /vendor/*
 !/vendor/rawInclude
 /src/config.php
