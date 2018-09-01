@@ -231,10 +231,10 @@ class __TwigTemplate_688ff1a4c9f7255cc5795438390eb029a0789799cd56ef05ff42121ef37
 \t\t\t\t<b>Popular Categories</b>
 \t\t\t\t<ul>
 \t\t\t\t\t
-\t\t\t\t\t\t<li><a href=\"/category/16\">Rock & Pop</a></li>
-\t\t\t\t\t\t<li><a href=\"/category/18\">Musicals</a></li>
-\t\t\t\t\t\t<li><a href=\"/category/19\">Rap & Hip-Hop</a></li>
-\t\t\t\t\t\t<li><a href=\"/category/20\">Alternative Rock</a></li>
+\t\t\t\t\t\t<li><a href=\"/category/5\">Rock & Pop</a></li>
+\t\t\t\t\t\t<li><a href=\"/category/4\">Musicals</a></li>
+\t\t\t\t\t\t<li><a href=\"/category/7\">Rap & Hip-Hop</a></li>
+\t\t\t\t\t\t<li><a href=\"/category/2\">Alternative Rock</a></li>
 \t\t\t\t\t
 \t\t\t\t</ul>
 \t\t\t</div>

@@ -1,8 +1,10 @@
 {% extends 'base.html.twig' %}
+	
+	{% block title %} List of Venues{% if curr_page > 1 %}. Page {{curr_page}} {% endif %}  {% endblock %}
 
 {% block body %}
 
-	<h3> List of Venues. Page {{page}} </h3>
+	<h3> List of Venues{% if curr_page > 1 %}. Page {{curr_page}} {% endif %} </h3>
 
 {% for v in venues %}
 

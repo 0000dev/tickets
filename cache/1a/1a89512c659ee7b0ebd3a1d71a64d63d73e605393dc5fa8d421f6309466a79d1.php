@@ -119,7 +119,7 @@ class __TwigTemplate_c5f835dc4e0001f05e88bef3525ac759c5dae13aa2f98534d5c1fd46843
         echo "\"/>
 \t\t \t\t
 \t\t</div>
-\t\t
+
 \t</div>
 </div>
 
@@ -663,7 +663,7 @@ class __TwigTemplate_c5f835dc4e0001f05e88bef3525ac759c5dae13aa2f98534d5c1fd46843
 \t</div>
 </div>
 
-<script type=\"text/javascript\">
+<script>
 \$( document ).ready(function() {
 \t\$( \"input.rating-input\" ).click(function() {
 \t\tname=\$(this).attr('name');

@@ -34,6 +34,11 @@ class __TwigTemplate_b7bd53135cead116b671423229640d049e9805261f70e7290ed9945d66c
     {
         echo twig_get_attribute($this->env, $this->source, (($__internal_7cd7461123377b8c9c1b6a01f46c7bbd94bd12e59266005df5e93029ddbc0ec5 = ($context["category"] ?? null)) && is_array($__internal_7cd7461123377b8c9c1b6a01f46c7bbd94bd12e59266005df5e93029ddbc0ec5) || $__internal_7cd7461123377b8c9c1b6a01f46c7bbd94bd12e59266005df5e93029ddbc0ec5 instanceof ArrayAccess ? ($__internal_7cd7461123377b8c9c1b6a01f46c7bbd94bd12e59266005df5e93029ddbc0ec5[0] ?? null) : null), "cats", array());
         echo " Artists";
+        if ((($context["curr_page"] ?? null) > 1)) {
+            echo ". Page ";
+            echo ($context["curr_page"] ?? null);
+            echo " ";
+        }
     }
 
     // line 5
@@ -44,6 +49,11 @@ class __TwigTemplate_b7bd53135cead116b671423229640d049e9805261f70e7290ed9945d66c
 \t<h3> ";
         // line 7
         echo twig_get_attribute($this->env, $this->source, (($__internal_3e28b7f596c58d7729642bcf2acc6efc894803703bf5fa7e74cd8d2aa1f8c68a = ($context["category"] ?? null)) && is_array($__internal_3e28b7f596c58d7729642bcf2acc6efc894803703bf5fa7e74cd8d2aa1f8c68a) || $__internal_3e28b7f596c58d7729642bcf2acc6efc894803703bf5fa7e74cd8d2aa1f8c68a instanceof ArrayAccess ? ($__internal_3e28b7f596c58d7729642bcf2acc6efc894803703bf5fa7e74cd8d2aa1f8c68a[0] ?? null) : null), "cats", array());
+        if ((($context["curr_page"] ?? null) > 1)) {
+            echo ". Page ";
+            echo ($context["curr_page"] ?? null);
+            echo " ";
+        }
         echo " </h3>
 
 ";
@@ -137,7 +147,7 @@ class __TwigTemplate_b7bd53135cead116b671423229640d049e9805261f70e7290ed9945d66c
 
     public function getDebugInfo()
     {
-        return array (  124 => 37,  114 => 33,  112 => 32,  108 => 30,  106 => 29,  103 => 28,  89 => 20,  81 => 19,  63 => 16,  55 => 10,  51 => 9,  46 => 7,  43 => 6,  40 => 5,  33 => 3,  15 => 1,);
+        return array (  134 => 37,  124 => 33,  122 => 32,  118 => 30,  116 => 29,  113 => 28,  99 => 20,  91 => 19,  73 => 16,  65 => 10,  61 => 9,  51 => 7,  48 => 6,  45 => 5,  33 => 3,  15 => 1,);
     }
 
     public function getSourceContext()
